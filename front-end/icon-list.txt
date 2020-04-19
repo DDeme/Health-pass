@@ -1,0 +1,8 @@
+https://fontawesome.com/icons/shield-virus?style=solid
+https://fontawesome.com/icons/arrow-left?style=solid
+https://fontawesome.com/icons/check-circle?style=regular
+https://fontawesome.com/icons/times-circle?style=regular
+https://fontawesome.com/icons/bell?style=regular
+https://fontawesome.com/icons/exclamation-triangle?style=solid
+
+
