@@ -1,13 +1,14 @@
 //@ts-check
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Container } from 'react-bootstrap'
+// import { Container } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../../components'
 
-const Wrapper: FC = styled(Container)`
+const Wrapper: FC = styled.div`
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 	justify-content: center;
 	height: 100%;
 `

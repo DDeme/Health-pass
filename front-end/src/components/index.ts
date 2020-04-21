@@ -1,4 +1,3 @@
-import Layout from './Layout'
-import Icon from './Icon'
+import Icon, { Icons } from './Icon'
 
-export { Layout, Icon }
+export { Icon, Icons }

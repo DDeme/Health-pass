@@ -3,9 +3,9 @@ import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 
-import { Layout } from './components'
 import Translater from './i18n'
 import Styler from './styles'
+import Layout from './Layout'
 
 const Root = () => (
 	<StrictMode>
