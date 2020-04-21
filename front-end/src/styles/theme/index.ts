@@ -1,6 +1,8 @@
 //@ts-check
+import process from 'process'
 
 let theme = {
+	mode: process.env.NODE_ENV,
 	fontFamily: 'Arial, Helvetica, sans-serif',
 	color: {
 		white: '#fff',

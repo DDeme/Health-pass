@@ -8,6 +8,8 @@ import { Container as ContainerB, Nav, Navbar } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const WrapperNavbar = styled.div`
+	display: ${({ theme }) => theme.mode !== 'dev' && 'none'};
+
 	nav {
 		padding: 0;
 	}
@@ -69,7 +71,7 @@ const Container = styled(ContainerB)`
 	height: 100%;
 `
 
-const Layout: FC = (): React.ReactElement => {
+const Layout: FC = (props): React.ReactElement => {
 	return (
 		<Container>
 			<BrowserRouter>
