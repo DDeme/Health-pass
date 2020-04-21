@@ -1,10 +1,7 @@
 //@ts-check
 import React, { FC } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Home from '../../Pages/Home'
-import Login from '../../Pages/Login'
-import Result from '../../Pages/Result'
-import Loading from '../../Pages/Loading'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { Home, Login, Loading, Result } from '../../Pages'
 
 import styled from 'styled-components'
 
@@ -16,7 +13,7 @@ const Nav: FC = styled.nav`
 
 const Layout: FC = (): React.ReactElement => {
 	return (
-		<Router>
+		<BrowserRouter>
 			<Nav>
 				<ul>
 					<li>
@@ -47,7 +44,7 @@ const Layout: FC = (): React.ReactElement => {
 					<Loading />
 				</Route>
 			</Switch>
-		</Router>
+		</BrowserRouter>
 	)
 }
 

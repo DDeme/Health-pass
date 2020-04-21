@@ -1,7 +1,7 @@
 //@ts-check
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Container } from '@material-ui/core'
+import { Container } from 'react-bootstrap'
 
 const H1: FC = styled.h1`
 	text-align: center;
