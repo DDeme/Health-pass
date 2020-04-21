@@ -3,19 +3,29 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Container } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
+import { Icon } from '../../components'
+
+const Wrapper: FC = styled(Container)`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+`
 
 const Title: FC = styled.h1`
 	text-transform: uppercase;
 	color: ${({ theme }) => theme.color.white};
 `
 
-const Laoding: FC = (): JSX.Element => {
+const Laoding: FC = (props): JSX.Element => {
 	const { t } = useTranslation()
+	console.log(props)
 
 	return (
-		<Container>
+		<Wrapper>
+			<Icon name="shield" />
 			<Title>{t('welcome.title')}</Title>
-		</Container>
+		</Wrapper>
 	)
 }
 

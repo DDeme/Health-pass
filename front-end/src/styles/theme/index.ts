@@ -1,6 +1,7 @@
 //@ts-check
 
 let theme = {
+	fontFamily: 'Arial, Helvetica, sans-serif',
 	color: {
 		white: '#fff',
 		black: '#000',
