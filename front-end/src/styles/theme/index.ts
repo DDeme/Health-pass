@@ -4,6 +4,7 @@ import process from 'process'
 let theme = {
 	mode: process.env.NODE_ENV,
 	fontFamily: 'Arial, Helvetica, sans-serif',
+	fontSize: '16px',
 	color: {
 		white: '#fff',
 		black: '#000',

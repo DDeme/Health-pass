@@ -2,9 +2,8 @@
 import React, { FC } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Icons } from '../components'
-import { Home, Login, Loading, Result } from '../Pages'
+import { Home, Login, Loading, Result, NotFound } from '../Pages'
 import { Container as ContainerB, Nav, Navbar } from 'react-bootstrap'
-
 import styled from 'styled-components'
 
 const WrapperNavbar = styled.div`
@@ -47,9 +46,10 @@ const Navigation: FC = () => (
 					<Navbar bg="light">
 						<Navbar.Brand>Pages</Navbar.Brand>
 					</Navbar>
-					<Nav.Link href="loading">Loading</Nav.Link>
-					<Nav.Link href="/">Home</Nav.Link>
+					<Nav.Link href="notFound">Not Found</Nav.Link>
+					<Nav.Link href="/">Loading</Nav.Link>
 					<Nav.Link href="/login">Login</Nav.Link>
+					<Nav.Link href="/home">Home</Nav.Link>
 					<Nav.Link href="/result">Result</Nav.Link>
 					<Navbar bg="light">
 						<Navbar.Brand>Settings</Navbar.Brand>
@@ -58,7 +58,6 @@ const Navigation: FC = () => (
 					{/* 
 						<Nav.Link href="/settings-theme">Theme</Nav.Link>
 						<Nav.Link href="/settings-cssReset">Reset css</Nav.Link>
-				
 						<Nav.Link href="/settings-translation">Translation</Nav.Link>
 				 */}
 				</Nav>
@@ -71,28 +70,32 @@ const Container = styled(ContainerB)`
 	height: 100%;
 `
 
-const Layout: FC = (props): React.ReactElement => {
+const Layout: any = (): any => {
 	return (
 		<Container>
-			<BrowserRouter>
-				<Navigation />
-				<Switch>
-					<Route path="/loading">
-						<Loading />
-					</Route>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<Route path="/login">
-						<Login />
-					</Route>
-					<Route path="/result">
-						<Result />
-					</Route>
-					<Route path="/settings-icon">
-						<Icons />
-					</Route>
-					{/* <Route path="/settings-theme">
+			<React.Suspense fallback={<Loading />}>
+				<BrowserRouter>
+					<Navigation />
+					<Switch>
+						<Route path="/notFound">
+							<NotFound />
+						</Route>
+						<Route exact path="/">
+							<Loading />
+						</Route>
+						<Route path="/home">
+							<Home />
+						</Route>
+						<Route path="/login">
+							<Login />
+						</Route>
+						<Route path="/result">
+							<Result />
+						</Route>
+						<Route path="/settings-icon">
+							<Icons />
+						</Route>
+						{/* <Route path="/settings-theme">
 					<Icons />
 				</Route>
 				<Route path="/settings-cssReset">
@@ -101,8 +104,9 @@ const Layout: FC = (props): React.ReactElement => {
 				<Route path="/settings-translation">
 					<Icons />
 				</Route> */}
-				</Switch>
-			</BrowserRouter>
+					</Switch>
+				</BrowserRouter>
+			</React.Suspense>
 		</Container>
 	)
 }

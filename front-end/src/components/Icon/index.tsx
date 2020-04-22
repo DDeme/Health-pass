@@ -12,10 +12,11 @@ interface StyledProps {
 
 interface IconProps {
 	name: string
+	className?: string
 }
 
-const Icon: FC<IconProps> = ({ name }): JSX.Element => (
-	<WrapperIcon className={`icon icon-${name}`} />
+const Icon: any = ({ name, className }): any => (
+	<WrapperIcon className={`icon icon-${name} ${className} rotate`} />
 )
 
 const WrapperIcons: FC = styled.ul`
@@ -62,7 +63,7 @@ const Icons: any = (): any => {
 		<WrapperIcons>
 			<h1>Copy your icon by click on one item:</h1>
 			{icons.map((icon, i): any => {
-				const text = `<Icon {name: '${icon.properties.name}'} />`
+				const text = `<Icon name="${icon.properties.name}" />`
 				return (
 					<WrapperIconsItem key={i}>
 						<Icon name={icon.properties.name} />
