@@ -10,6 +10,7 @@ jobs:
       - run: cd ./front-end/ 
       - run: cd ./front-end/ && yarn
       - run: cd ./front-end/ && yarn build
+      - run: cd ./front-end/ && yarn deploy
      
 workflows:
     build-and-test:
