@@ -11,9 +11,6 @@ const User = {
     movementAllowed: true,
 }
 
-
-
-
 router.get("/", (req, res, next) => {
     const certificate = getHealthCertificate(User)
   
