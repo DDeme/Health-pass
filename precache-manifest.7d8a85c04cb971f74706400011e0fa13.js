@@ -1,27 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "53485e0417197031ecc009ed2329bb58",
+    "revision": "ccf916afc49e37d90123cf4dc92ea9db",
     "url": "/Health-pass/index.html"
   },
   {
-    "revision": "1184e819e1536bdec608",
-    "url": "/Health-pass/static/css/2.69121389.chunk.css"
-  },
-  {
-    "revision": "9ffda890186274d91032",
+    "revision": "5aa236707947cd35c230",
     "url": "/Health-pass/static/css/main.f4e9e51b.chunk.css"
   },
   {
-    "revision": "1184e819e1536bdec608",
-    "url": "/Health-pass/static/js/2.48ef277a.chunk.js"
+    "revision": "ed0be986b947e8b45d2f",
+    "url": "/Health-pass/static/js/2.0f944644.chunk.js"
   },
   {
-    "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/Health-pass/static/js/2.48ef277a.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "/Health-pass/static/js/2.0f944644.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9ffda890186274d91032",
-    "url": "/Health-pass/static/js/main.b2f1f8ad.chunk.js"
+    "revision": "5aa236707947cd35c230",
+    "url": "/Health-pass/static/js/main.101e713f.chunk.js"
   },
   {
     "revision": "fee44851a2e1ee43501a",

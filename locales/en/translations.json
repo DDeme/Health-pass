@@ -1,5 +1,16 @@
 {
 	"welcome": {
 		"title": "Health Pass"
+	},
+	"navigation": {
+		"button_one": "See my certificate",
+		"button_two": "Verify by scanning",
+		"button_three": "Verify by phone number"
+	},
+	"login": {
+		"label_one": "Citizen id",
+		"placeholder_one": "Type your citizen id",
+		"error_one": "Type your citizen id",
+		"button_one": "Sign in"
 	}
 }
