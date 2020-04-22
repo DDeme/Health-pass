@@ -8,8 +8,8 @@ jobs:
     steps:
       - checkout
       - run: cd ./front-end/ 
-      - run: yarn
-      - run: yarn build
+      - run: cd ./front-end/ && yarn
+      - run: cd ./front-end/ && yarn build
      
 workflows:
     build-and-test:
