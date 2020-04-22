@@ -1,0 +1,23 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run: cd ./front-end/ 
+      - run: cd ./front-end/ && yarn
+      - run:
+          name: Configure git user
+          command: |
+            git config user.email "ci-build@ddeme.com"
+            git config user.name "ci-build"
+      - run: cd ./front-end/ && yarn build
+      - run: cd ./front-end/ && yarn deploy
+     
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test

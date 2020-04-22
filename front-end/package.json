@@ -2,6 +2,7 @@
 	"name": "front-end-t",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://ddeme.github.io/Health-pass/",
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
@@ -12,6 +13,7 @@
 		"@types/react-dom": "^16.9.0",
 		"@types/styled-components": "^5.1.0",
 		"cross-env": "^7.0.2",
+		"gh-pages": "^2.2.0",
 		"i18next": "^19.4.2",
 		"i18next-browser-languagedetector": "^4.1.1",
 		"i18next-xhr-backend": "^3.2.2",
@@ -23,12 +25,17 @@
 		"styled-components": "^5.1.0",
 		"typescript": "~3.7.2"
 	},
+	"authors": [
+		"Ing. Lukáš Frantál <frantal.lukas10@gmail.com>",
+		"Ing. Daniel Demečko <daniel@demecko.com>"
+	],
 	"scripts": {
 		"dev": "cross-env NODE_ENV=dev  react-scripts start",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
