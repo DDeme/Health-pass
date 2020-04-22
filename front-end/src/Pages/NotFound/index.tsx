@@ -1,13 +1,10 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
 
 const NotFound = () => (
-	<Row>
-		<Col>
-			<p>404</p>
-			<p>Page not found - </p>
-		</Col>
-	</Row>
+	<>
+		<p>404</p>
+		<p>Page not found - </p>
+	</>
 )
 
 export default NotFound

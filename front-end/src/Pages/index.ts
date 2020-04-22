@@ -1,7 +1,7 @@
 import Loading from './Loading'
-import Home from './Home'
+import SplashScreen from './SplashScreen'
 import Login from './Login'
-import Result from './Result'
 import NotFound from './NotFound'
+import Navigation from './Navigation'
 
-export { Home, Loading, Login, Result, NotFound }
+export { SplashScreen, Loading, Navigation, Login, NotFound }

@@ -1,6 +1,5 @@
 //@ts-check
 import React, { FC } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './reset.css'
 
 import { ThemeProvider, createGlobalStyle } from 'styled-components'

@@ -18,21 +18,28 @@ const Link = styled(LinkR)`
 	max-width: 280px;
 	width: 100%;
 `
+
 const Item: FC = styled(Button)`
 	margin-top: 30px;
 `
 
-const Login = () => {
+const Navigation = () => {
 	const { t } = useTranslation()
 
 	return (
 		<LogoWrapper>
 			<List>
-				<Link to="/2fa">
-					<Item>{t('login.button_one')}</Item>
+				<Link to="/login">
+					<Item>{t('navigation.button_one')}</Item>
+				</Link>
+				<Link to="/">
+					<Item>{t('navigation.button_two')}</Item>
+				</Link>
+				<Link to="/">
+					<Item>{t('navigation.button_three')}</Item>
 				</Link>
 			</List>
 		</LogoWrapper>
 	)
 }
-export default Login
+export default Navigation

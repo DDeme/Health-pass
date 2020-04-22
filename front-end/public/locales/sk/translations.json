@@ -1,6 +1,10 @@
 {
 	"welcome": {
-		"title": "Welcome to {{framework}}",
-		"intro": "To get started, edit <1><0></0></1> and save to reload."
+		"title": "Health Pass"
+	},
+	"home": {
+		"title-one": "See my certificate",
+		"title-two": "Verify by scanning",
+		"title-three": "Verify by phone number"
 	}
 }
