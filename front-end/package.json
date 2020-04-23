@@ -32,7 +32,7 @@
 		"Bc. Daniel Demečko <daniel@demecko.com>"
 	],
 	"scripts": {
-		"dev": "cross-env NODE_ENV=dev  react-scripts start",
+		"dev": "cross-env NODE_ENV=dev HTTPS=true react-scripts start",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",

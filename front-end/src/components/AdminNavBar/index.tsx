@@ -74,6 +74,9 @@ const AdminNavBar: any = props => {
 						<Link to="/verification">Verification</Link>
 					</Item>
 					<Item>
+						<Link to="/scanning">Scanning</Link>
+					</Item>
+					<Item>
 						<Title>Settings</Title>{' '}
 					</Item>
 					<Item>

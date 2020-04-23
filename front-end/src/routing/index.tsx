@@ -2,7 +2,14 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Icons, AdminNavBar } from '../components'
-import { SplashScreen, Loading, Home, Login, Verification } from '../Pages'
+import {
+	SplashScreen,
+	Loading,
+	Home,
+	Login,
+	Verification,
+	Scanning,
+} from '../Pages'
 import { PUBLIC_URL } from '../const'
 
 const Routing: any = (): any => {
@@ -28,6 +35,9 @@ const Routing: any = (): any => {
 					</Route>
 					<Route path="/settings-icon">
 						<Icons />
+					</Route>
+					<Route path="/scanning">
+						<Scanning />
 					</Route>
 					{/* <Route path="/settings-theme">
 					<Icons />
