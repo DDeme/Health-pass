@@ -2,7 +2,7 @@
 	"logo": {
 		"title": "Health Pass"
 	},
-	"navigation": {
+	"home": {
 		"button_one": "See my certificate",
 		"button_two": "Verify by scanning",
 		"button_three": "Verify by phone number"
@@ -11,9 +11,22 @@
 		"label_one": "Citizen id",
 		"placeholder_one": "Type your citizen id",
 		"error_one": "Your citizen id is not valid!",
+		"info_one": "Id card or passport number",
 		"label_two": "Phone number",
 		"placeholder_two": "Type your phone number",
 		"error_two": "Your phone number is not valid!",
+		"info_two": "Example pohone +421999999999",
 		"button_one": "Sign in"
+	},
+	"verification": {
+		"label_one": "Verification code",
+		"placeholder_one": "Type your verification code",
+		"error_one": "Your verification code is not valid!",
+		"info_one": "A code has been send to your device via SMS",
+		"button_one": "Submit",
+		"settings": {
+			"button_one": "Help",
+			"button_two": "Create account"
+		}
 	}
 }
