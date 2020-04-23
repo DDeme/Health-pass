@@ -65,7 +65,7 @@ const AdminNavBar: any = props => {
 						<Link to="loading">Loading Screen</Link>
 					</Item>
 					<Item>
-						<Link to="/navigation">Navigation</Link>
+						<Link to="/home">Home</Link>
 					</Item>
 					<Item>
 						<Link to="/login">Login</Link>

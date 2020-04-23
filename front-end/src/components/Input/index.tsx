@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components'
 const Wrapper = styled.div`
 	position: relative;
 	color: ${({ theme }) => theme.color.pruple};
-	max-width: 280px;
 	width: 100%;
 	height: 50px;
 `
@@ -27,7 +26,7 @@ const Title: any = styled.input<{ active: boolean; value: string }>`
 
 	::placeholder {
 		color: rgba(0, 0, 0, 0.5);
-		opacity: ${({ value }) => !!value.length && 0};
+		opacity: ${({ value }) => value && !!value.length && 0};
 		opacity: ${({ active }) => !active && 0};
 	}
 
@@ -71,33 +70,72 @@ const Lable: any = styled.label<{ active: boolean }>`
 		`}
 `
 
-const Warning = styled.span`
-	position: absolute;
+const Information: any = styled.span<{ valid: boolean }>`
+	display: block;
+	width: 100%;
+	text-align: left;
+	color: ${({ theme }) => theme.color.purple};
+	padding: 5px 15px 0;
+	font-size: 12px;
+
+	${({ valid }) =>
+		valid &&
+		css`
+			color: ${({ theme }) => theme.color.red};
+		`}
 `
 
-const Input: any = props => {
-	const [value, setValue] = useState(props.value || '')
-	const [activeLabel, setActiveLabel] = useState(false)
-
-	return (
-		<Wrapper className={props.className}>
-			<Title
-				type={props.type}
-				ref={props.ref}
-				name={props.name}
-				active={activeLabel || !!value.length}
-				value={value}
-				id={props.name}
-				placeholder={props.placeholder}
-				onChange={e => setValue(e.target.value)}
-				onFocus={() => setActiveLabel(true)}
-				onBlur={() => setActiveLabel(false)}
-			/>
-			<Lable active={activeLabel || !!value.length} htmlFor={props.name}>
-				{props.label}
-			</Lable>
-			<Warning>{props.error}</Warning>
-		</Wrapper>
-	)
+type InputProps = {
+	className: string
+	type: string
+	name?: string
+	register?: string
+	value?: string
+	placeholder?: string
+	error?: string
+	info?: string
+	label?: string
 }
+
+const Input: any = React.forwardRef(
+	(
+		{
+			className,
+			type,
+			name,
+			register,
+			value,
+			placeholder,
+			error,
+			info,
+			label,
+		}: InputProps,
+		ref
+	) => {
+		const [activeLabel, setActiveLabel] = useState(false)
+		return (
+			<>
+				<Wrapper className={className}>
+					<Title
+						type={type}
+						name={name}
+						ref={register}
+						active={activeLabel || (value && !!value.length)}
+						id={name}
+						placeholder={placeholder}
+						onFocus={() => setActiveLabel(true)}
+						onBlur={() => setActiveLabel(false)}
+					/>
+					<Lable
+						active={activeLabel || (value && !!value.length)}
+						htmlFor={name}>
+						{label}
+					</Lable>
+				</Wrapper>
+				<Information valid={error}>{error ? error : info}</Information>
+			</>
+		)
+	}
+)
+
 export default Input

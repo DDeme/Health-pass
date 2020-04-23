@@ -47,7 +47,7 @@ const Laoding = () => {
 	const lazyLoad = () => {
 		const timer = setTimeout(() => {
 			setLoading(false)
-			return history.push('/navigation')
+			return history.push('/home')
 		}, 1000)
 
 		return () => clearTimeout(timer)

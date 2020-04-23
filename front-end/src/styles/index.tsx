@@ -12,6 +12,13 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeI }>`
 		height: 100%;
 		background-color: ${({ theme }): string => theme.color.purple};
 	}
+
+	#root {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 	
 	* {
 		box-sizing: border-box;

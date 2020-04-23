@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from '../Logo'
+import { Logo, Container } from '../../components'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -31,11 +31,11 @@ const Heading = styled(Logo)`
 	}
 `
 
-const LogoWrapper: any = props => (
+const Navigation: any = props => (
 	<Wrapper className={props.className}>
 		<Heading />
-		{props.children}
+		<Container>{props.children}</Container>
 	</Wrapper>
 )
 
-export default LogoWrapper
+export default Navigation

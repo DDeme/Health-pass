@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper: any = styled.button`
 	display: inline-block;
+	text-transform: uppercase;
 	cursor: pointer;
 	max-width: 280px;
 	width: 100%;
@@ -10,7 +11,7 @@ const Wrapper: any = styled.button`
 	text-align: center;
 	background-color: ${({ theme }) => theme.color.purple};
 	color: ${({ theme }) => theme.color.white};
-	border: 1px solid ${({ theme }) => theme.color.purple};
+	border: 2px solid ${({ theme }) => theme.color.purple};
 	border-radius: 18px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	text-align: center;

@@ -5,13 +5,13 @@ import * as serviceWorker from './serviceWorker'
 
 import Translater from './i18n'
 import Styler from './styles'
-import Layout from './Layout'
+import Routing from './routing'
 
 const Root = () => (
 	<StrictMode>
 		<Translater>
 			<Styler>
-				<Layout />
+				<Routing />
 			</Styler>
 		</Translater>
 	</StrictMode>
