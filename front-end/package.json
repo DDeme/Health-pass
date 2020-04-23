@@ -27,7 +27,7 @@
 	},
 	"authors": [
 		"Ing. Lukáš Frantál <frantal.lukas10@gmail.com>",
-		"Ing. Daniel Demečko <daniel@demecko.com>"
+		"Bc. Daniel Demečko <daniel@demecko.com>"
 	],
 	"scripts": {
 		"dev": "cross-env NODE_ENV=dev  react-scripts start",
