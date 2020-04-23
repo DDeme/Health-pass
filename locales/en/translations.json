@@ -1,5 +1,5 @@
 {
-	"welcome": {
+	"logo": {
 		"title": "Health Pass"
 	},
 	"navigation": {
@@ -10,7 +10,10 @@
 	"login": {
 		"label_one": "Citizen id",
 		"placeholder_one": "Type your citizen id",
-		"error_one": "Type your citizen id",
+		"error_one": "Your citizen id is not valid!",
+		"label_two": "Phone number",
+		"placeholder_two": "Type your phone number",
+		"error_two": "Your phone number is not valid!",
 		"button_one": "Sign in"
 	}
 }
