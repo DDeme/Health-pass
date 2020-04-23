@@ -2,6 +2,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Icons } from '../components'
+
 import {
 	SplashScreen,
 	Loading,
@@ -9,12 +10,15 @@ import {
 	Login,
 	Verification,
 	Results,
-} from '../pages'
+	Scanning,
+} from '../Pages'
+
+import { PUBLIC_URL } from '../const'
 
 const Routing: any = (): any => {
 	return (
 		<React.Suspense fallback={<Loading />}>
-			<BrowserRouter>
+			<BrowserRouter basename={PUBLIC_URL}>
 				<Switch>
 					<Route exact path="/">
 						<SplashScreen />
@@ -36,6 +40,9 @@ const Routing: any = (): any => {
 					</Route>
 					<Route path="/settings-icon">
 						<Icons />
+					</Route>
+					<Route path="/scanning">
+						<Scanning />
 					</Route>
 					{/* <Route path="/settings-theme">
 					<Icons />

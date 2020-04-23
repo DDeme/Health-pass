@@ -127,6 +127,9 @@ const HamburgerMenu: any = props => {
 					<Link to="/results">Results</Link>
 				</Item>
 				<Item>
+					<Link to="/scanning">Scanning</Link>
+				</Item>
+				<Item>
 					<Title>Settings</Title>
 				</Item>
 				<Item>

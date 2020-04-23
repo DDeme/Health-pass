@@ -5,5 +5,15 @@ import NotFound from './NotFound'
 import Home from './Home'
 import Results from './Results'
 import Verification from './Verification'
+import Scanning from './Scanning'
 
-export { SplashScreen, Loading, Home, Login, Verification, NotFound, Results }
+export {
+	SplashScreen,
+	Loading,
+	Home,
+	Login,
+	Verification,
+	NotFound,
+	Results,
+	Scanning,
+}

@@ -3,6 +3,7 @@ import i18n from 'i18next'
 import Backend from 'i18next-xhr-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next, I18nextProvider } from 'react-i18next'
+import { PUBLIC_URL } from '../const'
 
 i18n
 	// learn more: https://github.com/i18next/i18next-xhr-backend
@@ -32,7 +33,7 @@ i18n
 		saveMissing: true,
 		saveMissingTo: 'all',
 		backend: {
-			loadPath: './locales/{{lng}}/translations.json',
+			loadPath: `${PUBLIC_URL}/locales/{{lng}}/translations.json`,
 		},
 	})
 

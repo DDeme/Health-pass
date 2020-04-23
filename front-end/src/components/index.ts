@@ -5,5 +5,16 @@ import Logo from './Logo'
 import Container from './Container'
 import HamburgerMenu from './HamburgerMenu'
 import Menu from './Menu'
+import Scanner from './Scanner'
 
-export { Icon, Icons, Button, Input, Logo, Container, HamburgerMenu, Menu }
+export {
+	Icon,
+	Icons,
+	Button,
+	Input,
+	Logo,
+	Container,
+	HamburgerMenu,
+	Menu,
+	Scanner,
+}
