@@ -5,8 +5,8 @@
   "background_color": "#6202ee",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "https://ddeme.github.io/Health-pass/",
+  "start_url": "https://ddeme.github.io/Health-pass/",
   "icons": [
 	{
 		"src": "favicon.ico",
