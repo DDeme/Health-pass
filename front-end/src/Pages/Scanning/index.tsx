@@ -1,8 +1,10 @@
 import React from 'react'
 // import { Scanner } from '../../components/Scanner/index';
-import { verifyPass } from '../../services/verifyPass';
+import { verifyPass } from '../../services'
 
-export const Scanning = () => {
-	 const res = JSON.stringify(verifyPass())
+const Scanning = () => {
+	const res = JSON.stringify(verifyPass())
 	return <span>{res}</span>
-}	
+}
+
+export default Scanning

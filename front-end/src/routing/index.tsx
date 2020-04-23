@@ -1,22 +1,24 @@
 //@ts-check
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { Icons, AdminNavBar } from '../components'
+import { Icons } from '../components'
+
 import {
 	SplashScreen,
 	Loading,
 	Home,
 	Login,
 	Verification,
+	Results,
 	Scanning,
 } from '../Pages'
+
 import { PUBLIC_URL } from '../const'
 
 const Routing: any = (): any => {
 	return (
 		<React.Suspense fallback={<Loading />}>
 			<BrowserRouter basename={PUBLIC_URL}>
-				<AdminNavBar />
 				<Switch>
 					<Route exact path="/">
 						<SplashScreen />
@@ -32,6 +34,9 @@ const Routing: any = (): any => {
 					</Route>
 					<Route path="/verification">
 						<Verification />
+					</Route>
+					<Route path="/results">
+						<Results />
 					</Route>
 					<Route path="/settings-icon">
 						<Icons />

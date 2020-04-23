@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Wrapper: any = styled.button`
+const Wrapper: any = styled.button<{ hovering: boolean }>`
 	display: inline-block;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -16,17 +16,25 @@ const Wrapper: any = styled.button`
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	text-align: center;
 
-	&:hover {
-		background-color: ${({ theme }) => theme.color.white};
-		color: ${({ theme }) => theme.color.purple};
-	}
+	${({ hovering }) =>
+		hovering &&
+		css`
+			&:hover {
+				background-color: ${({ theme }) => theme.color.white};
+				color: ${({ theme }) => theme.color.purple};
+			}
 
-	&:focus {
-		outline: 0;
-	}
+			&:focus {
+				outline: 0;
+			}
+		`}
 `
 
 const Button = props => {
-	return <Wrapper {...props}>{props.children}</Wrapper>
+	return (
+		<Wrapper {...props} hovering={props.hover || true}>
+			{props.children}
+		</Wrapper>
+	)
 }
 export default Button

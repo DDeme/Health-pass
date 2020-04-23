@@ -9,7 +9,6 @@ const Wrapper = styled.div`
 	justify-content: center;
 	flex: 1;
 	text-align: center;
-	margin-top: 20px;
 `
 
 const Heading = styled(Logo)`
@@ -18,6 +17,7 @@ const Heading = styled(Logo)`
 	flex: 1;
 
 	&:after {
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		position: absolute;
 		content: '';
 		background: ${({ theme }) => theme.color.purple};
