@@ -32,7 +32,7 @@ i18n
 		saveMissing: true,
 		saveMissingTo: 'all',
 		backend: {
-			loadPath: '/locales/{{lng}}/translations.json',
+			loadPath: './locales/{{lng}}/translations.json',
 		},
 	})
 
