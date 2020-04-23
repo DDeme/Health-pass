@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { Button as ButtonC, Input as InputC } from '../../components'
-import Navigation from '../../layouts/Navigation'
+import LayoutNavigation from '../../layouts/Navigation'
 import { useTranslation } from 'react-i18next'
 
 const List: any = styled.form`
@@ -39,7 +39,7 @@ const Login = () => {
 	}
 
 	return (
-		<Navigation>
+		<LayoutNavigation>
 			<List onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					type="string"
@@ -67,7 +67,7 @@ const Login = () => {
 				/>
 				<Button type="submit">{t('login.button_one')}</Button>
 			</List>
-		</Navigation>
+		</LayoutNavigation>
 	)
 }
 export default Login
