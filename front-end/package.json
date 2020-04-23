@@ -2,7 +2,6 @@
 	"name": "front-end-t",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://ddeme.github.io/Health-pass/",
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
@@ -19,6 +18,7 @@
 		"i18next-xhr-backend": "^3.2.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-hook-form": "^5.5.3",
 		"react-i18next": "^11.3.4",
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.4.1",

@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Logo from '../Logo'
 
-const Wrapper: FC = styled.div`
+const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -12,7 +12,7 @@ const Wrapper: FC = styled.div`
 	margin-top: 20px;
 `
 
-const Heading: FC = styled(Logo)`
+const Heading = styled(Logo)`
 	position: relative;
 	z-index: 1;
 	flex: 1;
@@ -31,8 +31,8 @@ const Heading: FC = styled(Logo)`
 	}
 `
 
-const LogoWrapper = props => (
-	<Wrapper>
+const LogoWrapper: any = props => (
+	<Wrapper className={props.className}>
 		<Heading />
 		{props.children}
 	</Wrapper>

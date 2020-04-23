@@ -11,7 +11,11 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeI }>`
 		font-size: ${({ theme }) => theme.fontSize};
 		height: 100%;
 		background-color: ${({ theme }): string => theme.color.purple};
-  }
+	}
+	
+	* {
+		box-sizing: border-box;
+	}
 `
 
 const Styler: FC = (props): JSX.Element => (

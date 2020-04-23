@@ -6,7 +6,7 @@ const Wrapper: any = styled.button`
 	cursor: pointer;
 	max-width: 280px;
 	width: 100%;
-	padding: 10px 15px;
+	padding: 15px 20px;
 	text-align: center;
 	background-color: ${({ theme }) => theme.color.purple};
 	color: ${({ theme }) => theme.color.white};

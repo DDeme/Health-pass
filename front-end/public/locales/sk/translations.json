@@ -1,10 +1,5 @@
 {
-	"welcome": {
+	"logo": {
 		"title": "Health Pass"
-	},
-	"home": {
-		"title-one": "See my certificate",
-		"title-two": "Verify by scanning",
-		"title-three": "Verify by phone number"
 	}
 }

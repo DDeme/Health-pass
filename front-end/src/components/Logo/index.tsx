@@ -35,9 +35,9 @@ const Logo = props => {
 	const { t } = useTranslation()
 
 	return (
-		<Wrapper {...props}>
+		<Wrapper className={props.className}>
 			<Shield name="shield" />
-			<Title>{t('welcome.title')}</Title>
+			<Title>{t('logo.title')}</Title>
 		</Wrapper>
 	)
 }

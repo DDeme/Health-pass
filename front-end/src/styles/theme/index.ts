@@ -1,4 +1,5 @@
 //@ts-check
+import process from 'process'
 
 let theme = {
 	mode: process.env.NODE_ENV,
@@ -7,10 +8,10 @@ let theme = {
 	color: {
 		white: '#fff',
 		black: '#000',
+		purple: '#6202EE',
 		green: '#5CB85C',
 		red: '#D9534F',
 		blue: '#0275D8',
-		purple: '#6202EE',
 	},
 }
 

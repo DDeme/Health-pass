@@ -47,11 +47,11 @@ const Title = styled.p`
 	padding: 5px;
 `
 
-const AdminNavBar: any = () => {
+const AdminNavBar: any = props => {
 	const [show, setShow] = useState(false)
 
 	return (
-		<Wrapper>
+		<Wrapper className={props.className}>
 			<Btn onClick={() => setShow(!show)}>{show ? 'close' : 'admin menu'}</Btn>
 			{show && (
 				<List>
@@ -69,6 +69,9 @@ const AdminNavBar: any = () => {
 					</Item>
 					<Item>
 						<Link to="/login">Login</Link>
+					</Item>
+					<Item>
+						<Link to="/verification">Verification</Link>
 					</Item>
 					<Item>
 						<Title>Settings</Title>{' '}

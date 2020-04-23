@@ -2,7 +2,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Icons, AdminNavBar } from '../components'
-import { SplashScreen, Loading, Navigation, Login } from '../Pages'
+import {
+	SplashScreen,
+	Loading,
+	Navigation,
+	Login,
+	Verification,
+} from '../Pages'
 import styled from 'styled-components'
 
 const WrapperLaout = styled.div`
@@ -31,6 +37,9 @@ const Layout: any = (): any => {
 						</Route>
 						<Route path="/login">
 							<Login />
+						</Route>
+						<Route path="/verification">
+							<Verification />
 						</Route>
 						<Route path="/settings-icon">
 							<Icons />
