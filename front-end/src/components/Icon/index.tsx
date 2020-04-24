@@ -13,10 +13,10 @@ const Wrapper = styled.i`
 	height: 30px;
 
 	&:before {
+		color: ${({ theme }) => theme.color.white};
 		font-size: 22px;
 		width: 20px;
 		height: 20px;
-		color: ${({ theme }) => theme.color.white};
 		position: absolute;
 		top: 50%;
 		left: 50%;

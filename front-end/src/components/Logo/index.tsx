@@ -37,9 +37,9 @@ const Logo = props => {
 
 	return (
 		<Wrapper className={props.className}>
-			{props.children}
 			<IconShield name="shield" />
 			<Title>{t('logo.title')}</Title>
+			{props.children}
 		</Wrapper>
 	)
 }

@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 	justify-content: space-between;
 	background-color: ${({ theme }) => theme.color.purple};
 	padding: 20px;
+	width: 100%;
 `
 
 const Title = styled.h1`

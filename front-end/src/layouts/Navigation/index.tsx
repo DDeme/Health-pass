@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 `
 
 const Heading = styled(Logo)`
+	background-color: ${({ theme }) => theme.color.purple};
 	position: relative;
 	z-index: 1;
 

@@ -1,24 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container as ContainerC, Menu } from '../../components'
+import { Container, ContainerEnumType, Menu } from '../../components'
 
-const Wrapper = styled.div`
+const Wrapper = styled(Container)`
 	overflow: auto;
 	display: flex;
-	flex-direction: column;
-	width: 100%;
-	flex: 1;
-`
-
-const Container = styled(ContainerC)`
-	justify-content: flex-start;
-	padding-top: 0;
 `
 
 const Mobile: any = props => (
-	<Wrapper className={props.className}>
+	<Wrapper className={props.className} type={ContainerEnumType.COL}>
 		<Menu />
-		<Container>{props.children}</Container>
+		<Container type={ContainerEnumType.COL}>{props.children}</Container>
 	</Wrapper>
 )
 
