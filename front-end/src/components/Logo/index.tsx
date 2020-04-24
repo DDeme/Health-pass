@@ -20,12 +20,6 @@ const Link = styled(LinkR)`
 	width: 70px;
 	height: 100%;
 
-	&:after {
-		position: absolute;
-		content: '';
-		background: linear-gradient(to right, #fff 0%, transparent 100%);
-	}
-
 	&:hover {
 		background-color: ${({ theme }) => theme.color.purple};
 	}
@@ -42,6 +36,7 @@ const IconArrow = styled(Icon)`
 		height: 24px;
 		color: ${({ theme }) => theme.color.white};
 		position: absolute;
+		z-index: 3;
 		top: 50%;
 		left: 50%;
 		bottom: 0;
