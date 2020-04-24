@@ -22,6 +22,7 @@ export type ContainerProps = {
 }
 
 const Wrapper = styled.div<ContainerProps>`
+	position: relative;
 	display: flex;
 	flex-direction: ${({ type }): string => type || ContainerEnumType.ROW};
 	justify-content: ${({ x }): string => x || ContainerEnumPosition.CENTER};

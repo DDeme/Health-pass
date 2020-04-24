@@ -1,17 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Container, ContainerEnumType, Menu } from '../../components'
-
-const Wrapper = styled(Container)`
-	overflow: auto;
-	display: flex;
-`
+import {
+	Container,
+	ContainerEnumType,
+	ContainerEnumPosition,
+	Menu,
+} from '../../components'
 
 const Mobile: any = props => (
-	<Wrapper className={props.className} type={ContainerEnumType.COL}>
+	<Container
+		className={props.className}
+		type={ContainerEnumType.COL}
+		y={ContainerEnumPosition.TOP}>
 		<Menu />
 		<Container type={ContainerEnumType.COL}>{props.children}</Container>
-	</Wrapper>
+	</Container>
 )
 
 export default Mobile
