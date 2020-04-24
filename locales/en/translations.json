@@ -28,5 +28,18 @@
 			"button_one": "Help",
 			"button_two": "Create account"
 		}
+	},
+	"results": {
+		"notification": {
+			"title": "Quarantine",
+			"description": "You may have been in contact with",
+			"link": "See more"
+		},
+		"info": {
+			"label_one": "Name",
+			"label_two": "Age",
+			"label_three": "Region",
+			"label_four": "Country"
+		}
 	}
 }

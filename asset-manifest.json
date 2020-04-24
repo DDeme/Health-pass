@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/Health-pass/static/css/main.f4e9e51b.chunk.css",
-    "main.js": "/Health-pass/static/js/main.0300e5d6.chunk.js",
-    "main.js.map": "/Health-pass/static/js/main.0300e5d6.chunk.js.map",
+    "main.js": "/Health-pass/static/js/main.1f858c7f.chunk.js",
+    "main.js.map": "/Health-pass/static/js/main.1f858c7f.chunk.js.map",
     "runtime-main.js": "/Health-pass/static/js/runtime-main.120539de.js",
     "runtime-main.js.map": "/Health-pass/static/js/runtime-main.120539de.js.map",
-    "static/js/2.7d568efd.chunk.js": "/Health-pass/static/js/2.7d568efd.chunk.js",
-    "static/js/2.7d568efd.chunk.js.map": "/Health-pass/static/js/2.7d568efd.chunk.js.map",
+    "static/js/2.f3fc9f4b.chunk.js": "/Health-pass/static/js/2.f3fc9f4b.chunk.js",
+    "static/js/2.f3fc9f4b.chunk.js.map": "/Health-pass/static/js/2.f3fc9f4b.chunk.js.map",
     "index.html": "/Health-pass/index.html",
-    "precache-manifest.cc0835d3784c6faf34f23baba96bd413.js": "/Health-pass/precache-manifest.cc0835d3784c6faf34f23baba96bd413.js",
+    "precache-manifest.b6296f998c86e5d959d44b660b8ea9a9.js": "/Health-pass/precache-manifest.b6296f998c86e5d959d44b660b8ea9a9.js",
     "service-worker.js": "/Health-pass/service-worker.js",
     "static/css/main.f4e9e51b.chunk.css.map": "/Health-pass/static/css/main.f4e9e51b.chunk.css.map",
-    "static/js/2.7d568efd.chunk.js.LICENSE.txt": "/Health-pass/static/js/2.7d568efd.chunk.js.LICENSE.txt",
+    "static/js/2.f3fc9f4b.chunk.js.LICENSE.txt": "/Health-pass/static/js/2.f3fc9f4b.chunk.js.LICENSE.txt",
     "static/media/style.css": "/Health-pass/static/media/icons.6f6e7fce.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.120539de.js",
-    "static/js/2.7d568efd.chunk.js",
+    "static/js/2.f3fc9f4b.chunk.js",
     "static/css/main.f4e9e51b.chunk.css",
-    "static/js/main.0300e5d6.chunk.js"
+    "static/js/main.1f858c7f.chunk.js"
   ]
 }
