@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-// import { Button } from '../../components'
+import { StatusBar } from '../../components'
 import Mobile from '../../layouts/Mobile'
 // import { Link as LinkR } from 'react-router-dom'
 // import { useTranslation } from 'react-i18next'
@@ -23,6 +23,7 @@ const Success = () => {
 
 	return (
 		<Mobile>
+			<StatusBar state={true} />
 			<List>a</List>
 		</Mobile>
 	)

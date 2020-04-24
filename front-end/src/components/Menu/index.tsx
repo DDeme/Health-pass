@@ -6,14 +6,33 @@ import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.div`
 	position: relative;
-	z-index: 1;
+	z-index: 1000;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: ${({ theme }) => theme.color.purple};
+	padding: 20px;
 `
 
-const Shield = styled(Icon)`
+const IconShield = styled(Icon)`
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	color: ${({ theme }) => theme.color.white};
+
+	&:before {
+		font-size: 22px;
+		color: ${({ theme }) => theme.color.white};
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+`
+
+const IconBell = styled(Icon)`
 	position: relative;
 	z-index: 2;
 	display: inline-block;
@@ -54,10 +73,10 @@ const Menu = props => {
 		<Wrapper className={props.className}>
 			<HamburgerMenu visibleMenu />
 			<Box>
-				<Shield name="shield" />
+				<IconShield name="shield" />
 				<Title>{t('logo.title')}</Title>
 			</Box>
-			<Shield name="bell" />
+			<IconBell name="bell" />
 		</Wrapper>
 	)
 }

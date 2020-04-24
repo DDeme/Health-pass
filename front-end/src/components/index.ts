@@ -6,6 +6,7 @@ import Container from './Container'
 import HamburgerMenu from './HamburgerMenu'
 import Menu from './Menu'
 import Scanner from './Scanner'
+import StatusBar from './StatusBar'
 
 export {
 	Icon,
@@ -17,4 +18,5 @@ export {
 	HamburgerMenu,
 	Menu,
 	Scanner,
+	StatusBar,
 }
