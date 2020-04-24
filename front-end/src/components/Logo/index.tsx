@@ -4,7 +4,7 @@ import Icon from '../Icon'
 import { useTranslation } from 'react-i18next'
 import Container, { ContainerEnumType } from '../Container'
 
-const Wrapper = styled(Container)`
+const Wrapper: any = styled(Container)`
 	padding-top: 30px;
 `
 
@@ -34,7 +34,7 @@ const Logo: any = props => {
 	return (
 		<Wrapper
 			className={props.className}
-			type={props.type && ContainerEnumType.COL}>
+			type={props.type || ContainerEnumType.COL}>
 			<IconShield name="shield" />
 			<Title>{t('logo.title')}</Title>
 			{props.children}

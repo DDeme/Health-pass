@@ -3,14 +3,13 @@ import styled from 'styled-components'
 import Icon from '../Icon'
 import HamburgerMenu from '../HamburgerMenu'
 import { useTranslation } from 'react-i18next'
-import Container, { ContainerEnumType } from '../Container'
+import Container from '../Container'
 
 const Wrapper = styled(Container)`
 	z-index: 1000;
 	justify-content: space-between;
 	background-color: ${({ theme }) => theme.color.purple};
 	padding: 20px;
-	width: 100%;
 	flex: initial;
 `
 
