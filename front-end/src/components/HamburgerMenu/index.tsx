@@ -4,7 +4,6 @@ import { Link as LinkR } from 'react-router-dom'
 import Icon from '../Icon'
 
 const Wrapper: any = styled.div`
-	display: inline-block;
 	background-color: ${({ theme }) => theme.color.purple};
 	cursor: pointer;
 	user-select: none;
@@ -31,19 +30,6 @@ const List: any = styled.ul<{ active: boolean }>`
 			opacity: 1;
 			transform: translateX(0);
 		`}
-
-	&:after {
-		position: absolute;
-		content: '';
-		background: ${({ theme }) => theme.color.purple};
-		border-radius: 50%;
-		height: 50px;
-		bottom: -25px;
-		left: 0;
-		right: 0;
-		width: 100%;
-		z-index: 1;
-	}
 `
 
 const Item = styled.li`
@@ -75,25 +61,6 @@ const Title = styled.p`
 	font-size: 18px;
 `
 
-const Checkbox: any = styled(Icon)`
-	display: inline-block;
-	position: relative;
-	z-index: 3;
-
-	&:before {
-		font-size: 22px;
-		width: 24px;
-		height: 24px;
-		color: ${({ theme }) => theme.color.white};
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		bottom: 0;
-		right: 0;
-		transform: translate(-50%, -50%);
-	}
-`
-
 const HamburgerMenu: any = props => {
 	const [state, setState] = useState(props.initialState || false)
 
@@ -103,7 +70,7 @@ const HamburgerMenu: any = props => {
 			className={props.className}
 			hovering={props.hovering}
 			onClick={() => setState(!state)}>
-			<Checkbox name={props.visibleMenu ? 'bars' : 'arrow'} />
+			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
 				<Item>
 					<Title>Pages</Title>

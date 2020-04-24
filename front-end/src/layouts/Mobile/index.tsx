@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Container as ContainerC, Menu } from '../../components'
 
 const Wrapper = styled.div`
+	overflow: auto;
 	display: flex;
 	flex-direction: column;
 	width: 100%;

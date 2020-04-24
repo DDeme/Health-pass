@@ -5,8 +5,29 @@ import styled from 'styled-components'
 // styles ./style.css from icomoon
 import './style.css'
 
+const Wrapper = styled.i`
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	width: 30px;
+	height: 30px;
+
+	&:before {
+		font-size: 22px;
+		width: 20px;
+		height: 20px;
+		color: ${({ theme }) => theme.color.white};
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		bottom: 0;
+		right: 0;
+		transform: translate(-50%, -50%);
+	}
+`
+
 const Icon: any = ({ name, className }): any => (
-	<i className={`icon icon-${name} ${className} rotate`} />
+	<Wrapper className={`icon icon-${name} ${className} rotate`} />
 )
 
 const ListIcons: FC = styled.ul`
@@ -59,7 +80,9 @@ const SettingsIconLayout: any = (): any => {
 						<Icon name={icon.properties.name} />
 						<WrapperIconsTitle
 							variant="secondary"
-							onClick={() => navigator.clipboard.writeText(text)}>
+							onClick={() =>
+								navigator.clipboard.writeText(icon.properties.name)
+							}>
 							{text}
 						</WrapperIconsTitle>
 					</Item>

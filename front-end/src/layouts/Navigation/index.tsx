@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
-import { Logo, Container, Icon } from '../../components'
+import { Logo, Container as ContainerC, Icon } from '../../components'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 const Heading = styled(Logo)`
 	position: relative;
 	z-index: 1;
-	flex: 1;
 
 	&:after {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -46,23 +45,11 @@ const Link = styled(LinkR)`
 `
 
 const IconArrow = styled(Icon)`
-	display: inline-block;
-	width: 100%;
 	height: 100%;
+`
 
-	&:before {
-		font-size: 22px;
-		width: 24px;
-		height: 24px;
-		color: ${({ theme }) => theme.color.white};
-		position: absolute;
-		z-index: 3;
-		top: 50%;
-		left: 50%;
-		bottom: 0;
-		right: 0;
-		transform: translate(-50%, -50%);
-	}
+const Container = styled(ContainerC)`
+	padding: 25px 0;
 `
 
 const Navigation: any = props => (

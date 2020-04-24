@@ -1,29 +1,24 @@
 //@ts-check
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
-import { Icon, Logo } from '../../components'
+import { Icon, Logo as LogoC } from '../../components'
 
 const Wrapper: FC = styled.div`
 	position: relative;
 	z-index: 2;
 	text-align: center;
-	padding-top: 60px;
 `
 
-const WrapperLoader: FC = styled.div`
-	flex: 1;
+const Logo: FC = styled(LogoC)`
+	padding-bottom: 60px;
 `
 
 const Loader = styled(Icon)<{ show: boolean }>`
-	position: relative;
-	display: ${({ show }) => (show ? 'inline-block' : 'none')};
-	color: ${({ theme }) => theme.color.white};
-	margin-top: 60px;
+	flex: 1;
 	width: 60px;
 	height: 60px;
-	border-width: 8px;
-	border-right-color: transparent;
+	animation: spin 4s linear infinite;
 
 	@keyframes spin {
 		100% {
@@ -32,21 +27,17 @@ const Loader = styled(Icon)<{ show: boolean }>`
 	}
 
 	&:before {
-		animation: spin 4s linear infinite;
 		font-size: 60px;
-		position: absolute;
-		left: 0;
-		top: 0;
+		width: 60px;
+		height: 60px;
 	}
 `
 
 const Laoding = () => {
 	let history = useHistory()
-	const [loading, setLoading] = useState(true)
 
 	const lazyLoad = () => {
 		const timer = setTimeout(() => {
-			setLoading(false)
 			return history.push('/home')
 		}, 1000)
 
@@ -60,9 +51,7 @@ const Laoding = () => {
 	return (
 		<Wrapper>
 			<Logo />
-			<WrapperLoader>
-				<Loader name="sync-alt-solid" show={loading} />
-			</WrapperLoader>
+			<Loader name="sync-alt-solid" />
 		</Wrapper>
 	)
 }

@@ -13,7 +13,7 @@ import {
 	Scanning,
 } from '../pages'
 
-import { PUBLIC_URL } from '../const'
+import { PUBLIC_URL } from '../env'
 
 const Routing: any = (): any => {
 	return (
