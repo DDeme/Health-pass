@@ -11,7 +11,7 @@ import {
 	Verification,
 	Results,
 	Scanning,
-} from '../pages'
+} from '../Pages'
 
 import { PUBLIC_URL } from '../const'
 
