@@ -1,6 +1,11 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { StatusBar, BoxShaddow, Container } from '../../components'
+import {
+	StatusBar,
+	BoxShaddow as BoxShaddowC,
+	Container,
+	Icon,
+} from '../../components'
 import Mobile from '../../layouts/Mobile'
 import path from './qrcode.png'
 // import { Link as LinkR } from 'react-router-dom'
@@ -18,6 +23,11 @@ const ImageQRCode: any = styled.img`
 	width: 100%;
 	padding: 30px 20px;
 `
+
+const BoxShaddow = styled(BoxShaddowC)`
+	padding: 25px;
+`
+
 const Success = () => {
 	// const { t } = useTranslation()
 
@@ -25,7 +35,9 @@ const Success = () => {
 		<Mobile>
 			<StatusBar state={true} />
 			<Content>
-				<BoxShaddow></BoxShaddow>
+				<BoxShaddow>
+					<Icon name="notification" />
+				</BoxShaddow>
 				<ImageQRCode src={path} />
 			</Content>
 		</Mobile>

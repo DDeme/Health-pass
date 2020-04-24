@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Icon from '../Icon'
 
-const Wrapper: any = styled.div<{ state: boolean }>`
+const Wrapper = styled.div<{ state: boolean }>`
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -41,26 +41,22 @@ const Wrapper: any = styled.div<{ state: boolean }>`
 `
 
 const IconStatus = styled(Icon)`
-	position: relative;
-	z-index: 2;
-	display: inline-block;
 	height: 60px;
 	width: 60px;
-	color: ${({ theme }) => theme.color.white};
 
 	&:before {
-		color: ${({ theme }) => theme.color.white};
 		font-size: 60px;
+		height: 60px;
+		width: 60px;
 	}
 `
 
-const StatusBar: any = props => {
-	return (
-		<Wrapper className={props.className} state={props.state}>
-			{props.children}
-			<IconStatus name={props.state ? 'check' : 'close'} />
-			{props.children}
-		</Wrapper>
-	)
-}
+const StatusBar: any = props => (
+	<Wrapper className={props.className} state={props.state}>
+		{props.children}
+		<IconStatus name={props.state ? 'check' : 'close'} />
+		{props.children}
+	</Wrapper>
+)
+
 export default StatusBar

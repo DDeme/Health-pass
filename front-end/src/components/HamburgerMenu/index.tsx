@@ -61,27 +61,6 @@ const Title = styled.p`
 	font-size: 18px;
 `
 
-const Checkbox: any = styled(Icon)`
-	display: inline-block;
-	position: relative;
-	z-index: 3;
-	width: 30px;
-	height: 30px;
-
-	&:before {
-		font-size: 22px;
-		width: 20px;
-		height: 20px;
-		color: ${({ theme }) => theme.color.white};
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		bottom: 0;
-		right: 0;
-		transform: translate(-50%, -50%);
-	}
-`
-
 const HamburgerMenu: any = props => {
 	const [state, setState] = useState(props.initialState || false)
 
@@ -91,7 +70,7 @@ const HamburgerMenu: any = props => {
 			className={props.className}
 			hovering={props.hovering}
 			onClick={() => setState(!state)}>
-			<Checkbox name={props.visibleMenu ? 'bars' : 'arrow'} />
+			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
 				<Item>
 					<Title>Pages</Title>

@@ -9,18 +9,17 @@ const Wrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-top: 30px;
 `
 
 const IconShield = styled(Icon)`
-	display: inline-block;
-	height: 175px;
-	width: 175px;
-	color: ${({ theme }) => theme.color.white};
-	margin-top: 40px;
+	height: 100px;
+	width: 100px;
 
 	&:before {
-		color: ${({ theme }) => theme.color.white};
-		font-size: 180px;
+		font-size: 100px;
+		height: 100px;
+		width: 100px;
 	}
 `
 
@@ -44,4 +43,5 @@ const Logo = props => {
 		</Wrapper>
 	)
 }
+
 export default Logo
