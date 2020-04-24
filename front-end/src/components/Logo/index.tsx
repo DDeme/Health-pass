@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Icon from '../Icon'
 import { useTranslation } from 'react-i18next'
-import { Link as LinkR } from 'react-router-dom'
 
 const Wrapper = styled.div`
 	position: relative;
@@ -10,39 +9,6 @@ const Wrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-`
-
-const Link = styled(LinkR)`
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 70px;
-	height: 100%;
-
-	&:hover {
-		background-color: ${({ theme }) => theme.color.purple};
-	}
-`
-
-const IconArrow = styled(Icon)`
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-
-	&:before {
-		font-size: 22px;
-		width: 24px;
-		height: 24px;
-		color: ${({ theme }) => theme.color.white};
-		position: absolute;
-		z-index: 3;
-		top: 50%;
-		left: 50%;
-		bottom: 0;
-		right: 0;
-		transform: translate(-50%, -50%);
-	}
 `
 
 const IconShield = styled(Icon)`
@@ -72,9 +38,7 @@ const Logo = props => {
 
 	return (
 		<Wrapper className={props.className}>
-			<Link to="/home">
-				<IconArrow name="arrow" />
-			</Link>
+			{props.children}
 			<IconShield name="shield" />
 			<Title>{t('logo.title')}</Title>
 		</Wrapper>
