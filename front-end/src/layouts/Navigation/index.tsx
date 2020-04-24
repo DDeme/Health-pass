@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
-import { Logo, Container, Icon } from '../../components'
+import { Logo, Container as ContainerC, Icon } from '../../components'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -63,6 +63,10 @@ const IconArrow = styled(Icon)`
 		right: 0;
 		transform: translate(-50%, -50%);
 	}
+`
+
+const Container = styled(ContainerC)`
+	padding: 25px 0;
 `
 
 const Navigation: any = props => (

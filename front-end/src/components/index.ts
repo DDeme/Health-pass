@@ -1,3 +1,4 @@
+import StatusBar from './StatusBar'
 import Icon, { SettingsIconLayout } from './Icon'
 import Button from './Button'
 import Input from './Input'
@@ -6,7 +7,7 @@ import Container from './Container'
 import HamburgerMenu from './HamburgerMenu'
 import Menu from './Menu'
 import Scanner from './Scanner'
-import StatusBar from './StatusBar'
+import BoxShaddow from './BoxShaddow'
 
 export {
 	SettingsIconLayout,
@@ -19,4 +20,5 @@ export {
 	Menu,
 	Scanner,
 	StatusBar,
+	BoxShaddow,
 }

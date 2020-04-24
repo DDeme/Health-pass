@@ -4,7 +4,6 @@ import { Link as LinkR } from 'react-router-dom'
 import Icon from '../Icon'
 
 const Wrapper: any = styled.div`
-	display: inline-block;
 	background-color: ${({ theme }) => theme.color.purple};
 	cursor: pointer;
 	user-select: none;
@@ -31,19 +30,6 @@ const List: any = styled.ul<{ active: boolean }>`
 			opacity: 1;
 			transform: translateX(0);
 		`}
-
-	&:after {
-		position: absolute;
-		content: '';
-		background: ${({ theme }) => theme.color.purple};
-		border-radius: 50%;
-		height: 50px;
-		bottom: -25px;
-		left: 0;
-		right: 0;
-		width: 100%;
-		z-index: 1;
-	}
 `
 
 const Item = styled.li`
@@ -79,11 +65,13 @@ const Checkbox: any = styled(Icon)`
 	display: inline-block;
 	position: relative;
 	z-index: 3;
+	width: 30px;
+	height: 30px;
 
 	&:before {
 		font-size: 22px;
-		width: 24px;
-		height: 24px;
+		width: 20px;
+		height: 20px;
 		color: ${({ theme }) => theme.color.white};
 		position: absolute;
 		top: 50%;

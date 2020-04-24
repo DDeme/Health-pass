@@ -9,7 +9,7 @@ const Wrapper: any = styled.div<{ state: boolean }>`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 30px 0;
+	padding-top: 30px;
 
 	&:after {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -54,7 +54,7 @@ const IconStatus = styled(Icon)`
 	}
 `
 
-const StatusBar = props => {
+const StatusBar: any = props => {
 	return (
 		<Wrapper className={props.className} state={props.state}>
 			{props.children}
