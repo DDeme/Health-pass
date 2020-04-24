@@ -1,19 +1,15 @@
 //@ts-check
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { Logo } from '../../components'
+import { Logo, Container, ContainerEnumType } from '../../components'
 
-const Wrapper: FC = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
+const Wrapper: any = styled(Container)`
+	background-color: ${({ theme }) => theme.color.purple};
 `
 
-const Home: FC = (): JSX.Element => {
+const Home: any = (): JSX.Element => {
 	return (
-		<Wrapper>
+		<Wrapper type={ContainerEnumType.COL}>
 			<Logo />
 		</Wrapper>
 	)

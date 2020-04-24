@@ -1,20 +1,18 @@
 import React from 'react'
 import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
-import { Logo, Container as ContainerC, Icon } from '../../components'
+import { Logo, Container, ContainerEnumType, Icon } from '../../components'
 
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	justify-content: center;
-	flex: 1;
-	text-align: center;
+const Wrapper = styled(Container)`
+	padding-bottom: 30px;
 `
 
 const Heading = styled(Logo)`
+	background-color: ${({ theme }) => theme.color.purple};
 	position: relative;
 	z-index: 1;
+	flex: initial;
+	padding-bottom: 30px;
 
 	&:after {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -48,12 +46,8 @@ const IconArrow = styled(Icon)`
 	height: 100%;
 `
 
-const Container = styled(ContainerC)`
-	padding: 25px 0;
-`
-
 const Navigation: any = props => (
-	<Wrapper className={props.className}>
+	<Wrapper className={props.className} type={ContainerEnumType.COL}>
 		<Heading>
 			<Link to="/home">
 				<IconArrow name="arrow" />

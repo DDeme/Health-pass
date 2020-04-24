@@ -3,15 +3,14 @@ import styled from 'styled-components'
 import Icon from '../Icon'
 import HamburgerMenu from '../HamburgerMenu'
 import { useTranslation } from 'react-i18next'
+import Container from '../Container'
 
-const Wrapper = styled.div`
-	position: relative;
+const Wrapper = styled(Container)`
 	z-index: 1000;
-	display: flex;
-	align-items: center;
 	justify-content: space-between;
 	background-color: ${({ theme }) => theme.color.purple};
 	padding: 20px;
+	flex: initial;
 `
 
 const Title = styled.h1`

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 // styles ./style.css from icomoon
 import './style.css'
+import Container, { ContainerEnumType } from '../Container'
 
 const Wrapper = styled.i`
 	display: inline-block;
@@ -13,10 +14,10 @@ const Wrapper = styled.i`
 	height: 30px;
 
 	&:before {
+		color: ${({ theme }) => theme.color.white};
 		font-size: 22px;
 		width: 20px;
 		height: 20px;
-		color: ${({ theme }) => theme.color.white};
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -71,24 +72,26 @@ const SettingsIconLayout: any = (): any => {
 	const { icons } = require('./selection.json')
 
 	return (
-		<ListIcons>
-			<h1>Copy your icon by click on one item:</h1>
-			{icons.map((icon, i): any => {
-				const text = `Click me and copy this text: ${icon.properties.name}`
-				return (
-					<Item key={i}>
-						<Icon name={icon.properties.name} />
-						<WrapperIconsTitle
-							variant="secondary"
-							onClick={() =>
-								navigator.clipboard.writeText(icon.properties.name)
-							}>
-							{text}
-						</WrapperIconsTitle>
-					</Item>
-				)
-			})}
-		</ListIcons>
+		<Container type={ContainerEnumType.COL}>
+			<ListIcons>
+				<h1>Copy your icon by click on one item:</h1>
+				{icons.map((icon, i): any => {
+					const text = `Click me and copy this text: ${icon.properties.name}`
+					return (
+						<Item key={i}>
+							<Icon name={icon.properties.name} />
+							<WrapperIconsTitle
+								variant="secondary"
+								onClick={() =>
+									navigator.clipboard.writeText(icon.properties.name)
+								}>
+								{text}
+							</WrapperIconsTitle>
+						</Item>
+					)
+				})}
+			</ListIcons>
+		</Container>
 	)
 }
 

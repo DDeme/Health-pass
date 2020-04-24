@@ -2,13 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Icon from '../Icon'
 import { useTranslation } from 'react-i18next'
+import Container, { ContainerEnumType } from '../Container'
 
-const Wrapper = styled.div`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+const Wrapper: any = styled(Container)`
 	padding-top: 30px;
 `
 
@@ -32,14 +28,16 @@ const Title = styled.h1`
 	position: relative;
 	z-index: 2;
 `
-const Logo = props => {
+const Logo: any = props => {
 	const { t } = useTranslation()
 
 	return (
-		<Wrapper className={props.className}>
-			{props.children}
+		<Wrapper
+			className={props.className}
+			type={props.type || ContainerEnumType.COL}>
 			<IconShield name="shield" />
 			<Title>{t('logo.title')}</Title>
+			{props.children}
 		</Wrapper>
 	)
 }

@@ -1,15 +1,11 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Icon from '../Icon'
+import Container, { ContainerEnumType } from '../Container'
 
-const Wrapper = styled.div<{ state: boolean }>`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
+const Wrapper = styled(Container)<{ state: boolean }>`
 	padding-top: 30px;
+	flex: initial;
 
 	&:after {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -52,7 +48,10 @@ const IconStatus = styled(Icon)`
 `
 
 const StatusBar: any = props => (
-	<Wrapper className={props.className} state={props.state}>
+	<Wrapper
+		className={props.className}
+		state={props.state}
+		type={props.type || ContainerEnumType.COL}>
 		{props.children}
 		<IconStatus name={props.state ? 'check' : 'close'} />
 		{props.children}

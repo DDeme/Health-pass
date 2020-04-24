@@ -1,25 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Container as ContainerC, Menu } from '../../components'
-
-const Wrapper = styled.div`
-	overflow: auto;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	flex: 1;
-`
-
-const Container = styled(ContainerC)`
-	justify-content: flex-start;
-	padding-top: 0;
-`
+import {
+	Container,
+	ContainerEnumType,
+	ContainerEnumPosition,
+	Menu,
+} from '../../components'
 
 const Mobile: any = props => (
-	<Wrapper className={props.className}>
+	<Container
+		className={props.className}
+		type={ContainerEnumType.COL}
+		y={ContainerEnumPosition.TOP}>
 		<Menu />
-		<Container>{props.children}</Container>
-	</Wrapper>
+		<Container type={ContainerEnumType.COL}>{props.children}</Container>
+	</Container>
 )
 
 export default Mobile
