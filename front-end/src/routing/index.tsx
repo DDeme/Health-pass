@@ -11,7 +11,7 @@ import {
 	Verification,
 	Results,
 	Scanning,
-} from '../pages'
+} from '../ages'
 
 import { PUBLIC_URL } from '../const'
 
