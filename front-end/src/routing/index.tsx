@@ -1,7 +1,7 @@
 //@ts-check
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { Icons } from '../components'
+import { SettingsIconLayout } from '../components'
 
 import {
 	SplashScreen,
@@ -39,19 +39,19 @@ const Routing: any = (): any => {
 						<Results />
 					</Route>
 					<Route path="/settings-icon">
-						<Icons />
+						<SettingsIconLayout />
 					</Route>
 					<Route path="/scanning">
 						<Scanning />
 					</Route>
 					{/* <Route path="/settings-theme">
-					<Icons />
+					<SettingsIconLayout />
 				</Route>
 				<Route path="/settings-cssReset">
-					<Icons />
+					<SettingsIconLayout />
 				</Route>
 				<Route path="/settings-translation">
-					<Icons />
+					<SettingsIconLayout />
 				</Route> */}
 				</Switch>
 			</BrowserRouter>

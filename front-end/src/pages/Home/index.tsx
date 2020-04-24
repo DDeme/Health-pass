@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Button } from '../../components'
+import { Button, Container } from '../../components'
 import Mobile from '../../layouts/Mobile'
 import { Link as LinkR } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -23,17 +23,19 @@ const Home = () => {
 
 	return (
 		<Mobile>
-			<List>
-				<Link to="/login">
-					<Item>{t('home.button_one')}</Item>
-				</Link>
-				<Link to="/">
-					<Item>{t('home.button_two')}</Item>
-				</Link>
-				<Link to="/">
-					<Item>{t('home.button_three')}</Item>
-				</Link>
-			</List>
+			<Container>
+				<List>
+					<Link to="/login">
+						<Item>{t('home.button_one')}</Item>
+					</Link>
+					<Link to="/">
+						<Item>{t('home.button_two')}</Item>
+					</Link>
+					<Link to="/">
+						<Item>{t('home.button_three')}</Item>
+					</Link>
+				</List>
+			</Container>
 		</Mobile>
 	)
 }

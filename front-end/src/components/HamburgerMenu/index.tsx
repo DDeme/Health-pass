@@ -8,8 +8,8 @@ const Wrapper: any = styled.div`
 	background-color: ${({ theme }) => theme.color.purple};
 	cursor: pointer;
 	user-select: none;
-	min-width: 30px;
-	min-height: 30px;
+	width: 30px;
+	height: 30px;
 `
 
 const List: any = styled.ul<{ active: boolean }>`

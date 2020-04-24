@@ -1,4 +1,4 @@
-import Icon, { Icons } from './Icon'
+import Icon, { SettingsIconLayout } from './Icon'
 import Button from './Button'
 import Input from './Input'
 import Logo from './Logo'
@@ -9,8 +9,8 @@ import Scanner from './Scanner'
 import StatusBar from './StatusBar'
 
 export {
+	SettingsIconLayout,
 	Icon,
-	Icons,
 	Button,
 	Input,
 	Logo,
