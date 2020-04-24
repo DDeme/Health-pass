@@ -3,7 +3,7 @@ import i18n from 'i18next'
 import Backend from 'i18next-xhr-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next, I18nextProvider } from 'react-i18next'
-import { PUBLIC_URL } from '../const'
+import { PUBLIC_URL } from '../env'
 
 i18n
 	// learn more: https://github.com/i18next/i18next-xhr-backend

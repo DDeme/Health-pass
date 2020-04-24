@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeI }>`
 		font-family: ${({ theme }) => theme.fontFamily};
 		font-size: ${({ theme }) => theme.fontSize};
 		height: 100%;
-		background-color: ${({ theme }): string => theme.color.purple};
 	}
 
 	#root {

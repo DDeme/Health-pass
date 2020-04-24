@@ -9,7 +9,7 @@ import {
 import Mobile from '../../layouts/Mobile'
 import path from './qrcode.png'
 // import { Link as LinkR } from 'react-router-dom'
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 const Content: FC = styled(Container)`
 	width: 100%;
@@ -25,11 +25,14 @@ const ImageQRCode: any = styled.img`
 `
 
 const BoxShaddow = styled(BoxShaddowC)`
+	display: inline-block;
 	padding: 25px;
 `
 
+const Title = styled.h3``
+
 const Success = () => {
-	// const { t } = useTranslation()
+	const { t } = useTranslation()
 
 	return (
 		<Mobile>
@@ -37,10 +40,12 @@ const Success = () => {
 			<Content>
 				<BoxShaddow>
 					<Icon name="notification" />
+					<Title>{t('result.notification.title')}</Title>
 				</BoxShaddow>
 				<ImageQRCode src={path} />
 			</Content>
 		</Mobile>
 	)
 }
+
 export default Success
