@@ -7,7 +7,7 @@ const getNotifications = () => {
 
 
 router.get('/', (req, res, next) => {
-    const data = getNotifications() 
+  const data = getNotifications() 
 
 
   res.send(data);

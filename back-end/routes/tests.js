@@ -10,13 +10,12 @@ const getTest = () => {
 }
 
 
-
 const getTests = () => {
     const tests = [getTest(), getTest()];
     return tests
 }
 
-router.get("/", (req, res, next) => {
+router.post("/", (req, res, next) => {
   res.send(getTests());
 });
 
