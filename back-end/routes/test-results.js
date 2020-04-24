@@ -1,18 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const getTest = () => {
-    const test = {
-        title: "NEGATIVE",
-        type: 'test',
-        message: "You have been tested negative. To minimize risk you should stay at home",
-        published: new Date().toISOString(),
-        end: new Date().toISOString(),
-    }
-    return test
-}
-
-
 const getTests = () => {
     const tests = [{
         title: "NEGATIVE",
