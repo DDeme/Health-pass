@@ -20,6 +20,12 @@ const Link = styled(LinkR)`
 	width: 70px;
 	height: 100%;
 
+	&:after {
+		position: absolute;
+		content: '';
+		background: linear-gradient(to right, #fff 0%, transparent 100%);
+	}
+
 	&:hover {
 		background-color: ${({ theme }) => theme.color.purple};
 	}

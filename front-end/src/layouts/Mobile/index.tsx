@@ -15,7 +15,6 @@ const Heading = styled(Menu)`
 	background-color: ${({ theme }) => theme.color.purple};
 	position: relative;
 	z-index: 3;
-	margin-top: 30px;
 	padding: 20px;
 `
 
