@@ -27,7 +27,7 @@ const parseJWT = (token = certificate) => {
 }
 
 const verifyPass = (token?: string, publickeys?: string[]) => {
-	return parseJWT()
+	return parseJWT(token)
 }
 
 export { verifyPass }

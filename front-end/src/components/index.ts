@@ -7,6 +7,7 @@ import HamburgerMenu from './HamburgerMenu'
 import Menu from './Menu'
 import Scanner from './Scanner'
 import StatusBar from './StatusBar'
+import QrCertificate from './QrCertificate/index';
 
 export {
 	SettingsIconLayout,
@@ -19,4 +20,5 @@ export {
 	Menu,
 	Scanner,
 	StatusBar,
+	QrCertificate,
 }
