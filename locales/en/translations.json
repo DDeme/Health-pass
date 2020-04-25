@@ -48,7 +48,7 @@
 			"label_four": "Country:"
 		}
 	},
-	"mystatus": {
+	"my_status": {
 		"positive": {
 			"label": "My status",
 			"title": "Quarantine",
