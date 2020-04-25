@@ -28,7 +28,7 @@ export const routes = [
 	{
 		visible: true,
 		label: 'NotFound',
-		link: '/notFound',
+		link: '/notfound',
 		component: NotFound,
 	},
 	{
