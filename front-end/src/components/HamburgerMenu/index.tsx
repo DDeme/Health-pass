@@ -24,6 +24,8 @@ const List: any = styled.ul<{ active: boolean }>`
 	transition: all 0.5s;
 	opacity: 0;
 	z-index: 1;
+	overflow: auto;
+	height: calc(100vh - 73px);
 
 	${({ active }) =>
 		active &&
@@ -66,20 +68,12 @@ const HamburgerMenu: any = props => {
 	const [state, setState] = useState(props.initialState || false)
 
 	return (
-		<Wrapper
-			active={state}
-			className={props.className}
-			hovering={props.hovering}
-			onClick={() => setState(!state)}>
+		<Wrapper active={state} className={props.className} hovering={props.hovering} onClick={() => setState(!state)}>
 			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
 				{routes.map((route, i) => (
 					<Item key={i}>
-						{route.visible && route.link ? (
-							<Link to={route.link}>{route.label}</Link>
-						) : (
-							<Title>{route.label}</Title>
-						)}
+						{route.visible && route.link ? <Link to={route.link}>{route.label}</Link> : <Title>{route.label}</Title>}
 					</Item>
 				))}
 			</List>

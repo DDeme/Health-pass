@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
+import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from '../../components'
 import { Navigation } from '../../layouts'
-import { Link as LinkR } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const List: FC = styled.div`
@@ -10,6 +10,7 @@ const List: FC = styled.div`
 	width: 100%;
 	padding: 30px 20px;
 `
+
 const Link = styled(LinkR)`
 	display: inline-block;
 	width: 100%;
