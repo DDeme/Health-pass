@@ -6,7 +6,7 @@ import HamburgerMenu from './HamburgerMenu'
 import Menu from './Menu'
 import QRCodeScanner from './QRCodeScanner'
 import BoxShaddow from './BoxShaddow'
-import QrCertificate from './QrCertificate'
+import QRCodeGenerator from './QRCodeGenerator'
 import StatusBar from './StatusBar'
 import OfflineBar from './OfflineBar'
 import Container, { ContainerEnumPosition, ContainerEnumType } from './Container'
@@ -25,7 +25,7 @@ export {
 	StatusBar,
 	BoxShaddow,
 	OfflineBar,
-	QrCertificate,
+	QRCodeGenerator,
 	Container,
 	ContainerEnumType,
 	ContainerEnumPosition,

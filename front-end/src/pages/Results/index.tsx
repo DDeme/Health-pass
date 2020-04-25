@@ -4,7 +4,7 @@ import {
 	StatusBar,
 	ContainerEnumType,
 	Container,
-	QrCertificate,
+	QRCodeGenerator,
 	UserInfoBlog,
 	NotificationBlog,
 	Icon,
@@ -18,7 +18,7 @@ const Content: any = styled(Container)`
 	padding: 50px 20px;
 `
 
-const ImageQRCode: any = styled(QrCertificate)`
+const ImageQRCode: any = styled(QRCodeGenerator)`
 	display: inline-block;
 	width: 100%;
 	margin-top: 30px;
