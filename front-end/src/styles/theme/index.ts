@@ -8,6 +8,7 @@ let theme = {
 	color: {
 		white: '#fff',
 		black: '#000',
+		lightblack: '#2A2C2E',
 		purple: '#6202EE',
 		green: '#5CB85C',
 		red: '#D9534F',

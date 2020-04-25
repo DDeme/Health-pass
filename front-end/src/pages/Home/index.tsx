@@ -28,7 +28,7 @@ const Home = () => {
 				<Link to="/login">
 					<Item>{t('home.button_one')}</Item>
 				</Link>
-				<Link to="/">
+				<Link to="/scanning">
 					<Item>{t('home.button_two')}</Item>
 				</Link>
 				<Link to="/">

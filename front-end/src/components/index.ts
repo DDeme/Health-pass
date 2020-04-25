@@ -8,13 +8,11 @@ import Scanner from './Scanner'
 import BoxShaddow from './BoxShaddow'
 import QrCertificate from './QrCertificate'
 import StatusBar from './StatusBar'
+import OfflineBaner from './OfflineBaner'
+import Container, { ContainerEnumPosition, ContainerEnumType } from './Container'
 // TODO vytvorit samostany priecinok pre blog a odpisem si nazov
 import UserInfoBlog from './UserInfoBlog'
 import NotificationBlog from './NotificationBlog'
-import Container, {
-	ContainerEnumPosition,
-	ContainerEnumType,
-} from './Container'
 
 export {
 	Icon,
@@ -26,10 +24,11 @@ export {
 	Scanner,
 	StatusBar,
 	BoxShaddow,
-	UserInfoBlog,
-	NotificationBlog,
+	OfflineBaner,
 	QrCertificate,
 	Container,
 	ContainerEnumType,
 	ContainerEnumPosition,
+	UserInfoBlog,
+	NotificationBlog,
 }

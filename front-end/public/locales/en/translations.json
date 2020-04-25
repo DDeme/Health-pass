@@ -82,5 +82,8 @@
 			"title": "Negative",
 			"description": "You have been tested negative. Your quarantine will end in {{count}} days."
 		}
+	},
+	"offline": {
+		"title": "You are offline. Data will expire in {{time}} "
 	}
 }

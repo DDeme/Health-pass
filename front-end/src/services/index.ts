@@ -15,10 +15,9 @@ interface VerifiedCertificate extends Certificate {
 	validUntil: string
 }
 
-
 // const verifyJWT = (token): boolean => true
 
-const parseJWT = (token) => {
+const parseJWT = token => {
 	const data = jwt.decode(token)
 
 	return data

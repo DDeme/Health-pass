@@ -3,7 +3,18 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { PUBLIC_URL } from '../env'
 
-import { Loading, Home, Scanning, Login, Verification, Results, MyStatus, TestReusults, Notifications } from '../pages'
+import {
+	Loading,
+	Home,
+	Scanning,
+	Login,
+	Verification,
+	Results,
+	MyStatus,
+	TestReusults,
+	Notifications,
+	NotFound,
+} from '../pages'
 import { ListIcons } from '../settings'
 
 export const routes = [
@@ -13,6 +24,12 @@ export const routes = [
 		label: 'Loading Screen',
 		link: '/loading',
 		component: Loading,
+	},
+	{
+		visible: true,
+		label: 'NotFound',
+		link: '/notFound',
+		component: NotFound,
 	},
 	{
 		visible: true,

@@ -4,18 +4,11 @@ import styled from 'styled-components'
 import { Button, Icon, Container } from '../../components'
 import { ContainerEnumType } from '../../components/Container'
 import { getListIcons } from '../../components/Icon'
-
-const Wrapper: any = styled(Container)`
-	background-color: ${({ theme }) => theme.color.purple};
-	color: ${({ theme }) => theme.color.white};
-	padding: 15px;
-`
+import { Mobile } from '../../layouts'
 
 const List: any = styled(Container)`
 	max-width: 320px;
-	background-color: ${({ theme }) => theme.color.white};
-	padding: 10px;
-	border-radius: 5px;
+	padding: 30px 20px;
 `
 
 const Item: any = styled(Container)`
@@ -30,7 +23,8 @@ const Title: any = styled.h1`
 	display: block;
 	font-size: 24px;
 	font-weight: bold;
-	padding-bottom: 30px;
+	padding: 30px 20px;
+	color: ${({ theme }) => theme.color.purple};
 `
 
 const IconType: any = styled(Icon)`
@@ -68,16 +62,14 @@ const ListIcons: any = (): any => {
 	console.log(data)
 
 	return (
-		<Wrapper type={ContainerEnumType.COL}>
+		<Mobile type={ContainerEnumType.COL}>
 			<Title>Copy your icon by click on one item:</Title>
 			<List type={ContainerEnumType.COL}>
 				{data.map((icon, i): any => {
 					const name = `${icon.properties.name}`
 					return (
 						<Item key={i} type={ContainerEnumType.COL}>
-							<ButtonCopy
-								variant="secondary"
-								onClick={() => navigator.clipboard.writeText(name)}>
+							<ButtonCopy variant="secondary" onClick={() => navigator.clipboard.writeText(name)}>
 								<IconType name={name} />
 								{name}
 							</ButtonCopy>
@@ -85,7 +77,7 @@ const ListIcons: any = (): any => {
 					)
 				})}
 			</List>
-		</Wrapper>
+		</Mobile>
 	)
 }
 
