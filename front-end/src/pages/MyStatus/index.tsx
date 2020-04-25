@@ -52,15 +52,18 @@ const Date: FC = styled.p`
 	color: ${({ theme }) => theme.color.black};
 	font-size: 16px;
 	width: 100%;
+	padding-bottom: 10px;
 `
 
 const Description: FC = styled.p`
 	color: ${({ theme }) => theme.color.black};
 	font-size: 14px;
-	padding-top: 10px;
+	padding: 10px 0 30px;
 	line-height: 20px;
 	opacity: 0.6;
 	text-align: left;
+	border: 1px solid ${({ theme }) => theme.color.black};
+	border-width: 1px 0;
 `
 
 const Button: any = styled(ButtonC)`
