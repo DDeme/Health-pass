@@ -1,17 +1,12 @@
 import { Router } from "express";
+import { keysResolver } from '../graphql/resolvers/keys';
 const router = Router()
 
 
-const getKeys = () => {
-    const keys = [{
-        key: "public_key",
-        validUntil: new Date().toISOString(),
-    }];
-    return keys
-}
+
 
 router.get("/", (req, res, next) => {
-    res.send(getKeys());
+    res.send({ keys: keysResolver });
 });
 
 export default router;
