@@ -10,6 +10,7 @@ import authRouter from "./routes/auth";
 import testRouter from "./routes/test-results";
 import keysRounter from "./routes/keys";
 import notificationsRounter from './routes/notifications'
+import qrRouter from './routes/qr'
 
 const app = express();
 app.use(cors({origin: true}))
@@ -22,6 +23,7 @@ app.use("/auth", authRouter);
 app.use("/test-results", testRouter);
 app.use("/keys", keysRounter);
 app.use("/notifications", notificationsRounter);
+app.use("/qr", qrRouter);
 app.get('*', (_, res) => {
     res.status(404).json({message: "Not found"})
 })

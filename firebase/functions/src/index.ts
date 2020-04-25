@@ -11,7 +11,6 @@ export const api = functions
         .runWith({memory: '512MB', timeoutSeconds: 10})
         .https.onRequest(app)
 
-
 const getExpress = async () => {
   const server =  graphqlServer;
   server.createHttpServer({});
