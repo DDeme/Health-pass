@@ -8,7 +8,7 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "deploy:all": "firebase deploy",
-    "firebase:ci": "firebase deploy --token '$FIREBASE_TOKEN'",
+    "deploy:ci": "firebase deploy --token '$FIREBASE_TOKEN'",
     "logs": "firebase functions:log"
   },
   "engines": {
