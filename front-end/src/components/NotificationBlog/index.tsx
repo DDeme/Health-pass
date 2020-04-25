@@ -24,6 +24,7 @@ const Title = styled.h3`
 `
 
 const Description = styled.p`
+	text-align: left;
 	font-size: 16px;
 	padding-top: 20px;
 	line-height: 24px;
@@ -36,6 +37,7 @@ const Link = styled(LinkR)`
 	color: ${({ theme }) => theme.color.purple};
 	font-size: 14px;
 	text-decoration: none;
+	margin-top: 30px;
 
 	&:hover {
 		text-decoration: underline;

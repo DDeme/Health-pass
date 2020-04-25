@@ -24,8 +24,8 @@ const List: any = styled.ul<{ active: boolean }>`
 	transition: all 0.5s;
 	opacity: 0;
 	z-index: 1;
+	height: calc(100vh - 70px);
 	overflow: auto;
-	height: calc(100vh - 73px);
 
 	${({ active }) =>
 		active &&

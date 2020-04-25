@@ -5,6 +5,7 @@ import NotFound from './NotFound'
 import Home from './Home'
 import Results from './Results'
 import Verification from './Verification'
+import Help from './Help'
 import Scanning from './Scanning'
 import MyStatus from './MyStatus'
 import TestReusults from './TestReusults'
@@ -13,6 +14,7 @@ import Notifications from './Notifications'
 export {
 	SplashScreen,
 	Loading,
+	Help,
 	Home,
 	Login,
 	Verification,

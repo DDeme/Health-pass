@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, ContainerEnumType, ContainerEnumPosition, Menu, OfflineBaner } from '../../components'
+import { Container, ContainerEnumType, ContainerEnumPosition, Menu, OfflineBar } from '../../components'
 
 const Mobile: any = props => (
 	<Container
@@ -8,7 +8,7 @@ const Mobile: any = props => (
 		y={props.y || ContainerEnumPosition.TOP}
 		x={props.x || ContainerEnumPosition.LEFT}>
 		<Menu />
-		<OfflineBaner />
+		<OfflineBar />
 		<Container type={ContainerEnumType.COL}>{props.children}</Container>
 	</Container>
 )

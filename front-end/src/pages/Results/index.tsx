@@ -4,7 +4,7 @@ import {
 	StatusBar,
 	ContainerEnumType,
 	Container,
-	QrCertificate,
+	QRCodeGenerator,
 	UserInfoBlog,
 	NotificationBlog,
 	Icon,
@@ -18,13 +18,14 @@ const Content: any = styled(Container)`
 	padding: 50px 20px;
 `
 
-const ImageQRCode: any = styled(QrCertificate)`
+const ImageQRCode: any = styled(QRCodeGenerator)`
 	display: inline-block;
 	width: 100%;
 	margin-top: 30px;
 `
 
 const Title = styled.h2`
+	text-transform: uppercase;
 	position: relative;
 	z-index: 2;
 	padding: 30px 15px 15px;
@@ -47,25 +48,28 @@ const IconStatus = styled(Icon)`
 const Success = () => {
 	const { t } = useTranslation()
 
-	const props = {
-		name: 'John Deo',
-		age: 24,
+	const data = {
+		age: '28',
 		country: 'Slovakia',
-		positive: true,
+		exp: 1587766108,
+		iat: 1587679708,
+		movementAllowed: true,
+		name: 'John Doe',
+		region: 'Poprad',
 	}
 
 	return (
 		<Mobile>
-			<StatusBar state={props.positive}>
+			<StatusBar state={data.movementAllowed}>
 				<>
-					<IconStatus name={props.positive ? 'close' : 'check'} />
-					<Title>{props.positive ? t('results.positive.title') : t('results.negative.title')}</Title>
+					<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
+					<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
 				</>
 			</StatusBar>
 			<Content type={ContainerEnumType.COL}>
-				<NotificationBlog show={true} />
+				<NotificationBlog show={data.movementAllowed} />
 				<ImageQRCode certificateToken={'test'} />
-				<UserInfoBlog data={props} />
+				<UserInfoBlog data={data} />
 			</Content>
 		</Mobile>
 	)
