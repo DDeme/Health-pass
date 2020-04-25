@@ -83,6 +83,10 @@
 			"description": "You have been tested negative. Your quarantine will end in {{count}} days."
 		}
 	},
+	"scanning": {
+		"title": "Place the code inside the frame",
+		"button_one": "Scan another"
+	},
 	"offline": {
 		"title": "You are offline. Data will expire in {{time}} "
 	},
