@@ -7,9 +7,10 @@ import { Navigation } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
 const List: any = styled.form`
-	max-width: 350px;
+	max-width: 320px;
 	text-align: center;
 	width: 100%;
+	padding: 30px 20px;
 `
 
 const Input: any = styled(InputC)`
@@ -26,7 +27,7 @@ type FormData = {
 }
 
 const Login = () => {
-	let history = useHistory()
+	const history = useHistory()
 	const { t } = useTranslation()
 	const { register, handleSubmit, watch, errors } = useForm<FormData>()
 	const onSubmit = data => {

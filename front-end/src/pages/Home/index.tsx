@@ -6,9 +6,9 @@ import { Link as LinkR } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const List: FC = styled.div`
-	max-width: 350px;
-	text-align: center;
+	max-width: 320px;
 	width: 100%;
+	padding: 30px 20px;
 `
 const Link = styled(LinkR)`
 	display: inline-block;

@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Icon from '../Icon'
 import HamburgerMenu from '../HamburgerMenu'
-import { useTranslation } from 'react-i18next'
 import Container from '../Container'
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled(Container)`
 	z-index: 1000;
@@ -39,7 +40,9 @@ const Menu = props => {
 				<Icon name="shield" />
 				<Title>{t('logo.title')}</Title>
 			</Box>
-			<Icon name="bell" />
+			<Link to="/notifications">
+				<Icon name="bell" />
+			</Link>
 		</Wrapper>
 	)
 }

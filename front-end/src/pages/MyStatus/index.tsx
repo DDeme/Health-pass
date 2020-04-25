@@ -13,12 +13,13 @@ import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
 const Content = styled(Container)`
-	max-width: 350px;
-	margin: 30px;
+	max-width: 320px;
+	width: 100%;
+	padding: 30px 20px;
 `
 
 const InfoStatusBar: any = styled(StatusBar)`
-	padding: 25px;
+	padding: 20px;
 	flex: initial;
 
 	&:after {
@@ -27,19 +28,18 @@ const InfoStatusBar: any = styled(StatusBar)`
 `
 
 const Status: any = styled(Container)`
-	max-width: 350px;
-
+	max-width: 320px;
 	width: 100%;
-	margin: 0 30px;
+	padding: 0 20px;
 `
 
 const Label: FC = styled.label`
-	max-width: 350px;
+	max-width: 320px;
 	width: 100%;
 	font-size: 14px;
 	color: ${({ theme }) => theme.color.black};
 	font-size: 14px;
-	padding: 25px 0;
+	padding: 25px 20px;
 	margin: 0 30px;
 `
 
@@ -50,6 +50,7 @@ const Title: FC = styled.h3`
 `
 
 const Date: FC = styled.p`
+	text-transform: uppercase;
 	color: ${({ theme }) => theme.color.black};
 	font-size: 16px;
 	width: 100%;

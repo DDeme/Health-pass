@@ -35,7 +35,7 @@ const Loader = styled(Icon)<{ show: boolean }>`
 `
 
 const Laoding = () => {
-	let history = useHistory()
+	const history = useHistory()
 
 	const lazyLoad = () => {
 		const timer = setTimeout(() => {

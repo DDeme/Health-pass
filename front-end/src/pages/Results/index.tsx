@@ -13,9 +13,9 @@ import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
 const Content: any = styled(Container)`
-	max-width: 350px;
+	max-width: 320px;
 	text-align: center;
-	padding: 60px 0;
+	padding: 50px 20px;
 `
 
 const ImageQRCode: any = styled(QrCertificate)`

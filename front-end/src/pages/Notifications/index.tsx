@@ -39,7 +39,7 @@ const Description: FC = styled.p`
 	border-bottom: 1px solid ${({ theme }) => theme.color.black};
 `
 
-const TestReusults = () => {
+const Notifications = () => {
 	const { t } = useTranslation()
 
 	const data = [
@@ -58,7 +58,7 @@ const TestReusults = () => {
 	return (
 		<Mobile>
 			<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
-				<Label>{t('test_results.label')}</Label>
+				<Label>{t('notification.label')}</Label>
 				{data &&
 					data.map(info => (
 						<Item type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
@@ -77,4 +77,4 @@ const TestReusults = () => {
 	)
 }
 
-export default TestReusults
+export default Notifications
