@@ -3,15 +3,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { PUBLIC_URL } from '../env'
 
-import {
-	Loading,
-	Home,
-	Scanning,
-	Login,
-	Verification,
-	Results,
-	MyStatus,
-} from '../pages'
+import { Loading, Home, Scanning, Login, Verification, Results, MyStatus } from '../pages'
 import { ListIcons } from '../settings'
 
 export const routes = [
@@ -56,14 +48,7 @@ const Routing: any = (): any => {
 				<Switch>
 					{routes.map(
 						(route, i) =>
-							route.link && (
-								<Route
-									key={i}
-									path={route.link}
-									exact={route.exact}
-									component={route.component}
-								/>
-							)
+							route.link && <Route key={i} path={route.link} exact={route.exact} component={route.component} />
 					)}
 				</Switch>
 			</BrowserRouter>

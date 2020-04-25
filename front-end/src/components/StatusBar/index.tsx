@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Icon from '../Icon'
 import Container, { ContainerEnumType } from '../Container'
 
 const Wrapper = styled(Container)<{ state: boolean }>`
@@ -22,37 +21,21 @@ const Wrapper = styled(Container)<{ state: boolean }>`
 	${({ state }) =>
 		state
 			? css`
-					background-color: ${({ theme }) => theme.color.green};
-					&:after {
-						background-color: ${({ theme }) => theme.color.green};
-					}
-			  `
-			: css`
 					background-color: ${({ theme }) => theme.color.red};
 					&:after {
 						background-color: ${({ theme }) => theme.color.red};
 					}
+			  `
+			: css`
+					background-color: ${({ theme }) => theme.color.green};
+					&:after {
+						background-color: ${({ theme }) => theme.color.green};
+					}
 			  `}
 `
 
-const IconStatus = styled(Icon)`
-	height: 60px;
-	width: 60px;
-
-	&:before {
-		font-size: 60px;
-		height: 60px;
-		width: 60px;
-	}
-`
-
 const StatusBar: any = props => (
-	<Wrapper
-		className={props.className}
-		state={props.state}
-		type={props.type || ContainerEnumType.COL}>
-		{props.children}
-		<IconStatus name={props.state ? 'check' : 'close'} />
+	<Wrapper className={props.className} state={props.state} type={props.type || ContainerEnumType.COL}>
 		{props.children}
 	</Wrapper>
 )

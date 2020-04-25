@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
-import Container, {
-	ContainerEnumPosition,
-	ContainerEnumType,
-} from '../Container'
+import Container, { ContainerEnumPosition, ContainerEnumType } from '../Container'
 import BoxShaddow from '../BoxShaddow'
 import Icon from '../Icon'
 import { useTranslation } from 'react-i18next'
@@ -53,11 +50,11 @@ const NotificationBlog: any = ({ show }) => {
 			<Wrapper type={ContainerEnumType.COL}>
 				<Container x={ContainerEnumPosition.LEFT}>
 					<IconNotification name="notification" />
-					<Title>{t('results.notification.title')}</Title>
+					<Title>{t('results.positive.notification.title')}</Title>
 				</Container>
-				<Description>{t('results.notification.description')}</Description>
+				<Description>{t('results.positive.notification.description')}</Description>
 				<Container x={ContainerEnumPosition.RIGHT}>
-					<Link to="/mystatus">{t('results.notification.link')}</Link>
+					<Link to="/mystatus">{t('results.positive.notification.link')}</Link>
 				</Container>
 			</Wrapper>
 		)

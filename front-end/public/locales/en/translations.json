@@ -30,10 +30,16 @@
 		}
 	},
 	"results": {
-		"notification": {
-			"title": "Quarantine",
-			"description": "You may have been in contact with infected person",
-			"link": "See more"
+		"positive": {
+			"title": "Movement restricted",
+			"notification": {
+				"title": "Quarantine",
+				"description": "You may have been in contact with infected person",
+				"link": "See more"
+			}
+		},
+		"negative": {
+			"title": "Movement allowed"
 		},
 		"info": {
 			"label_one": "Name:",

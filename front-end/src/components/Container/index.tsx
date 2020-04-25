@@ -4,8 +4,8 @@ import styled from 'styled-components'
 enum ContainerEnumPosition {
 	LEFT = 'flex-start',
 	RIGHT = 'flex-end',
-	TOP = 'top',
-	BOTTOM = 'bottom',
+	TOP = 'flex-start',
+	BOTTOM = 'flex-end',
 	CENTER = 'center',
 }
 
@@ -31,13 +31,7 @@ const Wrapper = styled.div<ContainerProps>`
 	width: 100%;
 `
 
-const Container: FC<ContainerProps> = ({
-	children,
-	className,
-	type,
-	x,
-	y,
-}): any => (
+const Container: FC<ContainerProps> = ({ children, className, type, x, y }): any => (
 	<Wrapper className={className} type={type} x={x} y={y}>
 		{children}
 	</Wrapper>
