@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b2578c763f14d3a2454ba5cc3488d803",
+    "revision": "0985cb8518dbe3e1bcd03ab76c9d46d4",
     "url": "/Health-pass/index.html"
   },
   {
-    "revision": "707c1ad2db1724edca6d",
+    "revision": "b4e8a3d30e409725f629",
     "url": "/Health-pass/static/css/main.f4e9e51b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Health-pass/static/js/2.e1d00be2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "707c1ad2db1724edca6d",
-    "url": "/Health-pass/static/js/main.c92ab393.chunk.js"
+    "revision": "b4e8a3d30e409725f629",
+    "url": "/Health-pass/static/js/main.0d14429e.chunk.js"
   },
   {
     "revision": "fee44851a2e1ee43501a",
