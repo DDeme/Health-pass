@@ -71,11 +71,14 @@ const HamburgerMenu: any = props => {
 		<Wrapper active={state} className={props.className} hovering={props.hovering} onClick={() => setState(!state)}>
 			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
-				{routes.map((route, i) => (
-					<Item key={i}>
-						{route.visible && route.link ? <Link to={route.link}>{route.label}</Link> : <Title>{route.label}</Title>}
-					</Item>
-				))}
+				{routes.map(
+					(route, i) =>
+						route.visible && (
+							<Item key={i}>
+								{route.link ? <Link to={route.link}>{route.label}</Link> : <Title>{route.label}</Title>}
+							</Item>
+						)
+				)}
 			</List>
 		</Wrapper>
 	)
