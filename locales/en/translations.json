@@ -51,7 +51,7 @@
 	"my_status": {
 		"positive": {
 			"label": "My status",
-			"title": "Quarantine",
+			"title": "Quarantined",
 			"description": "You may be with closed contact with suspected person. Plese stay at home. We will contact you about next steps."
 		},
 		"negative": {
