@@ -82,6 +82,8 @@ const Scanning: any = () => {
 		}
 	}, [history, scan])
 
+	const conditionisNegative = !data.movementAllowed
+
 	return (
 		<Mobile>
 			{!Object.keys(data).length ? (
@@ -91,10 +93,10 @@ const Scanning: any = () => {
 				</Content>
 			) : (
 				<Container type={ContainerEnumType.COL}>
-					<StatusBar state={data.movementAllowed}>
+					<StatusBar state={conditionisNegative}>
 						<>
-							<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
-							<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
+							<IconStatus name={conditionisNegative ? 'close' : 'check'} />
+							<Title>{conditionisNegative ? t('results.positive.title') : t('results.negative.title')}</Title>
 						</>
 					</StatusBar>
 					<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
