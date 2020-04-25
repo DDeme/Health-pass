@@ -18,8 +18,7 @@ jobs:
       - run: cd ./front-end/ && yarn deploy
       - run: cd ./firebase/ && bash copy_build.sh
       - run: cd ./firebase/functions && npm install
-      - run: npm install -g firebase
-      - run: cd ./firebase/ && firebase deploy --token "$FIREBASE_TOKEN"
+      - run: cd ./firebase/functions && npm run deploy:ci
      
 workflows:
     build-and-test:
