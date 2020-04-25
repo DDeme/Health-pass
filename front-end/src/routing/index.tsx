@@ -1,16 +1,16 @@
 //@ts-check
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { SettingsIconLayout } from '../components'
+import { ListIcons } from '../settings'
 
 import {
-	SplashScreen,
 	Loading,
 	Home,
 	Login,
 	Verification,
 	Results,
 	Scanning,
+	MyStatus,
 } from '../pages'
 
 import { PUBLIC_URL } from '../env'
@@ -21,7 +21,7 @@ const Routing: any = (): any => {
 			<BrowserRouter basename={PUBLIC_URL}>
 				<Switch>
 					<Route exact path="/">
-						<SplashScreen />
+						<Loading />
 					</Route>
 					<Route path="/loading">
 						<Loading />
@@ -39,10 +39,13 @@ const Routing: any = (): any => {
 						<Results />
 					</Route>
 					<Route path="/settings-icon">
-						<SettingsIconLayout />
+						<ListIcons />
 					</Route>
 					<Route path="/scanning">
 						<Scanning />
+					</Route>
+					<Route path="/mystatus">
+						<MyStatus />
 					</Route>
 					{/* <Route path="/settings-theme">
 					<SettingsIconLayout />

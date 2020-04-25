@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {
 	StatusBar,
@@ -6,23 +6,23 @@ import {
 	Icon,
 	ContainerEnumType,
 	ContainerEnumPosition,
-	Container as ContainerC,
+	Container,
+	QrCertificate,
+	UserInfoBlog,
 } from '../../components'
-import { ContainerProps } from '../../components/Container'
-import Mobile from '../../layouts/Mobile'
-import path from './qrcode.png'
+import { Mobile } from '../../layouts'
 import { Link as LinkR } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-const Content: any = styled(ContainerC)`
-	max-width: 290px;
+const Content: any = styled(Container)`
+	max-width: 350px;
 	padding: 60px 0;
 `
 
-const ImageQRCode: any = styled.img`
+const ImageQRCode: any = styled(QrCertificate)`
 	display: inline-block;
 	width: 100%;
-	padding: 30px 20px;
+	margin-top: 30px;
 `
 
 const IconNotification = styled(Icon)`
@@ -37,10 +37,6 @@ const BoxShaddow = styled(BoxShaddowC)`
 	padding: 25px;
 `
 
-const Container: FC<ContainerProps> = styled(ContainerC)`
-	justify-content: flex-start;
-`
-
 const Title = styled.h3`
 	font-size: 24px;
 	margin-left: 30px;
@@ -53,12 +49,26 @@ const Description = styled.p`
 `
 
 const Link = styled(LinkR)`
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: bold;
 	color: ${({ theme }) => theme.color.purple};
 	font-size: 14px;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 `
 
 const Success = () => {
 	const { t } = useTranslation()
+
+	const data = {
+		name: 'John Deo',
+		age: 24,
+		country: 'Slovakia',
+	}
 
 	return (
 		<Mobile>
@@ -70,9 +80,12 @@ const Success = () => {
 						<Title>{t('results.notification.title')}</Title>
 					</Container>
 					<Description>{t('results.notification.description')}</Description>
-					<Link>{t('results.notification.link')}</Link>
+					<Container x={ContainerEnumPosition.RIGHT}>
+						<Link to="/mystatus">{t('results.notification.link')}</Link>
+					</Container>
 				</BoxShaddow>
-				<ImageQRCode src={path} />
+				<ImageQRCode certificateToken={'test'} />
+				<UserInfoBlog data={data} />
 			</Content>
 		</Mobile>
 	)

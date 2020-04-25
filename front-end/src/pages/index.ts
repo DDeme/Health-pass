@@ -6,6 +6,7 @@ import Home from './Home'
 import Results from './Results'
 import Verification from './Verification'
 import Scanning from './Scanning'
+import MyStatus from './MyStatus'
 
 export {
 	SplashScreen,
@@ -16,4 +17,5 @@ export {
 	NotFound,
 	Results,
 	Scanning,
+	MyStatus,
 }

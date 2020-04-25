@@ -8,7 +8,6 @@ const Wrapper = styled(Container)<{ state: boolean }>`
 	flex: initial;
 
 	&:after {
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		position: absolute;
 		content: '';
 		border-radius: 50%;

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { Button as ButtonC, Input as InputC } from '../../components'
-import LayoutNavigation from '../../layouts/Navigation'
+import { Navigation } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
 const List: any = styled.form`
@@ -33,11 +33,11 @@ const Verification = () => {
 		console.log(data)
 
 		if (!Object.keys(errors).length) {
-			history.push('/verification')
+			history.push('/results')
 		}
 	}
 	return (
-		<LayoutNavigation>
+		<Navigation>
 			<List onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					type="string"
@@ -51,7 +51,7 @@ const Verification = () => {
 				/>
 				<Button type="submit">{t('verification.button_one')}</Button>
 			</List>
-		</LayoutNavigation>
+		</Navigation>
 	)
 }
 export default Verification

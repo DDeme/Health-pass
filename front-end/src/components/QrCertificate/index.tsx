@@ -1,20 +1,22 @@
 import React from 'react'
 import QRCode from 'qrcode.react'
 
-
-interface QrCertificateProps {
-    certificateToken: string
-}
-
 const QrCodeProps = {
-    renderAs: 'svg',
-    level: 'M',
-    size: 256,
+	renderAs: 'svg',
+	level: 'M',
+	size: 256,
+}
+export interface QrCertificateProps {
+	certificateToken: string
+	className?: string
 }
 
 const QrCertificate = (props: QrCertificateProps) => (
-	<QRCode value={props.certificateToken} {...QrCodeProps} />
+	<QRCode
+		className={props.className}
+		value={props.certificateToken}
+		{...QrCodeProps}
+	/>
 )
-
 
 export default QrCertificate

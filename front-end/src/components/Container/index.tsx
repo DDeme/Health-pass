@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 enum ContainerEnumPosition {
-	LEFT = 'flex-end',
-	RIGHT = 'flex-start',
+	LEFT = 'flex-start',
+	RIGHT = 'flex-end',
 	TOP = 'top',
 	BOTTOM = 'bottom',
 	CENTER = 'center',
