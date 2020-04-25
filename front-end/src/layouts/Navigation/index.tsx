@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as LinkR, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import { Logo, Container, ContainerEnumType, Icon } from '../../components'
+import { Logo, Container, ContainerEnumType, Icon, OfflineBar } from '../../components'
 
 const Wrapper = styled(Container)`
 	padding-bottom: 30px;
@@ -48,6 +48,7 @@ const Navigation: any = props => {
 
 	return (
 		<Wrapper className={props.className} type={ContainerEnumType.COL}>
+			<OfflineBar />
 			<Heading>
 				{location.pathname !== '/home' && (
 					<Link to="/home">

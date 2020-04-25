@@ -1,7 +1,7 @@
 //@ts-check
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { PUBLIC_URL } from '../env'
+import { PUBLIC_URL, NODE_ENV } from '../env'
 
 import {
 	Loading,
@@ -18,26 +18,36 @@ import {
 } from '../pages'
 import { ListIcons } from '../settings'
 
+const showDevLinks = NODE_ENV === 'development'
+
 export const routes = [
-	{ visible: true, label: 'Pages' },
+	{ visible: showDevLinks, label: 'Pages' },
 	{
-		visible: true,
+		visible: showDevLinks,
 		label: 'Loading Screen',
 		link: '/loading',
 		component: Loading,
 	},
 	{
-		visible: true,
+		visible: showDevLinks,
 		label: 'NotFound',
 		link: '/notfound',
 		component: NotFound,
 	},
 	{
-		visible: true,
+		visible: showDevLinks,
 		label: 'Start Screen',
 		link: '/',
 		component: Loading,
 		exact: true,
+	},
+	{ visible: showDevLinks, label: 'Home', link: '/home', component: Home },
+	{ visible: showDevLinks, label: 'Login', link: '/login', component: Login },
+	{
+		visible: showDevLinks,
+		label: 'Verification',
+		link: '/verification',
+		component: Verification,
 	},
 	{
 		visible: true,
@@ -45,22 +55,14 @@ export const routes = [
 		link: '/help',
 		component: Help,
 	},
-	{ visible: true, label: 'Home', link: '/home', component: Home },
-	{ visible: true, label: 'Login', link: '/login', component: Login },
-	{
-		visible: true,
-		label: 'Verification',
-		link: '/verification',
-		component: Verification,
-	},
 	{ visible: true, label: 'Results', link: '/results', component: Results },
 	{ visible: true, label: 'My status', link: '/mystatus', component: MyStatus },
 	{ visible: true, label: 'Test reusults', link: '/test-reusults', component: TestReusults },
 	{ visible: true, label: 'Notifications', link: '/notifications', component: Notifications },
 	{ visible: true, label: 'Scanning', link: '/scanning', component: Scanning },
-	{ visible: true, label: 'Settings' },
+	{ visible: showDevLinks, label: 'Settings' },
 	{
-		visible: true,
+		visible: showDevLinks,
 		label: 'Icons',
 		link: '/settings-icon',
 		component: ListIcons,
