@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link as LinkR } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { verifyPass } from '../../services'
@@ -8,7 +7,7 @@ import {
 	ContainerEnumType,
 	StatusBar,
 	UserInfoBlog,
-	Button,
+	Button as ButtonC,
 	Icon,
 	ContainerEnumPosition,
 	QRCodeScanner,
@@ -50,12 +49,7 @@ const IconStatus = styled(Icon)`
 	}
 `
 
-const Link = styled(LinkR)`
-	display: inline-block;
-	width: 100%;
-`
-
-const Item: any = styled(Button)`
+const Button: any = styled(ButtonC)`
 	margin-top: 30px;
 `
 interface Data {
@@ -90,7 +84,7 @@ const Scanning: any = () => {
 
 	return (
 		<Mobile>
-			{!Object.keys(data).length ? (
+			{false ? (
 				<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 					<QRCodeScanner onScan={res => setScan(res)} onError={() => setScan('')} />
 					<Info>{t('scanning.title')}</Info>
@@ -105,12 +99,10 @@ const Scanning: any = () => {
 					</StatusBar>
 					<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 						<UserInfoBlog data={data} />
+						<Button onClick={() => setData({})}>{t('scanning.button_one')}</Button>
 					</Content>
 				</Container>
 			)}
-			<Link to="/login">
-				<Item>{t('home.button_one')}</Item>
-			</Link>
 		</Mobile>
 	)
 }

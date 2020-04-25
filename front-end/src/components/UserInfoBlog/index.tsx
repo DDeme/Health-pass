@@ -6,6 +6,7 @@ import Container, { ContainerEnumType, ContainerEnumPosition } from '../Containe
 const Wrapper = styled(Container)`
 	font-size: 14px;
 	margin-top: 30px;
+	flex: initial;
 `
 
 const TitleName = styled.h4`
