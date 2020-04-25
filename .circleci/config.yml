@@ -16,6 +16,9 @@ jobs:
             git config user.name "ci-build"
       - run: cd ./front-end/ && yarn build
       - run: cd ./front-end/ && yarn deploy
+      - run: cd ./firebase/ && bash copy_build.sh
+      - run: cd ./firebase/functions && npm install
+      - run: cd ./firebase/ && ./functions/node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
      
 workflows:
     build-and-test:
