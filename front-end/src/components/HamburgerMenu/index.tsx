@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'
 import Icon from '../Icon'
+import { routes } from '../../routes'
 
 const Wrapper: any = styled.div`
 	background-color: ${({ theme }) => theme.color.purple};
@@ -72,45 +73,15 @@ const HamburgerMenu: any = props => {
 			onClick={() => setState(!state)}>
 			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
-				<Item>
-					<Title>Pages</Title>
-				</Item>
-				<Item>
-					<Link to="/">Splash Screen</Link>
-				</Item>
-				<Item>
-					<Link to="loading">Loading Screen</Link>
-				</Item>
-				<Item>
-					<Link to="/home">Home</Link>
-				</Item>
-				<Item>
-					<Link to="/login">Login</Link>
-				</Item>
-				<Item>
-					<Link to="/verification">Verification</Link>
-				</Item>
-				<Item>
-					<Link to="/results">Results</Link>
-				</Item>
-				<Item>
-					<Link to="/scanning">Scanning</Link>
-				</Item>
-				<Item>
-					<Title>Settings</Title>
-				</Item>
-				<Item>
-					<Link to="/settings-icon">Icons</Link>
-				</Item>
-				{/* <Item>
-						<Link to="/settings-theme">Theme</Link>
+				{routes.map((route, i) => (
+					<Item key={i}>
+						{route.visible && route.link ? (
+							<Link to={route.link}>{route.label}</Link>
+						) : (
+							<Title>{route.label}</Title>
+						)}
 					</Item>
-					<Item>
-						<Link to="/settings-cssReset">Reset css</Link>
-					</Item>
-					<Item>
-						<Link to="/settings-translation">Translation</Link>
-					</Item> */}
+				))}
 			</List>
 		</Wrapper>
 	)

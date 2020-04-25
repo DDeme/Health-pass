@@ -8,7 +8,9 @@ import Scanner from './Scanner'
 import BoxShaddow from './BoxShaddow'
 import QrCertificate from './QrCertificate'
 import StatusBar from './StatusBar'
+// TODO vytvorit samostany priecinok pre blog a odpisem si nazov
 import UserInfoBlog from './UserInfoBlog'
+import NotificationBlog from './NotificationBlog'
 import Container, {
 	ContainerEnumPosition,
 	ContainerEnumType,
@@ -25,6 +27,7 @@ export {
 	StatusBar,
 	BoxShaddow,
 	UserInfoBlog,
+	NotificationBlog,
 	QrCertificate,
 	Container,
 	ContainerEnumType,

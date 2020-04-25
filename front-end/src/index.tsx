@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker'
 
 import Translater from './i18n'
 import Styler from './styles'
-import Routing from './routing'
+import Routing from './routes'
 
 const Root = () => (
 	<StrictMode>
