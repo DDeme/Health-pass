@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const Reason = {
-  reason_enum: 0,
-  message_enum: 0,
-  start: new Date().toISOString(),
+  title: "Quarantine",
+  type: 'reason',
+  message: "You may have been in contact with infected person.",
+  published: new Date().toISOString(),
   end: new Date().toISOString(),
 }
 
