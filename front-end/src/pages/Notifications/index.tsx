@@ -63,12 +63,12 @@ const Notifications = () => {
 					data.map(info => (
 						<Item type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 							<Date>
-								{info.date} - {info.positive ? t('test_results.positive.title') : t('test_results.negative.title')}
+								{info.date} - {info.positive ? t('notification.positive.title') : t('notification.negative.title')}
 							</Date>
 							<Description>
 								{info.positive
-									? t('test_results.positive.description')
-									: t('test_results.negative.description', { count: info.finishQarantineDay })}
+									? t('notification.positive.description')
+									: t('notification.negative.description', { count: info.finishQarantineDay })}
 							</Description>
 						</Item>
 					))}

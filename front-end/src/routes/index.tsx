@@ -22,7 +22,6 @@ export const routes = [
 		exact: true,
 	},
 	{ visible: true, label: 'Home', link: '/home', component: Home },
-	{ visible: true, label: 'Scanning', scanning: '/login', component: Scanning },
 	{ visible: true, label: 'Login', link: '/login', component: Login },
 	{
 		visible: true,
@@ -34,6 +33,7 @@ export const routes = [
 	{ visible: true, label: 'My status', link: '/mystatus', component: MyStatus },
 	{ visible: true, label: 'Test reusults', link: '/test-reusults', component: TestReusults },
 	{ visible: true, label: 'Notifications', link: '/notifications', component: Notifications },
+	{ visible: true, label: 'Scanning', link: '/scanning', component: Scanning },
 	{ visible: true, label: 'Settings' },
 	{
 		visible: true,
