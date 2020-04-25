@@ -1,24 +1,12 @@
 import { Router } from 'express';
-import { getHealthCertificate } from '../lib/getHealthCertificate'
+import { certificateResolver } from '../graphql/resolvers/certificate';
+
 
 const router = Router();
 
-
-const getUser = () => {
-    return {
-        name: "John Doe",
-        age: "28",
-        region: "Poprad",
-        country: "Slovakia",
-        movementAllowed: true,
-    }
-}
-
-router.post("/", (req, res, next) => {
-    const User = getUser()
-    const certificate = getHealthCertificate(User)
+router.post("/", (req, res, next) => {    
     res.send({
-        certificate
+        certificate: certificateResolver()
     })
 })
 
