@@ -1,48 +1,54 @@
 import React from 'react'
+import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
-import {
-	StatusBar,
-	ContainerEnumType,
-	Container,
-	QrCertificate,
-	UserInfoBlog,
-	NotificationBlog,
-	Icon,
-} from '../../components'
+import { Container, Button, Icon, ContainerEnumType } from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
-const Content: any = styled(Container)`
+const Content = styled(Container)`
 	max-width: 320px;
 	text-align: center;
-	padding: 50px 20px;
-`
-
-const ImageQRCode: any = styled(QrCertificate)`
-	display: inline-block;
 	width: 100%;
-	margin-top: 30px;
-`
-
-const Title = styled.h2`
-	position: relative;
-	z-index: 2;
-	padding: 30px 15px 15px;
-	font-size: 18px;
-	font-weight: bold;
-	color: ${({ theme }) => theme.color.white};
+	padding: 30px 20px;
 `
 
 const IconNotification = styled(Icon)`
-	height: 60px;
-	width: 60px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
 
 	&:before {
 		color: ${({ theme }) => theme.color.red};
-		font-size: 60px;
-		height: 60px;
-		width: 60px;
 	}
+`
+
+const Title = styled.h1`
+	position: relative;
+	padding-left: 50px;
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: ${({ theme }) => theme.color.red};
+`
+
+const Description = styled.p`
+	width: 100%;
+	text-align: left;
+	margin-top: 60px;
+	font-size: 14px;
+	font-weight: bold;
+	color: ${({ theme }) => theme.color.red};
+`
+
+const Link = styled(LinkR)`
+	display: inline-block;
+	width: 100%;
+`
+
+const Item: any = styled(Button)`
+	margin-top: 30px;
 `
 
 const NotFound = () => {
@@ -50,8 +56,18 @@ const NotFound = () => {
 
 	return (
 		<Mobile>
-			<IconNotification name="notification" />
-			<Title>{t('error.title')}</Title>
+			<Content type={ContainerEnumType.COL}>
+				<Container type={ContainerEnumType.COL}>
+					<Title>
+						<IconNotification name="notification" />
+						{t('error.title')}
+					</Title>
+					<Description>{t('error.description')}</Description>
+				</Container>
+				<Link to="/">
+					<Item>{t('error.button_one')}</Item>
+				</Link>
+			</Content>
 		</Mobile>
 	)
 }

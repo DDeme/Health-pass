@@ -85,5 +85,10 @@
 	},
 	"offline": {
 		"title": "You are offline. Data will expire in {{time}} "
+	},
+	"error": {
+		"title": "something went wrong!",
+		"description": "An unexpected error occured. Please  go back and try again.",
+		"button_one": "Go back"
 	}
 }
