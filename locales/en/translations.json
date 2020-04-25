@@ -41,5 +41,16 @@
 			"label_three": "Region:",
 			"label_four": "Country:"
 		}
+	},
+	"mystatus": {
+		"positive": {
+			"label": "My status",
+			"title": "Quarantine"
+		},
+		"negative": {
+			"label": "Last test result",
+			"title": "Negative"
+		},
+		"button_one": "See test results"
 	}
 }
