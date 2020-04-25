@@ -51,11 +51,13 @@
 	"mystatus": {
 		"positive": {
 			"label": "My status",
-			"title": "Quarantine"
+			"title": "Quarantine",
+			"description": "You may be with closed contact with suspected person. Plese stay at home. We will contact you about next steps."
 		},
 		"negative": {
 			"label": "Last test result",
-			"title": "Negative"
+			"title": "Negative",
+			"description": "You have been tested negative. Your quarantine will end in {{count}} days."
 		},
 		"button_one": "See test results"
 	}

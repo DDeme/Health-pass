@@ -1,21 +1,24 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Link as LinkR } from 'react-router-dom'
-import { Button, StatusBar, Icon, ContainerEnumType, ContainerEnumPosition, Container } from '../../components'
+import { useHistory } from 'react-router-dom'
+import {
+	Button as ButtonC,
+	StatusBar,
+	Icon,
+	ContainerEnumType,
+	ContainerEnumPosition,
+	Container,
+} from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
-const Content: any = styled(Container)`
-	justify-content: flex-start;
-`
-
-const Link = styled(LinkR)`
-	display: inline-block;
-	width: 100%;
+const Content = styled(Container)`
+	max-width: 350px;
+	margin: 30px;
 `
 
 const InfoStatusBar: any = styled(StatusBar)`
-	padding: 20px;
+	padding: 25px;
 	flex: initial;
 
 	&:after {
@@ -23,41 +26,74 @@ const InfoStatusBar: any = styled(StatusBar)`
 	}
 `
 
+const Status: any = styled(Container)`
+	max-width: 350px;
+	width: 100%;
+	margin: 0 30px;
+`
+
 const Label: FC = styled.label`
-	color: ${({ theme }) => theme.color.white};
+	max-width: 350px;
+	width: 100%;
+	font-size: 14px;
+	color: ${({ theme }) => theme.color.black};
 	font-size: 24px;
+	padding: 25px 0;
+	margin: 0 30px;
 `
 
 const Title: FC = styled.h3`
 	color: ${({ theme }) => theme.color.white};
 	font-size: 24px;
-	padding-left: 20px;
+	padding-left: 15px;
 `
 
-const Item: FC = styled(Button)`
-	margin-top: 30px;
+const Date: FC = styled.p`
+	color: ${({ theme }) => theme.color.black};
+	font-size: 16px;
+	width: 100%;
 `
 
+const Description: FC = styled.p`
+	color: ${({ theme }) => theme.color.black};
+	font-size: 14px;
+	padding-top: 10px;
+	line-height: 20px;
+	opacity: 0.6;
+	text-align: left;
+`
+
+const Button: any = styled(ButtonC)`
+	margin-top: 60px;
+	width: 100%;
+`
 const Home = () => {
+	const history = useHistory()
 	const { t } = useTranslation()
 
 	const data = {
 		positive: true,
+		date: '25. 4. 2020, 13:22:02',
+		finishQarantineDay: 6,
 	}
 
 	return (
 		<Mobile>
-			<Content type={ContainerEnumType.COL} y={ContainerEnumPosition.TOP}>
-				<InfoStatusBar state={data.positive}>
-					<Container x={ContainerEnumPosition.LEFT}>
-						<Icon name={data.positive ? 'notification' : 'check'} />
-						<Title>{t('mystatus.positive.title')}</Title>
-					</Container>
-				</InfoStatusBar>
-				<Label>{t('mystatus.positive.label')}</Label>
-				<Link to="/">
-					<Item>{t('mystatus.button_one')}</Item>
-				</Link>
+			<Label>{data.positive ? t('mystatus.positive.label') : t('mystatus.negative.label')}</Label>
+			<InfoStatusBar state={data.positive}>
+				<Status x={ContainerEnumPosition.LEFT}>
+					<Icon name={data.positive ? 'notification' : 'check'} />
+					<Title>{t('mystatus.positive.title')}</Title>
+				</Status>
+			</InfoStatusBar>
+			<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
+				<Date>{data.date}</Date>
+				<Description>
+					{data.positive
+						? t('mystatus.positive.description')
+						: t('mystatus.negative.description', { count: data.finishQarantineDay })}
+				</Description>
+				<Button onClick={() => history.push('/test-reusults')}>{t('mystatus.button_one')}</Button>
 			</Content>
 		</Mobile>
 	)

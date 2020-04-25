@@ -7,15 +7,6 @@ import Results from './Results'
 import Verification from './Verification'
 import Scanning from './Scanning'
 import MyStatus from './MyStatus'
+import TestReusults from './TestReusults'
 
-export {
-	SplashScreen,
-	Loading,
-	Home,
-	Login,
-	Verification,
-	NotFound,
-	Results,
-	Scanning,
-	MyStatus,
-}
+export { SplashScreen, Loading, Home, Login, Verification, NotFound, Results, Scanning, MyStatus, TestReusults }

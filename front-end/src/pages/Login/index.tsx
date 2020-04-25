@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 
 const List: any = styled.form`
 	display: inline-block;
-	max-width: 280px;
+	max-width: 350px;
 	width: 100%;
 `
 

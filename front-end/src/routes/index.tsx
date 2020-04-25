@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { PUBLIC_URL } from '../env'
 
-import { Loading, Home, Scanning, Login, Verification, Results, MyStatus } from '../pages'
+import { Loading, Home, Scanning, Login, Verification, Results, MyStatus, TestReusults } from '../pages'
 import { ListIcons } from '../settings'
 
 export const routes = [
@@ -32,6 +32,7 @@ export const routes = [
 	},
 	{ visible: true, label: 'Results', link: '/results', component: Results },
 	{ visible: true, label: 'My status', link: '/mystatus', component: MyStatus },
+	{ visible: true, label: 'Test reusults', link: '/test-reusults', component: TestReusults },
 	{ visible: true, label: 'Settings' },
 	{
 		visible: true,
