@@ -84,7 +84,7 @@ const Scanning: any = () => {
 
 	return (
 		<Mobile>
-			{false ? (
+			{!Object.keys(data).length ? (
 				<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 					<QRCodeScanner onScan={res => setScan(res)} onError={() => setScan('')} />
 					<Info>{t('scanning.title')}</Info>
