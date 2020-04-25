@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Button } from '../../components'
-import { Mobile } from '../../layouts'
+import { Navigation } from '../../layouts'
 import { Link as LinkR } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -23,7 +23,7 @@ const Home = () => {
 	const { t } = useTranslation()
 
 	return (
-		<Mobile>
+		<Navigation>
 			<List>
 				<Link to="/login">
 					<Item>{t('home.button_one')}</Item>
@@ -35,7 +35,7 @@ const Home = () => {
 					<Item>{t('home.button_three')}</Item>
 				</Link>
 			</List>
-		</Mobile>
+		</Navigation>
 	)
 }
 export default Home

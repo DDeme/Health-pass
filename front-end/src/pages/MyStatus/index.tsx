@@ -38,7 +38,7 @@ const Label: FC = styled.label`
 	width: 100%;
 	font-size: 14px;
 	color: ${({ theme }) => theme.color.black};
-	font-size: 24px;
+	font-size: 14px;
 	padding: 25px 0;
 	margin: 0 30px;
 `
@@ -53,18 +53,16 @@ const Date: FC = styled.p`
 	color: ${({ theme }) => theme.color.black};
 	font-size: 16px;
 	width: 100%;
-	padding-bottom: 10px;
 `
 
 const Description: FC = styled.p`
 	color: ${({ theme }) => theme.color.black};
 	font-size: 14px;
-	padding: 10px 0 30px;
+	padding: 15px 0;
 	line-height: 20px;
 	opacity: 0.6;
 	text-align: left;
-	border: 1px solid ${({ theme }) => theme.color.black};
-	border-width: 1px 0;
+	border-bottom: 1px solid ${({ theme }) => theme.color.black};
 `
 
 const Button: any = styled(ButtonC)`
@@ -83,21 +81,21 @@ const Home = () => {
 
 	return (
 		<Mobile>
-			<Label>{data.positive ? t('mystatus.positive.label') : t('mystatus.negative.label')}</Label>
+			<Label>{data.positive ? t('my_status.positive.label') : t('my_status.negative.label')}</Label>
 			<InfoStatusBar state={data.positive}>
 				<Status x={ContainerEnumPosition.LEFT}>
 					<Icon name={data.positive ? 'notification' : 'check'} />
-					<Title>{t('mystatus.positive.title')}</Title>
+					<Title>{t('my_status.positive.title')}</Title>
 				</Status>
 			</InfoStatusBar>
 			<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 				<Date>{data.date}</Date>
 				<Description>
 					{data.positive
-						? t('mystatus.positive.description')
-						: t('mystatus.negative.description', { count: data.finishQarantineDay })}
+						? t('my_status.positive.description')
+						: t('my_status.negative.description', { count: data.finishQarantineDay })}
 				</Description>
-				<Button onClick={() => history.push('/test-reusults')}>{t('mystatus.button_one')}</Button>
+				<Button onClick={() => history.push('/test-reusults')}>{t('my_status.button_one')}</Button>
 			</Content>
 		</Mobile>
 	)
