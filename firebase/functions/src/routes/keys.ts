@@ -1,9 +1,10 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from "express";
+const router = Router()
+
 
 const getKeys = () => {
     const keys = [{
-        key: "NEGATIVE",
+        key: "public_key",
         validUntil: new Date().toISOString(),
     }];
     return keys
@@ -13,5 +14,5 @@ router.get("/", (req, res, next) => {
     res.send(getKeys());
 });
 
-module.exports = router;
+export default router;
 

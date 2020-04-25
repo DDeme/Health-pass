@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
+import * as jwt from 'jsonwebtoken'
 const HEALTH_CERTIFICATION_VALIDITY = '24h'; 
 
 
-const getHealthCertificate = (user) => {
+export const getHealthCertificate = (user: any): string => {
     const token = jwt.sign(user, "private key", {
       expiresIn: HEALTH_CERTIFICATION_VALIDITY,
     });   
@@ -11,4 +11,3 @@ const getHealthCertificate = (user) => {
 }
 
 
-module.exports = getHealthCertificate
