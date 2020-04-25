@@ -28,6 +28,7 @@ const InfoStatusBar: any = styled(StatusBar)`
 
 const Status: any = styled(Container)`
 	max-width: 350px;
+
 	width: 100%;
 	margin: 0 30px;
 `

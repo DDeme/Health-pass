@@ -7,8 +7,8 @@ import { Navigation } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
 const List: any = styled.form`
-	display: inline-block;
 	max-width: 350px;
+	text-align: center;
 	width: 100%;
 `
 

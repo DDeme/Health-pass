@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next'
 
 const Content: any = styled(Container)`
 	max-width: 350px;
+	text-align: center;
 	padding: 60px 0;
 `
 

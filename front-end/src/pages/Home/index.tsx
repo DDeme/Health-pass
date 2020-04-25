@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next'
 
 const List: FC = styled.div`
 	max-width: 350px;
+	text-align: center;
 	width: 100%;
 `
 const Link = styled(LinkR)`
