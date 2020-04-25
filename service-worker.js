@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Health-pass/precache-manifest.946ad58426864baa96e01e97c546279d.js"
+  "/Health-pass/precache-manifest.8d42b5a23cefbbcabbf14e42393fb84d.js"
 );
 
 self.addEventListener('message', (event) => {
