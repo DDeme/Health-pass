@@ -30,6 +30,10 @@ const Heading = styled(Logo)`
 `
 
 const Link = styled(LinkR)`
+	position: absolute;
+	left: 15px;
+	top: 15px;
+
 	&:hover {
 		background-color: ${({ theme }) => theme.color.purple};
 	}
