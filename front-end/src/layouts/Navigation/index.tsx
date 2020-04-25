@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as LinkR } from 'react-router-dom'
+import { Link as LinkR, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { Logo, Container, ContainerEnumType, Icon } from '../../components'
 
@@ -43,15 +43,22 @@ const IconArrow = styled(Icon)`
 	height: 100%;
 `
 
-const Navigation: any = props => (
-	<Wrapper className={props.className} type={ContainerEnumType.COL}>
-		<Heading>
-			<Link to="/home">
-				<IconArrow name="arrow" />
-			</Link>
-		</Heading>
-		<Container>{props.children}</Container>
-	</Wrapper>
-)
+const Navigation: any = props => {
+	let location = useLocation()
+	console.log(location.pathname)
+
+	return (
+		<Wrapper className={props.className} type={ContainerEnumType.COL}>
+			<Heading>
+				{location.pathname !== '/home' && (
+					<Link to="/home">
+						<IconArrow name="arrow" />
+					</Link>
+				)}
+			</Heading>
+			<Container>{props.children}</Container>
+		</Wrapper>
+	)
+}
 
 export default Navigation
