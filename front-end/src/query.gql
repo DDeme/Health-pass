@@ -1,0 +1,28 @@
+{
+	certificate
+	notifications {
+		title
+		type
+		message
+		published
+		end
+	}
+	reason {
+		title
+		type
+		message
+		published
+		end
+	}
+	test_results {
+		title
+		type
+		message
+		published
+		end
+	}
+	keys {
+		public_key
+		validUntil
+	}
+}

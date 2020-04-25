@@ -11,6 +11,8 @@ import {
 } from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
+import { useQuery } from '@apollo/react-hooks'
+import { gql } from 'apollo-boost'
 
 const Content: any = styled(Container)`
 	max-width: 320px;
@@ -45,26 +47,35 @@ const IconStatus = styled(Icon)`
 	}
 `
 
+const REASON_QUERY = gql`
+	{
+		reason {
+			title
+			type
+			message
+			published
+			end
+		}
+	}
+`
+
+
+
 const Success = () => {
 	const { t } = useTranslation()
+	const { loading, error, data } = useQuery(REASON_QUERY)
 
-	const data = {
-		age: '28',
-		country: 'Slovakia',
-		exp: 1587766108,
-		iat: 1587679708,
-		movementAllowed: true,
-		name: 'John Doe',
-		region: 'Poprad',
-	}
 
-	return (
-		<Mobile>
+	return loading ? null :  
+	<Mobile>
 			<StatusBar state={data.movementAllowed}>
-				<>
-					<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
-					<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
-				</>
+				{
+					
+					<>
+						<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
+						<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
+					</>
+				}
 			</StatusBar>
 			<Content type={ContainerEnumType.COL}>
 				<NotificationBlog show={data.movementAllowed} />
@@ -72,7 +83,7 @@ const Success = () => {
 				<UserInfoBlog data={data} />
 			</Content>
 		</Mobile>
-	)
+	
 }
 
 export default Success
