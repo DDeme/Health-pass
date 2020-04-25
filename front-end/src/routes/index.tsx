@@ -1,7 +1,7 @@
 //@ts-check
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { PUBLIC_URL, NODE_ENV } from '../env'
+import { PUBLIC_URL } from '../env'
 
 import {
 	Loading,
@@ -18,7 +18,7 @@ import {
 } from '../pages'
 import { ListIcons } from '../settings'
 
-const showDevLinks = NODE_ENV === 'development'
+const showDevLinks = false
 
 export const routes = [
 	{ visible: showDevLinks, label: 'Pages' },
