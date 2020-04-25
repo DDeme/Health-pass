@@ -36,10 +36,10 @@
 			"link": "See more"
 		},
 		"info": {
-			"label_one": "Name",
-			"label_two": "Age",
-			"label_three": "Region",
-			"label_four": "Country"
+			"label_one": "Name:",
+			"label_two": "Age:",
+			"label_three": "Region:",
+			"label_four": "Country:"
 		}
 	}
 }
