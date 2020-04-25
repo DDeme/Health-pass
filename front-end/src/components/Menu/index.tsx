@@ -35,7 +35,7 @@ const Menu = props => {
 
 	return (
 		<Wrapper className={props.className}>
-			<HamburgerMenu visibleMenu />
+			<HamburgerMenu visibleMenu={props.visibleMenu || true} />
 			<Box>
 				<Icon name="shield" />
 				<Title>{t('logo.title')}</Title>
