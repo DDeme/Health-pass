@@ -59,18 +59,14 @@ const REASON_QUERY = gql`
 	}
 `
 
-
-
 const Success = () => {
 	const { t } = useTranslation()
 	const { loading, error, data } = useQuery(REASON_QUERY)
 
-
-	return loading ? null :  
-	<Mobile>
+	return loading ? null : (
+		<Mobile>
 			<StatusBar state={data.movementAllowed}>
 				{
-					
 					<>
 						<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
 						<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
@@ -83,7 +79,7 @@ const Success = () => {
 				<UserInfoBlog data={data} />
 			</Content>
 		</Mobile>
-	
+	)
 }
 
 export default Success
