@@ -1,12 +1,12 @@
 {
-  "name": "HEALTH PASS",
-  "short_name": " HEALTH PASS",
+  "name": "MEDIC PASS",
+  "short_name": " MEDIC PASS",
   "theme_color": "#6202ee",
   "background_color": "#6202ee",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "https://ddeme.github.io/Health-pass/",
-  "start_url": "https://ddeme.github.io/Health-pass/",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
 	{
 		"src": "icon-72x72.png",
