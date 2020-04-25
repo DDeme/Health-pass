@@ -4,11 +4,11 @@ import Input from './Input'
 import Logo from './Logo'
 import HamburgerMenu from './HamburgerMenu'
 import Menu from './Menu'
-import Scanner from './Scanner'
+import QRCodeScanner from './QRCodeScanner'
 import BoxShaddow from './BoxShaddow'
 import QrCertificate from './QrCertificate'
 import StatusBar from './StatusBar'
-import OfflineBaner from './OfflineBaner'
+import OfflineBar from './OfflineBar'
 import Container, { ContainerEnumPosition, ContainerEnumType } from './Container'
 // TODO vytvorit samostany priecinok pre blog a odpisem si nazov
 import UserInfoBlog from './UserInfoBlog'
@@ -21,10 +21,10 @@ export {
 	Logo,
 	HamburgerMenu,
 	Menu,
-	Scanner,
+	QRCodeScanner,
 	StatusBar,
 	BoxShaddow,
-	OfflineBaner,
+	OfflineBar,
 	QrCertificate,
 	Container,
 	ContainerEnumType,

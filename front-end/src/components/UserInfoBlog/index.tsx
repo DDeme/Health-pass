@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import Container, {
-	ContainerEnumType,
-	ContainerEnumPosition,
-} from '../Container'
+import Container, { ContainerEnumType, ContainerEnumPosition } from '../Container'
 
 const Wrapper = styled(Container)`
 	font-size: 14px;
@@ -38,7 +35,7 @@ const Logo: any = props => {
 			<Label>{t('results.info.label_two')}</Label>
 			<Text>{props.data.age}</Text>
 			<Label>{t('results.info.label_three')}</Label>
-			<Text>{'Okres Levoča, Prešovský kraj'}</Text>
+			<Text>{props.data.region}</Text>
 			<Label>{t('results.info.label_four')}</Label>
 			<Text>{props.data.country}</Text>
 		</Wrapper>

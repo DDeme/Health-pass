@@ -60,8 +60,8 @@ const Notifications = () => {
 			<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 				<Label>{t('notification.label')}</Label>
 				{data &&
-					data.map(info => (
-						<Item type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
+					data.map((info, i) => (
+						<Item key={i} type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 							<Date>
 								{info.date} - {info.positive ? t('notification.positive.title') : t('notification.negative.title')}
 							</Date>

@@ -45,7 +45,6 @@ const IconArrow = styled(Icon)`
 
 const Navigation: any = props => {
 	let location = useLocation()
-	console.log(location.pathname)
 
 	return (
 		<Wrapper className={props.className} type={ContainerEnumType.COL}>

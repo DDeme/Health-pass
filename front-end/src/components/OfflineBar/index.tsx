@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Container from '../Container'
 import { useTranslation } from 'react-i18next'
@@ -11,12 +11,19 @@ const Wrapper: any = styled(Container)`
 	font-size: 16px;
 `
 
-const OfflineBaner: any = ({ className }) => {
+const OfflineBar: any = ({ className }) => {
+	const [isOnline, seTisOnline] = useState(navigator.onLine)
 	const { t } = useTranslation()
+
+	useEffect(() => {
+		setTimeout(() => {
+			!navigator.onLine && seTisOnline(navigator.onLine)
+		}, 1000)
+	}, [isOnline])
 
 	// TODO get time and show this bar when I am offline
 	const time = '12:00:10'
 
-	return <Wrapper className={className}>{t('offline.title', { time })}</Wrapper>
+	return !isOnline && <Wrapper className={className}>{t('offline.title', { time })}</Wrapper>
 }
-export default OfflineBaner
+export default OfflineBar

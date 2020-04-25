@@ -59,8 +59,6 @@ const ListIcons: any = (): any => {
 		setData(icons)
 	}, [])
 
-	console.log(data)
-
 	return (
 		<Mobile type={ContainerEnumType.COL}>
 			<Title>Copy your icon by click on one item:</Title>
