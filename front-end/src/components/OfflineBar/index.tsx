@@ -12,7 +12,7 @@ const Wrapper: any = styled(Container)`
 `
 
 const OfflineBar: any = ({ className }) => {
-	const [isOnline, seTisOnline] = useState(navigator.onLine)
+	const [isOnline, seTisOnline] = useState(true)
 	const { t } = useTranslation()
 
 	useEffect(() => {

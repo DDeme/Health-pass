@@ -13,6 +13,7 @@ import {
 	MyStatus,
 	TestReusults,
 	Notifications,
+	Help,
 	NotFound,
 } from '../pages'
 import { ListIcons } from '../settings'
@@ -37,6 +38,12 @@ export const routes = [
 		link: '/',
 		component: Loading,
 		exact: true,
+	},
+	{
+		visible: true,
+		label: 'Help',
+		link: '/help',
+		component: Help,
 	},
 	{ visible: true, label: 'Home', link: '/home', component: Home },
 	{ visible: true, label: 'Login', link: '/login', component: Login },
