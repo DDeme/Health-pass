@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from "express";
+const router = Router();
 
 const Reason = {
   title: "Quarantine",
@@ -13,4 +13,4 @@ router.post("/", (req, res, next) => {
   res.send(Reason)
 })
 
-module.exports = router
+export default router;

@@ -1,5 +1,6 @@
-const express = require('express');
-const router = express.Router();
+
+import { Router } from "express";
+const router = Router();
 
 const getTests = () => {
     const tests = [{
@@ -31,5 +32,6 @@ router.post("/", (req, res, next) => {
   res.send(getTests());
 });
 
-module.exports = router;
+export default router;
+
 
