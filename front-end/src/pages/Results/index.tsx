@@ -27,6 +27,7 @@ const ImageQRCode: any = styled(QRCodeGenerator)`
 	display: inline-block;
 	width: 100%;
 	margin-top: 30px;
+	zoom: 1.1;
 `
 
 const Title = styled.h2`
