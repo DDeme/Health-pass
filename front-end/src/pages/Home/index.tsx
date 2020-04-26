@@ -33,9 +33,9 @@ const Home = () => {
 				<Link to="/scanning">
 					<Item>{t('home.button_two')}</Item>
 				</Link>
-				{/* <Link to="/">
+				<Link to="/verifyphonenumber">
 					<Item>{t('home.button_three')}</Item>
-				</Link> */}
+				</Link>
 			</List>
 		</Navigation>
 	)

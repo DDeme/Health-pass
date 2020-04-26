@@ -1,5 +1,6 @@
 //@ts-check
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import {
 	Button,
@@ -59,6 +60,11 @@ const ButtonPrint = styled(Button)`
 
 const Results = () => {
 	const { t } = useTranslation()
+	let location = useLocation()
+
+	useEffect(() => {
+		location.pathname === '/results-print' && window.print()
+	}, [])
 
 	const handlePrint = () => {
 		window.print()

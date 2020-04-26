@@ -8,7 +8,7 @@ import Verification from './Verification'
 import Help from './Help'
 import Scanning from './Scanning'
 import MyStatus from './MyStatus'
-import TestReusults from './TestReusults'
+import TestResults from './TestResults'
 import Notifications from './Notifications'
 
 export {
@@ -22,6 +22,6 @@ export {
 	Results,
 	Scanning,
 	MyStatus,
-	TestReusults,
+	TestResults,
 	Notifications,
 }
