@@ -50,8 +50,8 @@ const Navigation: any = props => {
 		<Wrapper className={props.className} type={ContainerEnumType.COL}>
 			<OfflineBar />
 			<Heading>
-				{location.pathname !== '/home' && (
-					<Link to="/home">
+				{location.pathname !== '/' && (
+					<Link to="/">
 						<IconArrow name="arrow" />
 					</Link>
 				)}
