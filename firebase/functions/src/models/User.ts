@@ -7,7 +7,7 @@ export const findUserBycitizenID = async (citizen_id: string) => {
 		return []
 	}
 
-	let docs: any[] = []
+	const docs: any[] = []
 	snapshot.forEach(doc => {
 		docs.push(doc.data())
 	})

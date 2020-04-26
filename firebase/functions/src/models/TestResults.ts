@@ -15,7 +15,7 @@ export const getTestResults = async (id: string) => {
 		return []
 	}
 
-	let docs: any[] = []
+	const docs: any[] = []
 	snapshot.forEach(doc => {
 		docs.push(doc.data())
 	})
