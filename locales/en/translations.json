@@ -80,7 +80,7 @@
 		"button_one": "Scan another"
 	},
 	"offline": {
-		"title": "You are offline. Data will expire in {{time}} "
+		"title": "You are offline!"
 	},
 	"error": {
 		"title": "something went wrong!",
