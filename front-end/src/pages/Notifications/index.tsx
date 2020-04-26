@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { Loading, NotFound } from '../../pages'
 import { QUERY_NOTIFICATION } from '../../gql/queries'
 import { useQuery } from '@apollo/react-hooks'
+import { formatDate } from '../../services'
 
 const Content: any = styled(Container)`
 	max-width: 320px;
@@ -63,7 +64,7 @@ const Notifications = () => {
 					notifications.map((item, i) => (
 						<Item key={i} type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 							<Date>
-								{item.published} - {item.title}
+								{formatDate(item.published)} - {item.title}
 							</Date>
 							<Description>{item.message}</Description>
 						</Item>

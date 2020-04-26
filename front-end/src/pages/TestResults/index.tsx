@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { ContainerEnumType, ContainerEnumPosition, Container } from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
-
 import { Loading, NotFound } from '../../pages'
 import { QUERY_TESTRESULTS } from '../../gql/queries'
 import { useQuery } from '@apollo/react-hooks'
+import { formatDate } from '../../services'
 
 const Content: any = styled(Container)`
 	max-width: 320px;
@@ -27,7 +27,7 @@ const Label: FC = styled.label`
 	color: ${({ theme }) => theme.color.black};
 `
 
-const Date: FC = styled.p`
+const DateFC: FC = styled.p`
 	text-transform: uppercase;
 	color: ${({ theme }) => theme.color.black};
 	font-size: 16px;
@@ -62,9 +62,9 @@ const TestReusults = () => {
 				{testResults &&
 					testResults.map((item, i) => (
 						<Item key={i} type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
-							<Date>
-								{item.published} - {item.title}
-							</Date>
+							<DateFC>
+								{formatDate(item.published)} - {item.title}
+							</DateFC>
 							<Description>{item.message}</Description>
 						</Item>
 					))}

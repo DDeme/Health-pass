@@ -1,6 +1,6 @@
 //@ts-check
 import jwt from 'jsonwebtoken'
-
+import { format } from 'date-fns'
 interface Certificate {
 	name: string
 	age: string
@@ -28,4 +28,6 @@ const verifyPass = (token?: string, publickeys?: string[]) => {
 	return parseJWT(token)
 }
 
-export { verifyPass }
+const formatDate = date => format(new Date(date), 'dd.MM.yyyy HH:mm')
+
+export { verifyPass, formatDate }
