@@ -21,7 +21,7 @@
 		"button_one": "Sign in"
 	},
 	"verify_by_phone_number": {
-		"titleMain": "Verify other citizen",
+		"titleMain": "Verify",
 		"label_one": "Phone number",
 		"placeholder_one": "Type your phone number",
 		"error_one": "Your phone number is not valid!",
