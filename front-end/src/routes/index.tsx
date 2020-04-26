@@ -50,7 +50,7 @@ export const routes = [
 	{
 		visible: true,
 		label: 'Verify by phone number',
-		link: '/veryfybyphonenumber',
+		link: '/verify',
 		component: VerifyByPhoneNumber,
 	},
 	{

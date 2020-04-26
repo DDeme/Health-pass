@@ -26,7 +26,7 @@ type FormData = {
 	phone: number
 }
 
-const VerificationByPhoneNumber = () => {
+const VerifyByPhoneNumber = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
 	const { register, handleSubmit, watch, errors } = useForm<FormData>()
@@ -61,4 +61,4 @@ const VerificationByPhoneNumber = () => {
 		</Navigation>
 	)
 }
-export default VerificationByPhoneNumber
+export default VerifyByPhoneNumber

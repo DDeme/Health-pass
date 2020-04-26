@@ -43,7 +43,7 @@ const Home = () => {
 				<Link to="/scanning">
 					<Item>{t('home.button_two')}</Item>
 				</Link>
-				<Link to="/verifyphonenumber">
+				<Link to="/verify">
 					<Item>{t('home.button_three')}</Item>
 				</Link>
 			</List>
