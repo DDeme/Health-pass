@@ -1,24 +1,17 @@
 import React from 'react'
-// import { useQuery } from '@apollo/react-hooks'
-import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
 import { Loading, NotFound } from '../pages'
+import { Query } from 'react-apollo'
 
-const GQL = props => {
-	return (
-		<Query query={props.query}>
-			{({ loading, error, data }: any) => {
-				if (loading) return <Loading />
-				if (error) return <NotFound />
-				if (!data) return <NotFound />
-				return props.children
-			}}
-		</Query>
-	)
+const QueryStateManagement: any = (props: any) => {
+	const { loading, error, data } = props
+	if (loading) return <Loading />
+	if (error) return <NotFound />
+	if (!data) return <NotFound />
 }
 
 const REASON_QUERY = gql`
-	query {
+	{
 		certificate
 		reason {
 			title
@@ -29,6 +22,24 @@ const REASON_QUERY = gql`
 		}
 	}
 `
+
+interface GQLProps {
+	query: any
+	children: any
+}
+
+const GQL: any = (props: GQLProps): any => (
+	<Query query={props.query}>
+		{({ loading, error, data }: any): any => {
+			if (loading || error || !data) {
+				return <QueryStateManagement loading={loading} error={error} data={data} />
+			}
+
+			// return React.Children.map(props.children, child => React.cloneElement(child, { data: props.data }))
+			return React.cloneElement(props.children, props)
+		}}
+	</Query>
+)
 
 export { REASON_QUERY }
 export default GQL

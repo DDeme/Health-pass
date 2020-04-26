@@ -11,8 +11,13 @@ import {
 } from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
-// import { useQuery } from '@apollo/react-hooks'
-// import { gql } from 'apollo-boost'
+
+import { Query } from 'react-apollo'
+import GQL from '../../gql'
+
+import { gql } from 'apollo-boost'
+import { Loading, NotFound } from '../../pages'
+import { verifyPass } from '../../services'
 
 const Content: any = styled(Container)`
 	max-width: 320px;
@@ -47,32 +52,48 @@ const IconStatus = styled(Icon)`
 	}
 `
 
+const REASON_QUERY = gql`
+	{
+		certificate
+		reason {
+			title
+			type
+			message
+			published
+			end
+		}
+	}
+`
+
 const Success = () => {
 	const { t } = useTranslation()
-	const data = {
-		age: '28',
-		country: 'Slovakia',
-		exp: 1587766108,
-		iat: 1587679708,
-		movementAllowed: true,
-		name: 'John Doe',
-		region: 'Poprad',
-	}
 
 	return (
-		<Mobile>
-			<StatusBar state={data.movementAllowed}>
-				<>
-					<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
-					<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
-				</>
-			</StatusBar>
-			<Content type={ContainerEnumType.COL}>
-				<NotificationBlog show={data.movementAllowed} />
-				<ImageQRCode certificateToken={'test'} />
-				<UserInfoBlog data={data} />
-			</Content>
-		</Mobile>
+		<GQL query={REASON_QUERY}>
+			{({ data }: any): any => {
+				const { certificate, reason } = data
+				const userData = verifyPass(certificate)
+				console.log(userData, reason)
+
+				return <div>asdfgasg</div>
+
+				// return (
+				// 	<Mobile>
+				// 		<StatusBar state={data.movementAllowed}>
+				// 			<>
+				// 				<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
+				// 				<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
+				// 			</>
+				// 		</StatusBar>
+				// 		<Content type={ContainerEnumType.COL}>
+				// 			<NotificationBlog show={data.movementAllowed} />
+				// 			<ImageQRCode certificateToken={'test'} />
+				// 			<UserInfoBlog data={data} />
+				// 		</Content>
+				// 	</Mobile>
+				// )
+			}}
+		</GQL>
 	)
 }
 
