@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { PUBLIC_URL } from '../env'
 
 import {
-	Loading,
 	Home,
 	Scanning,
 	Login,
@@ -15,6 +14,7 @@ import {
 	Notifications,
 	Help,
 	NotFound,
+	Loading,
 } from '../pages'
 import { ListIcons } from '../settings'
 
@@ -34,14 +34,7 @@ export const routes = [
 		link: '/notfound',
 		component: NotFound,
 	},
-	{
-		visible: showDevLinks,
-		label: 'Start Screen',
-		link: '/',
-		component: Loading,
-		exact: true,
-	},
-	{ visible: showDevLinks, label: 'Home', link: '/home', component: Home },
+	{ visible: showDevLinks, label: 'Home', link: '/', component: Home, exact: true },
 	{ visible: showDevLinks, label: 'Login', link: '/login', component: Login },
 	{
 		visible: showDevLinks,
@@ -71,16 +64,14 @@ export const routes = [
 
 const Routing: any = (): any => {
 	return (
-		<React.Suspense fallback={<Loading />}>
-			<BrowserRouter basename={PUBLIC_URL}>
-				<Switch>
-					{routes.map(
-						(route, i) =>
-							route.link && <Route key={i} path={route.link} exact={route.exact} component={route.component} />
-					)}
-				</Switch>
-			</BrowserRouter>
-		</React.Suspense>
+		<BrowserRouter basename={PUBLIC_URL}>
+			<Switch>
+				{routes.map(
+					(route, i) =>
+						route.link && <Route key={i} path={route.link} exact={route.exact} component={route.component} />
+				)}
+			</Switch>
+		</BrowserRouter>
 	)
 }
 

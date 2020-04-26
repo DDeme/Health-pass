@@ -6,25 +6,17 @@ import * as serviceWorker from './serviceWorker'
 import Translater from './i18n'
 import Styler from './styles'
 import Routing from './routes'
-
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
-
-const client = new ApolloClient({
-	uri: 'https://us-central1-health-pass.cloudfunctions.net/graphql',
-});
-
-
+import Apollo from './gql'
 
 const Root = () => (
 	<StrictMode>
-		<ApolloProvider client={client}>
-		<Translater>
-			<Styler>
-				<Routing />
-			</Styler>
-		</Translater>
-		</ApolloProvider>
+		<Apollo>
+			<Translater>
+				<Styler>
+					<Routing />
+				</Styler>
+			</Translater>
+		</Apollo>
 	</StrictMode>
 )
 
