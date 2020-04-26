@@ -5,8 +5,8 @@ import { getReason } from '../../models/Reason'
 const getCodeData = (user: any, reason: any) => {
 	return {
 		name: user.name,
-		age: user.name,
-		region: user.country,
+		age: user.age,
+		region: user.region,
 		country: user.country,
 		movementAllowed: reason === null ? true : false,
 	}
