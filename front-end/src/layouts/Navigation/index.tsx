@@ -56,7 +56,7 @@ const Navigation: any = props => {
 					</Link>
 				)}
 			</Heading>
-			<Container>{props.children}</Container>
+			<Container type={ContainerEnumType.COL}>{props.children}</Container>
 		</Wrapper>
 	)
 }

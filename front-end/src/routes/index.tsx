@@ -14,6 +14,7 @@ import {
 	Notifications,
 	Help,
 	NotFound,
+	VerifyByPhoneNumber,
 	Loading,
 } from '../pages'
 import { ListIcons } from '../settings'
@@ -46,7 +47,12 @@ export const routes = [
 	{ visible: true, label: 'Test results', link: '/test-results', component: TestResults },
 	{ visible: true, label: 'Notifications', link: '/notifications', component: Notifications },
 	{ visible: true, label: 'Verify by scanning', link: '/scanning', component: Scanning },
-	{ visible: true, label: 'Verify by phone number', link: '/verifyphonenumber', component: Scanning },
+	{
+		visible: true,
+		label: 'Verify by phone number',
+		link: '/veryfybyphonenumber',
+		component: VerifyByPhoneNumber,
+	},
 	{
 		visible: true,
 		label: 'Help',

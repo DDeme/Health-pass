@@ -21,11 +21,21 @@ const Item: FC = styled(Button)`
 	margin-top: 30px;
 `
 
+const TitleMain: FC = styled.h2`
+	max-width: 320px;
+	padding: 0 20px;
+	width: 100%;
+	text-align: left;
+	color: ${({ theme }) => theme.color.black};
+	font-size: 14px;
+`
+
 const Home = () => {
 	const { t } = useTranslation()
 
 	return (
 		<Navigation>
+			<TitleMain>{t('home.title')}</TitleMain>
 			<List>
 				<Link to="/login">
 					<Item>{t('home.button_one')}</Item>

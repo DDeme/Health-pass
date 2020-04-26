@@ -10,6 +10,7 @@ import Scanning from './Scanning'
 import MyStatus from './MyStatus'
 import TestResults from './TestResults'
 import Notifications from './Notifications'
+import VerifyByPhoneNumber from './VerifyByPhoneNumber'
 
 export {
 	SplashScreen,
@@ -24,4 +25,5 @@ export {
 	MyStatus,
 	TestResults,
 	Notifications,
+	VerifyByPhoneNumber,
 }

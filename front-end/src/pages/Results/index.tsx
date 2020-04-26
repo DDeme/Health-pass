@@ -64,7 +64,7 @@ const Results = () => {
 
 	useEffect(() => {
 		location.pathname === '/results-print' && window.print()
-	}, [])
+	})
 
 	const handlePrint = () => {
 		window.print()
