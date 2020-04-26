@@ -14,6 +14,10 @@ const Wrapper: any = styled.div`
 `
 
 const List: any = styled.ul<{ active: boolean }>`
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	align-items: stretch;
 	background-color: ${({ theme }) => theme.color.purple};
 	position: absolute;
 	text-transform: capitalize;
@@ -25,7 +29,7 @@ const List: any = styled.ul<{ active: boolean }>`
 	transition: all 0.5s;
 	opacity: 0;
 	z-index: 1;
-	height: calc(100vh - 70px);
+	height: 100vh;
 	overflow: auto;
 
 	${({ active }) =>
@@ -38,6 +42,10 @@ const List: any = styled.ul<{ active: boolean }>`
 
 const Item = styled.li`
 	padding: 1px 0;
+`
+
+const Split = styled.li`
+	flex: 1;
 `
 
 const Link = styled(LinkR)`
@@ -72,13 +80,16 @@ const HamburgerMenu: any = props => {
 		<Wrapper active={state} className={props.className} hovering={props.hovering} onClick={() => setState(!state)}>
 			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
-				{routes.map(
-					(route, i) =>
+				{routes.map((route, i) =>
+					route.split ? (
+						<Split />
+					) : (
 						route.visible && (
 							<Item key={i}>
 								{route.link ? <Link to={route.link}>{route.label}</Link> : <Title>{route.label}</Title>}
 							</Item>
 						)
+					)
 				)}
 			</List>
 		</Wrapper>

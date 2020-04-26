@@ -22,6 +22,7 @@ import { ListIcons } from '../settings'
 
 export const routes = [
 	{ visible: SHOW_DEV_LINKS, label: 'Pages' },
+	{ visible: true, label: 'My profile' },
 	{
 		visible: SHOW_DEV_LINKS,
 		label: 'Loading Screen',
@@ -59,6 +60,13 @@ export const routes = [
 	{ visible: true, label: 'My status', link: '/mystatus', component: MyStatus },
 	{ visible: true, label: 'Test results', link: '/test-results', component: TestResults },
 	{ visible: true, label: 'Notifications', link: '/notifications', component: Notifications },
+	{
+		visible: true,
+		label: 'Log out',
+		link: '/home',
+		component: Home,
+	},
+	{ visible: true, split: true },
 	{ visible: true, label: 'Verify by scanning', link: '/scanning', component: Scanning },
 	{
 		visible: true,
@@ -72,6 +80,7 @@ export const routes = [
 		link: '/help',
 		component: Help,
 	},
+	{ visible: true, split: true },
 	{ visible: SHOW_DEV_LINKS, label: 'Settings' },
 	{
 		visible: SHOW_DEV_LINKS,

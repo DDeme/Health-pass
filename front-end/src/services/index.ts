@@ -1,6 +1,7 @@
 //@ts-check
 import jwt from 'jsonwebtoken'
 import { format } from 'date-fns'
+
 interface Certificate {
 	name: string
 	age: string

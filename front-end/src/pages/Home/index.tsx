@@ -1,6 +1,6 @@
 //@ts-check
 import React, { FC } from 'react'
-import { Link as LinkR } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button, TitleMain } from '../../components'
 import { Navigation } from '../../layouts'
@@ -12,31 +12,21 @@ const List: FC = styled.div`
 	padding: 30px 20px;
 `
 
-const Link = styled(LinkR)`
-	display: inline-block;
-	width: 100%;
-`
-
-const Item: FC = styled(Button)`
+const ButtonLink: any = styled(Button)`
 	margin-top: 30px;
 `
 
 const Home = () => {
 	const { t } = useTranslation()
+	const history = useHistory()
 
 	return (
 		<Navigation>
 			<TitleMain>{t('home.titleMain')}</TitleMain>
 			<List>
-				<Link to="/login">
-					<Item>{t('home.button_one')}</Item>
-				</Link>
-				<Link to="/scanning">
-					<Item>{t('home.button_two')}</Item>
-				</Link>
-				<Link to="/verify">
-					<Item>{t('home.button_three')}</Item>
-				</Link>
+				<ButtonLink onClick={() => history.push('/login')}>{t('home.button_one')}</ButtonLink>
+				<ButtonLink onClick={() => history.push('/scanning')}>{t('home.button_two')}</ButtonLink>
+				<ButtonLink onClick={() => history.push('/verify')}>{t('home.button_three')}</ButtonLink>
 			</List>
 		</Navigation>
 	)
