@@ -1,3 +1,4 @@
+//@ts-check
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 
@@ -98,20 +99,7 @@ type InputProps = {
 }
 
 const Input: any = React.forwardRef(
-	(
-		{
-			className,
-			type,
-			name,
-			register,
-			value,
-			placeholder,
-			error,
-			info,
-			label,
-		}: InputProps,
-		ref
-	) => {
+	({ className, type, name, register, value, placeholder, error, info, label }: InputProps, ref) => {
 		const [activeLabel, setActiveLabel] = useState(false)
 		return (
 			<>
@@ -126,9 +114,7 @@ const Input: any = React.forwardRef(
 						onFocus={() => setActiveLabel(true)}
 						onBlur={() => setActiveLabel(false)}
 					/>
-					<Lable
-						active={activeLabel || (value && !!value.length)}
-						htmlFor={name}>
+					<Lable active={activeLabel || (value && !!value.length)} htmlFor={name}>
 						{label}
 					</Lable>
 				</Wrapper>

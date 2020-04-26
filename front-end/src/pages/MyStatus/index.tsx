@@ -1,3 +1,4 @@
+//@ts-check
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
@@ -12,11 +13,9 @@ import {
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
-const Content = styled(Container)`
-	max-width: 320px;
-	width: 100%;
-	padding: 30px 20px;
-`
+import { Loading, NotFound } from '../../pages'
+import { QUERY_MYSTATUS } from '../../gql/queries'
+import { useQuery } from '@apollo/react-hooks'
 
 const InfoStatusBar: any = styled(StatusBar)`
 	padding: 20px;
@@ -34,16 +33,16 @@ const Status: any = styled(Container)`
 `
 
 const Label: FC = styled.label`
-	max-width: 320px;
-	width: 100%;
 	font-size: 14px;
 	color: ${({ theme }) => theme.color.black};
 	font-size: 14px;
+	max-width: 320px;
+	width: 100%;
 	padding: 25px 20px;
-	margin: 0 30px;
 `
 
 const Title: FC = styled.h3`
+	text-transform: capitalize;
 	color: ${({ theme }) => theme.color.white};
 	font-size: 24px;
 	padding-left: 15px;
@@ -53,51 +52,85 @@ const Date: FC = styled.p`
 	text-transform: uppercase;
 	color: ${({ theme }) => theme.color.black};
 	font-size: 16px;
+	max-width: 320px;
 	width: 100%;
+	padding: 25px 20px 0;
 `
 
 const Description: FC = styled.p`
+	position: relative;
 	color: ${({ theme }) => theme.color.black};
 	font-size: 14px;
-	padding: 15px 0;
 	line-height: 20px;
 	opacity: 0.6;
 	text-align: left;
-	border-bottom: 1px solid ${({ theme }) => theme.color.black};
+	max-width: 320px;
+	width: 100%;
+	padding: 15px 20px 25px;
+	margin-bottom: 15px;
+
+	&:after {
+		position: absolute;
+		content: '';
+		border-bottom: 1px solid ${({ theme }) => theme.color.black};
+		left: 20px;
+		bottom: 0;
+		width: calc(100% - 40px);
+	}
 `
 
 const Button: any = styled(ButtonC)`
-	margin-top: 60px;
+	margin: 30px 0;
 	width: 100%;
 `
+
 const Home = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
 
-	const data = {
-		positive: true,
-		date: '25. 4. 2020, 13:22:02',
-		finishQarantineDay: 6,
-	}
+	const { loading, error, data } = useQuery(QUERY_MYSTATUS)
+	if (loading) return <Loading />
+	if (error) return <NotFound />
+	if (!data) return <NotFound />
+
+	console.log(data)
+
+	const reason = data.reason
+	const testResults = data.test_results[0]
+
+	// TODO reason && testResults = undefined dorobit stranku no date avalaible...
 
 	return (
 		<Mobile>
-			<Label>{data.positive ? t('my_status.positive.label') : t('my_status.negative.label')}</Label>
-			<InfoStatusBar state={data.positive}>
-				<Status x={ContainerEnumPosition.LEFT}>
-					<Icon name={data.positive ? 'notification' : 'check'} />
-					<Title>{t('my_status.positive.title')}</Title>
-				</Status>
-			</InfoStatusBar>
-			<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
-				<Date>{data.date}</Date>
-				<Description>
-					{data.positive
-						? t('my_status.positive.description')
-						: t('my_status.negative.description', { count: data.finishQarantineDay })}
-				</Description>
+			<Container type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
+				{reason && (
+					<>
+						<Label>{t('my_status.positive.label')}</Label>
+						<InfoStatusBar state={true}>
+							<Status x={ContainerEnumPosition.LEFT}>
+								<Icon name="notification" />
+								<Title>{reason.title}</Title>
+							</Status>
+						</InfoStatusBar>
+						<Date>{reason.published}</Date>
+						<Description>{reason.message}</Description>
+					</>
+				)}
+				{!!data.test_results.length && (
+					<>
+						<Label>{t('my_status.negative.label')}</Label>
+						<InfoStatusBar state={false}>
+							<Status x={ContainerEnumPosition.LEFT}>
+								<Icon name="check" />
+								<Title>{testResults.title}</Title>
+							</Status>
+						</InfoStatusBar>
+						<Date>{testResults.published}</Date>
+						<Description>{testResults.message}</Description>
+					</>
+				)}
 				<Button onClick={() => history.push('/test-reusults')}>{t('my_status.button_one')}</Button>
-			</Content>
+			</Container>
 		</Mobile>
 	)
 }

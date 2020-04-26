@@ -1,3 +1,4 @@
+//@ts-check
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'

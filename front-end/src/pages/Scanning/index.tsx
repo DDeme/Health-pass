@@ -1,3 +1,5 @@
+//@ts-check
+//@ts-check
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
@@ -83,6 +85,8 @@ const Scanning: any = () => {
 	}, [history, scan])
 
 	const conditionisNegative = !data.movementAllowed
+
+	// TODO verify naskenovany certifikat
 
 	return (
 		<Mobile>

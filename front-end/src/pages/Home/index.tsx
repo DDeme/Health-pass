@@ -1,3 +1,4 @@
+//@ts-check
 import React, { FC } from 'react'
 import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'

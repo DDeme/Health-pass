@@ -1,3 +1,4 @@
+//@ts-check
 import React, { FC } from 'react'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider as ApolloProviderGQL } from '@apollo/react-hooks'

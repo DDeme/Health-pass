@@ -1,3 +1,4 @@
+//@ts-check
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Container, { ContainerEnumType } from '../Container'

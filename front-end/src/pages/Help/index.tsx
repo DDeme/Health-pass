@@ -1,3 +1,4 @@
+//@ts-check
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Navigation } from '../../layouts'
@@ -11,7 +12,7 @@ const Content: FC = styled.div`
 const Help = () => {
 	return (
 		<Navigation>
-			<Content>Help</Content>
+			<Content>Help page in progress...</Content>
 		</Navigation>
 	)
 }

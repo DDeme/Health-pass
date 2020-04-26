@@ -1,6 +1,2 @@
-
-
-
-export const logout = ():void => {
-
-}
+//@ts-check
+export const logout = (): void => {}

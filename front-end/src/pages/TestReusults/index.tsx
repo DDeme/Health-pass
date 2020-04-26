@@ -1,8 +1,13 @@
+//@ts-check
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { ContainerEnumType, ContainerEnumPosition, Container } from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
+
+import { Loading, NotFound } from '../../pages'
+import { QUERY_TESTRESULTS } from '../../gql/queries'
+import { useQuery } from '@apollo/react-hooks'
 
 const Content: any = styled(Container)`
 	max-width: 320px;
@@ -42,34 +47,25 @@ const Description: FC = styled.p`
 const TestReusults = () => {
 	const { t } = useTranslation()
 
-	const data = [
-		{
-			positive: false,
-			date: '25. 4. 2020, 13:22:02',
-			finishQarantineDay: 4,
-		},
-		{
-			positive: false,
-			date: '28. 2. 2020, 13:22:02',
-			finishQarantineDay: 6,
-		},
-	]
+	const { loading, error, data } = useQuery(QUERY_TESTRESULTS)
+	if (loading) return <Loading />
+	if (error) return <NotFound />
+	if (!data) return <NotFound />
+
+	// TODO v back-ende prementovat test_results na testResults
+	const testResults = data.test_results
 
 	return (
 		<Mobile>
 			<Content type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 				<Label>{t('test_results.label')}</Label>
-				{data &&
-					data.map(info => (
-						<Item type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
+				{testResults &&
+					testResults.map((item, i) => (
+						<Item key={i} type={ContainerEnumType.COL} x={ContainerEnumPosition.TOP}>
 							<Date>
-								{info.date} - {info.positive ? t('test_results.positive.title') : t('test_results.negative.title')}
+								{item.published} - {item.title}
 							</Date>
-							<Description>
-								{info.positive
-									? t('test_results.positive.description')
-									: t('test_results.negative.description', { count: info.finishQarantineDay })}
-							</Description>
+							<Description>{item.message}</Description>
 						</Item>
 					))}
 			</Content>

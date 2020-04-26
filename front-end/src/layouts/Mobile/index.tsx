@@ -1,15 +1,16 @@
+//@ts-check
 import React from 'react'
 import { Container, ContainerEnumType, ContainerEnumPosition, Menu, OfflineBar } from '../../components'
 
-const Mobile: any = props => (
+const Mobile: any = ({ className, x, y, children }) => (
 	<Container
-		className={props.className}
+		className={className}
 		type={ContainerEnumType.COL}
-		y={props.y || ContainerEnumPosition.TOP}
-		x={props.x || ContainerEnumPosition.LEFT}>
-		<Menu />
-		<OfflineBar />
-		<Container type={ContainerEnumType.COL}>{props.children}</Container>
+		y={y || ContainerEnumPosition.TOP}
+		x={x || ContainerEnumPosition.LEFT}>
+		<Menu className={'media-print'} />
+		<OfflineBar className={'media-print'} />
+		<Container type={ContainerEnumType.COL}>{children}</Container>
 	</Container>
 )
 

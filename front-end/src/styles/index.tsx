@@ -29,6 +29,11 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeI }>`
 		}
 	}
 
+	@media print {
+		.media-print {
+			display: none;
+		}
+	}
 `
 
 const Styler: FC = (props): JSX.Element => (

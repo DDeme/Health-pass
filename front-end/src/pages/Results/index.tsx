@@ -1,6 +1,8 @@
+//@ts-check
 import React from 'react'
 import styled from 'styled-components'
 import {
+	Button,
 	StatusBar,
 	ContainerEnumType,
 	Container,
@@ -13,7 +15,7 @@ import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
 import { Loading, NotFound } from '../../pages'
-import { CERTIFICATE_QUERY } from '../../gql/queries'
+import { QUERY_RESULTS } from '../../gql/queries'
 import { useQuery } from '@apollo/react-hooks'
 import { verifyPass } from '../../services'
 
@@ -51,30 +53,44 @@ const IconStatus = styled(Icon)`
 	}
 `
 
-const Success = () => {
+const ButtonPrint = styled(Button)`
+	margin-top: 30px;
+`
+
+const Results = () => {
 	const { t } = useTranslation()
-	const { loading, error, data } = useQuery(CERTIFICATE_QUERY)
+
+	const handlePrint = () => {
+		window.print()
+	}
+
+	const { loading, error, data } = useQuery(QUERY_RESULTS)
 	if (loading) return <Loading />
 	if (error) return <NotFound />
 	if (!data) return <NotFound />
 
-	const userDate = data && verifyPass(data.certificate)
+	const userData = data && verifyPass(data.certificate)
+	const status = userData.movementAllowed
 
 	return (
 		<Mobile>
-			<StatusBar state={userDate.movementAllowed}>
+			<StatusBar state={status} className={'media-print'}>
 				<>
-					<IconStatus name={userDate.movementAllowed ? 'close' : 'check'} />
-					<Title>{userDate.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
+					<IconStatus name={status ? 'close' : 'check'} />
+					<Title>{status ? t('results.positive.title') : t('results.negative.title')}</Title>
 				</>
 			</StatusBar>
+
 			<Content type={ContainerEnumType.COL}>
-				<NotificationBlog show={userDate.movementAllowed} />
-				<ImageQRCode certificateToken={'test'} />
-				<UserInfoBlog data={userDate} />
+				<NotificationBlog show={status} />
+				<ImageQRCode certificateToken={data.certificate} />
+				<UserInfoBlog data={userData} />
+				<ButtonPrint type="submit" onClick={() => handlePrint()} className={'media-print'}>
+					{t('results.button_one')}
+				</ButtonPrint>
 			</Content>
 		</Mobile>
 	)
 }
 
-export default Success
+export default Results

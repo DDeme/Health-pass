@@ -1,3 +1,4 @@
+//@ts-check
 import React from 'react'
 import styled from 'styled-components'
 import Icon from '../Icon'
@@ -32,9 +33,7 @@ const Logo: any = props => {
 	const { t } = useTranslation()
 
 	return (
-		<Wrapper
-			className={props.className}
-			type={props.type || ContainerEnumType.COL}>
+		<Wrapper className={props.className} type={props.type || ContainerEnumType.COL}>
 			<IconShield name="shield" />
 			<Title>{t('logo.title')}</Title>
 			{props.children}

@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// styles ./style.css from icomoon
+// STYLES FROM ICOMOON
 import './style.css'
 
 const Wrapper = styled.i`
@@ -26,9 +26,7 @@ const Wrapper = styled.i`
 	}
 `
 
-const Icon: any = ({ name, className }): any => (
-	<Wrapper className={`icon icon-${name} ${className} rotate`} />
-)
+const Icon: any = ({ name, className }): any => <Wrapper className={`icon icon-${name} ${className} rotate`} />
 
 export default Icon
 export const getListIcons = () => require('./selection.json')

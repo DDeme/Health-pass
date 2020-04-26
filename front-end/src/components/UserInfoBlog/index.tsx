@@ -21,6 +21,7 @@ const Label = styled.label`
 	margin: 20px 0 5px;
 `
 
+//@ts-check
 const Text = styled.p`
 	font-weight: bold;
 	font-size: 18px;

@@ -1,3 +1,5 @@
+//@ts-check
+//@ts-check
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -28,6 +30,7 @@ const Verification = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
 	const { register, handleSubmit, watch, errors } = useForm<FormData>()
+
 	const onSubmit = data => {
 		// TODO send data to server and add verify for push history
 		console.log(data)
@@ -36,6 +39,7 @@ const Verification = () => {
 			history.push('/results')
 		}
 	}
+
 	return (
 		<Navigation>
 			<List onSubmit={handleSubmit(onSubmit)}>

@@ -30,6 +30,7 @@
 		}
 	},
 	"results": {
+		"button_one": "Print certificate",
 		"positive": {
 			"title": "Movement restricted",
 			"notification": {
@@ -50,38 +51,18 @@
 	},
 	"my_status": {
 		"positive": {
-			"label": "My status",
-			"title": "Quarantined",
-			"description": "You may be with closed contact with suspected person. Plese stay at home. We will contact you about next steps."
+			"label": "My status"
 		},
 		"negative": {
-			"label": "Last test result",
-			"title": "Negative",
-			"description": "You have been tested negative. Your quarantine will end in {{count}} days."
+			"label": "Last test result"
 		},
 		"button_one": "See test results"
 	},
 	"test_results": {
-		"label": "Tests results",
-		"positive": {
-			"title": "Positive",
-			"description": "You may be with closed contact with suspected person. Plese stay at home. We will contact you about next steps."
-		},
-		"negative": {
-			"title": "Negative",
-			"description": "You have been tested negative. Your quarantine will end in {{count}} days."
-		}
+		"label": "Tests results"
 	},
 	"notification": {
-		"label": "Notifications",
-		"positive": {
-			"title": "Positive",
-			"description": "You may be with closed contact with suspected person. Plese stay at home. We will contact you about next steps."
-		},
-		"negative": {
-			"title": "Negative",
-			"description": "You have been tested negative. Your quarantine will end in {{count}} days."
-		}
+		"label": "Notifications"
 	},
 	"scanning": {
 		"title": "Place the code inside the frame",
