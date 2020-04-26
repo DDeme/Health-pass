@@ -2,7 +2,7 @@
 import React, { FC } from 'react'
 import { Link as LinkR } from 'react-router-dom'
 import styled from 'styled-components'
-import { Button } from '../../components'
+import { Button, TitleMain } from '../../components'
 import { Navigation } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
@@ -21,21 +21,12 @@ const Item: FC = styled(Button)`
 	margin-top: 30px;
 `
 
-const TitleMain: FC = styled.h2`
-	max-width: 320px;
-	padding: 0 20px;
-	width: 100%;
-	text-align: left;
-	color: ${({ theme }) => theme.color.black};
-	font-size: 14px;
-`
-
 const Home = () => {
 	const { t } = useTranslation()
 
 	return (
 		<Navigation>
-			<TitleMain>{t('home.title')}</TitleMain>
+			<TitleMain>{t('home.titleMain')}</TitleMain>
 			<List>
 				<Link to="/login">
 					<Item>{t('home.button_one')}</Item>
@@ -43,7 +34,7 @@ const Home = () => {
 				<Link to="/scanning">
 					<Item>{t('home.button_two')}</Item>
 				</Link>
-				<Link to="/verifyphonenumber">
+				<Link to="/verify">
 					<Item>{t('home.button_three')}</Item>
 				</Link>
 			</List>

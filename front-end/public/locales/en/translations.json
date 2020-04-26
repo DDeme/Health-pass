@@ -3,7 +3,7 @@
 		"title": "Medic pass"
 	},
 	"home": {
-		"title": "Choose your action",
+		"titleMain": "Choose your action",
 		"button_one": "My certificate",
 		"button_two": "Verify by scanning",
 		"button_three": "Verify by phone number"
@@ -20,6 +20,7 @@
 		"button_one": "Sign in"
 	},
 	"verify_by_phone_number": {
+		"titleMain": "Verify other citizen",
 		"label_one": "Phone number",
 		"placeholder_one": "Type your phone number",
 		"error_one": "Your phone number is not valid!",
@@ -83,5 +84,8 @@
 		"title": "something went wrong!",
 		"description": "An unexpected error occured. Please  go back and try again.",
 		"button_one": "Go back"
+	},
+	"help": {
+		"titleMain": "Help page in progress..."
 	}
 }
