@@ -9,6 +9,7 @@ import BoxShaddow from './BoxShaddow'
 import QRCodeGenerator from './QRCodeGenerator'
 import StatusBar from './StatusBar'
 import OfflineBar from './OfflineBar'
+import TitleMain from './TitleMain'
 import Container, { ContainerEnumPosition, ContainerEnumType } from './Container'
 // TODO vytvorit samostany priecinok pre blog a odpisem si nazov
 import UserInfoBlog from './UserInfoBlog'
@@ -19,6 +20,7 @@ export {
 	Button,
 	Input,
 	Logo,
+	TitleMain,
 	HamburgerMenu,
 	Menu,
 	QRCodeScanner,

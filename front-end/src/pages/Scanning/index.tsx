@@ -1,5 +1,4 @@
 //@ts-check
-//@ts-check
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'

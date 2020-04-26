@@ -1,7 +1,7 @@
 //@ts-check
 //@ts-check
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { Button as ButtonC, Input as InputC } from '../../components'
@@ -29,14 +29,17 @@ type FormData = {
 const Verification = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
+	const location = useLocation()
 	const { register, handleSubmit, watch, errors } = useForm<FormData>()
 
 	const onSubmit = data => {
 		// TODO send data to server and add verify for push history
 		console.log(data)
 
-		if (!Object.keys(errors).length) {
-			history.push('/results')
+		if (location.pathname === '/verification-by-phone') {
+			return history.push('/scan-result')
+		} else if (!Object.keys(errors).length) {
+			return history.push('/results')
 		}
 	}
 

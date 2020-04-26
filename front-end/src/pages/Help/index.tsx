@@ -2,6 +2,8 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Navigation } from '../../layouts'
+import { TitleMain } from '../../components'
+import { useTranslation } from 'react-i18next'
 
 const Content: FC = styled.div`
 	max-width: 320px;
@@ -10,9 +12,13 @@ const Content: FC = styled.div`
 `
 
 const Help = () => {
+	const { t } = useTranslation()
+
 	return (
 		<Navigation>
-			<Content>Help page in progress...</Content>
+			<Content>
+				<TitleMain>{t('help.titleMain')}</TitleMain>
+			</Content>
 		</Navigation>
 	)
 }

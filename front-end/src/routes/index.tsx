@@ -16,6 +16,7 @@ import {
 	NotFound,
 	VerifyByPhoneNumber,
 	Loading,
+	ScanResult,
 } from '../pages'
 import { ListIcons } from '../settings'
 
@@ -40,6 +41,18 @@ export const routes = [
 		label: 'Verification',
 		link: '/verification',
 		component: Verification,
+	},
+	{
+		visible: SHOW_DEV_LINKS,
+		label: 'Verification by phone',
+		link: '/verification-by-phone',
+		component: Verification,
+	},
+	{
+		visible: SHOW_DEV_LINKS,
+		label: 'Scan result',
+		link: '/scan-result',
+		component: ScanResult,
 	},
 	{ visible: true, label: 'My certificate', link: '/results', component: Results },
 	{ visible: true, label: 'Print certificate', link: '/results-print', component: Results },

@@ -3,7 +3,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import { Button as ButtonC, Input as InputC } from '../../components'
+import { Button as ButtonC, Input as InputC, TitleMain } from '../../components'
 import { Navigation } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
@@ -30,17 +30,19 @@ const VerifyByPhoneNumber = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
 	const { register, handleSubmit, watch, errors } = useForm<FormData>()
+
 	const onSubmit = data => {
 		// TODO send data to server and add verify for push history
 		console.log(data)
 
 		if (!Object.keys(errors).length) {
-			history.push('/results')
+			history.push('/verification-by-phone')
 		}
 	}
 
 	return (
 		<Navigation>
+			<TitleMain>{t('verify_by_phone_number.titleMain')}</TitleMain>
 			<List onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					type="tel"
