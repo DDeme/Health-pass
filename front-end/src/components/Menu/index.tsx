@@ -23,23 +23,20 @@ const Title = styled.h1`
 	padding: 0 10px;
 `
 
-const Box = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
-`
-
 const Menu = props => {
 	const { t } = useTranslation()
 
 	return (
 		<Wrapper className={props.className}>
 			<HamburgerMenu visibleMenu={props.visibleMenu || true} />
-			<Box>
-				<Icon name="shield" />
-				<Title>{t('logo.title')}</Title>
-			</Box>
+			<Container>
+				<Link to="/">
+					<Container>
+						<Icon name="shield" />
+						<Title>{t('logo.title')}</Title>
+					</Container>
+				</Link>
+			</Container>
 			<Link to="/notifications">
 				<Icon name="bell" />
 			</Link>

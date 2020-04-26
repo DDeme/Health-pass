@@ -1,5 +1,5 @@
 //@ts-check
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Icon, Logo as LogoC, Container as ContainerC } from '../../components'
 
