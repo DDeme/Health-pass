@@ -67,12 +67,14 @@ const Title = styled.p`
 const HamburgerMenu: any = props => {
 	const [state, setState] = useState(props.initialState || false)
 
+	console.log('routes', routes)
+
 	return (
 		<Wrapper active={state} className={props.className} hovering={props.hovering} onClick={() => setState(!state)}>
 			<Icon name={props.visibleMenu ? 'bars' : 'arrow'} />
 			<List active={state}>
 				{routes.map((route, i) => {
-					console.log(route)
+					console.log('route', route)
 
 					return (
 						route.visible && (
