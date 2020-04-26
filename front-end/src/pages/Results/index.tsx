@@ -11,8 +11,11 @@ import {
 } from '../../components'
 import { Mobile } from '../../layouts'
 import { useTranslation } from 'react-i18next'
-// import { useQuery } from '@apollo/react-hooks'
-// import { gql } from 'apollo-boost'
+
+import { Loading, NotFound } from '../../pages'
+import { CERTIFICATE_QUERY } from '../../gql/queries'
+import { useQuery } from '@apollo/react-hooks'
+import { verifyPass } from '../../services'
 
 const Content: any = styled(Container)`
 	max-width: 320px;
@@ -49,28 +52,25 @@ const IconStatus = styled(Icon)`
 
 const Success = () => {
 	const { t } = useTranslation()
-	const data = {
-		age: '28',
-		country: 'Slovakia',
-		exp: 1587766108,
-		iat: 1587679708,
-		movementAllowed: true,
-		name: 'John Doe',
-		region: 'Poprad',
-	}
+	const { loading, error, data } = useQuery(CERTIFICATE_QUERY)
+	if (loading) return <Loading />
+	if (error) return <NotFound />
+	if (!data) return <NotFound />
+
+	const userDate = data && verifyPass(data.certificate)
 
 	return (
 		<Mobile>
-			<StatusBar state={data.movementAllowed}>
+			<StatusBar state={userDate.movementAllowed}>
 				<>
-					<IconStatus name={data.movementAllowed ? 'close' : 'check'} />
-					<Title>{data.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
+					<IconStatus name={userDate.movementAllowed ? 'close' : 'check'} />
+					<Title>{userDate.movementAllowed ? t('results.positive.title') : t('results.negative.title')}</Title>
 				</>
 			</StatusBar>
 			<Content type={ContainerEnumType.COL}>
-				<NotificationBlog show={data.movementAllowed} />
+				<NotificationBlog show={userDate.movementAllowed} />
 				<ImageQRCode certificateToken={'test'} />
-				<UserInfoBlog data={data} />
+				<UserInfoBlog data={userDate} />
 			</Content>
 		</Mobile>
 	)

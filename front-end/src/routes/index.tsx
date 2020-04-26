@@ -1,7 +1,7 @@
 //@ts-check
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { PUBLIC_URL } from '../env'
+import { PUBLIC_URL, SHOW_DEV_LINKS } from '../env'
 
 import {
 	Home,
@@ -18,26 +18,24 @@ import {
 } from '../pages'
 import { ListIcons } from '../settings'
 
-const showDevLinks = false
-
 export const routes = [
-	{ visible: showDevLinks, label: 'Pages' },
+	{ visible: SHOW_DEV_LINKS, label: 'Pages' },
 	{
-		visible: showDevLinks,
+		visible: SHOW_DEV_LINKS,
 		label: 'Loading Screen',
 		link: '/loading',
 		component: Loading,
 	},
 	{
-		visible: showDevLinks,
+		visible: SHOW_DEV_LINKS,
 		label: 'NotFound',
 		link: '/notfound',
 		component: NotFound,
 	},
-	{ visible: showDevLinks, label: 'Home', link: '/', component: Home, exact: true },
-	{ visible: showDevLinks, label: 'Login', link: '/login', component: Login },
+	{ visible: true, label: 'Home', link: '/', component: Home, exact: true },
+	{ visible: SHOW_DEV_LINKS, label: 'Login', link: '/login', component: Login },
 	{
-		visible: showDevLinks,
+		visible: SHOW_DEV_LINKS,
 		label: 'Verification',
 		link: '/verification',
 		component: Verification,
@@ -53,9 +51,9 @@ export const routes = [
 	{ visible: true, label: 'Test reusults', link: '/test-reusults', component: TestReusults },
 	{ visible: true, label: 'Notifications', link: '/notifications', component: Notifications },
 	{ visible: true, label: 'Scanning', link: '/scanning', component: Scanning },
-	{ visible: showDevLinks, label: 'Settings' },
+	{ visible: SHOW_DEV_LINKS, label: 'Settings' },
 	{
-		visible: showDevLinks,
+		visible: SHOW_DEV_LINKS,
 		label: 'Icons',
 		link: '/settings-icon',
 		component: ListIcons,

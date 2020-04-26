@@ -19,8 +19,16 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeI }>`
 	}
 	
 	* {
+		outline: 0;
 		box-sizing: border-box;
 	}
+
+	a {
+		&:active {
+			text-decoration: none;
+		}
+	}
+
 `
 
 const Styler: FC = (props): JSX.Element => (

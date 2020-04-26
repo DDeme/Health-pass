@@ -1,6 +1,5 @@
 //@ts-check
-import React, { FC, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Icon, Logo as LogoC, Container as ContainerC } from '../../components'
 
@@ -35,20 +34,6 @@ const Loader = styled(Icon)<{ show: boolean }>`
 `
 
 const Laoding = () => {
-	const history = useHistory()
-
-	const lazyLoad = () => {
-		const timer = setTimeout(() => {
-			return history.push('/home')
-		}, 1000)
-
-		return () => clearTimeout(timer)
-	}
-
-	useEffect(() => {
-		lazyLoad()
-	})
-
 	return (
 		<Wrapper>
 			<Logo>
