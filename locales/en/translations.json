@@ -3,7 +3,8 @@
 		"title": "Medic pass"
 	},
 	"home": {
-		"button_one": "See my certificate",
+		"title": "Choose your action",
+		"button_one": "My certificate",
 		"button_two": "Verify by scanning",
 		"button_three": "Verify by phone number"
 	},
@@ -15,8 +16,15 @@
 		"label_two": "Phone number",
 		"placeholder_two": "Type your phone number",
 		"error_two": "Your phone number is not valid!",
-		"info_two": "Example pohone +421999999999",
+		"info_two": "Example phone +421999999999",
 		"button_one": "Sign in"
+	},
+	"verify_by_phone_number": {
+		"label_one": "Phone number",
+		"placeholder_one": "Type your phone number",
+		"error_one": "Your phone number is not valid!",
+		"info_one": "Example phone +421999999999",
+		"button_one": "Send code"
 	},
 	"verification": {
 		"label_one": "Verification code",
