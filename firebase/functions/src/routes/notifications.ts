@@ -1,12 +1,10 @@
-import { Router } from "express";
-import { notificationsResolver } from '../graphql/resolvers/notifications';
-const router = Router();
+import { Router } from 'express'
+import { notificationsResolver } from '../graphql/resolvers/notifications'
+const router = Router()
 
+router.post('/', async (req, res, next) => {
+	const nottifications = await notificationsResolver()
+	res.send(nottifications)
+})
 
-
-
-router.post("/", (req, res, next) => {
-  res.send(notificationsResolver());
-});
-
-export default router;
+export default router

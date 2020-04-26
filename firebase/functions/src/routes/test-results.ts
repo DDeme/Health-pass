@@ -1,14 +1,10 @@
+import { Router } from 'express'
+import { testResultsResolver } from '../graphql/resolvers/testResults'
+const router = Router()
 
-import { Router } from "express";
-import { testResultsResolver } from '../graphql/resolvers/testResults';
-const router = Router();
+router.post('/', async (req, res, next) => {
+	const data = await testResultsResolver()
+	res.send(data)
+})
 
-
-
-router.post("/", (req, res, next) => {
-  res.send(testResultsResolver);
-});
-
-export default router;
-
-
+export default router

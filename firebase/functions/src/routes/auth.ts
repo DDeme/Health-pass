@@ -1,23 +1,38 @@
 import * as express from 'express'
+import { setAccess } from '../models/Access'
+import { findUserBycitizenID } from '../models/User'
+import {
+	setAuthorization,
+	getAuthorization,
+	deleteAuthorization,
+} from '../models/Authorization'
 
 const router = express.Router()
-const access_token = '329cc604-cdc9-42cb-b986-783b6920f2d5'
-const authorization_token = '3796a6d0-7a9f-4148-b094-ed6d58964560'
 
-// const get2FACode = () => String.format("%06d", number);
+router.post('/login', async (req, res) => {
+	// const { country, citizen_id, phone } = req.body
 
-// const confirmation_token = '123456'
+	const user = await findUserBycitizenID(req.body.citizen_id)
+	if (user.length !== 0 && user[0].id !== undefined) {
+		const { authorization_token } = await setAuthorization(user[0].id)
+		res.send({ authorization_token })
+	}
+	res.sendStatus(401)
+})
 
-// TODO: add country
-router.post('/login',  (req, res) => {
-    res.send({ authorization_token });
-});
-
-router.post('/confirmation', (req, res) =>  {
-    if (req.body.authorization_token === authorization_token) {
-        res.send({ access_token });
-    }
-    res.send(401)
-});
+router.post('/confirmation', async (req, res) => {
+	const result = await getAuthorization(req.body.authorization_token)
+	if (
+		result !== null &&
+		result !== undefined
+		//&&
+		// 		result.verification_code === req.body.verification_code
+	) {
+		const { access_token } = await setAccess(result.id)
+		await deleteAuthorization(result.authorization_token)
+		res.send({ access_token })
+	}
+	res.sendStatus(401)
+})
 
 export default router

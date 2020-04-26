@@ -1,11 +1,10 @@
-import { Router } from "express";
-import { reasonResolver } from '../graphql/resolvers/reason';
-const router = Router();
+import { Router } from 'express'
+import { reasonResolver } from '../graphql/resolvers/reason'
+const router = Router()
 
-
-
-router.post("/", (req, res, next) => {
-  res.send(reasonResolver())
+router.post('/', async (req, res, next) => {
+	const data = await reasonResolver()
+	res.send({ reason: data })
 })
 
-export default router;
+export default router
