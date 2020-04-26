@@ -23,8 +23,7 @@ const OfflineBar: any = ({ className }) => {
 	}, [isOnline])
 
 	// TODO get time and show this bar when I am offline
-	const time = '12:00:10'
 
-	return !isOnline && <Wrapper className={className}>{t('offline.title', { time })}</Wrapper>
+	return !isOnline && <Wrapper className={className}>{t('offline.title')}</Wrapper>
 }
 export default OfflineBar
