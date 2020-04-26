@@ -3,7 +3,7 @@ import * as faker from 'faker'
 const getRandomInt = (min: number, max: number) => {
 	const MIN = Math.ceil(min)
 	const MAX = Math.floor(max)
-	return Math.floor(Math.random() * (max - min)) + min //The maximum is exclusive and the minimum is inclusive
+	return Math.floor(Math.random() * (MAX - MIN)) + MIN //The maximum is exclusive and the minimum is inclusive
 }
 
 export const getRandomUser = (movementAllowed = true): Model.User => {
