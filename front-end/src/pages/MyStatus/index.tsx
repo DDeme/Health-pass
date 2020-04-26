@@ -119,9 +119,9 @@ const Home = () => {
 				{!!data.test_results.length && (
 					<>
 						<Label>{t('my_status.negative.label')}</Label>
-						<InfoStatusBar state={false}>
+						<InfoStatusBar state={testResults.title.toUpperCase().includes('POSITIVE')}>
 							<Status x={ContainerEnumPosition.LEFT}>
-								<Icon name="check" />
+								<Icon name={testResults.title.toUpperCase().includes('POSITIVE') ? 'notification' : 'check'} />
 								<Title>{testResults.title}</Title>
 							</Status>
 						</InfoStatusBar>

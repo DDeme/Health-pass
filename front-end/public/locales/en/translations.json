@@ -9,8 +9,9 @@
 		"button_three": "Verify by phone number"
 	},
 	"login": {
-		"label_one": "Citizen id",
-		"placeholder_one": "Type your citizen id",
+		"titleMain": "Sign in with your ID",
+		"label_one": "Citizen ID",
+		"placeholder_one": "Type your citizen ID",
 		"error_one": "Your citizen id is not valid!",
 		"info_one": "Id card or passport number",
 		"label_two": "Phone number",
@@ -28,6 +29,7 @@
 		"button_one": "Send code"
 	},
 	"verification": {
+		"titleMain": "Enter your verification",
 		"label_one": "Verification code",
 		"placeholder_one": "Type your verification code",
 		"error_one": "Your verification code is not valid!",

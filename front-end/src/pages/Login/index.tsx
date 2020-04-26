@@ -3,7 +3,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import { Button as ButtonC, Input as InputC } from '../../components'
+import { Button as ButtonC, Input as InputC, TitleMain } from '../../components'
 import { Navigation } from '../../layouts'
 import { useTranslation } from 'react-i18next'
 
@@ -41,6 +41,7 @@ const Login = () => {
 
 	return (
 		<Navigation>
+			<TitleMain>{t('login.titleMain')}</TitleMain>
 			<List onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					type="string"

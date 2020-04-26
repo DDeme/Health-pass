@@ -16,7 +16,7 @@ const Wrapper: any = styled.div`
 const List: any = styled.ul<{ active: boolean }>`
 	background-color: ${({ theme }) => theme.color.purple};
 	position: absolute;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	left: 0;
 	top: 100%;
 	max-width: 320px;
