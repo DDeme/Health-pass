@@ -80,14 +80,14 @@ const Results = () => {
 
 	return (
 		<Mobile>
-			<StatusBar state={status} className={'media-print'}>
+			<StatusBar state={!status} className={'media-print'}>
 				<>
-					<IconStatus name={status ? 'close' : 'check'} />
-					<Title>{status ? t('results.positive.title') : t('results.negative.title')}</Title>
+					<IconStatus name={!status ? 'close' : 'check'} />
+					<Title>{!status ? t('results.positive.title') : t('results.negative.title')}</Title>
 				</>
 			</StatusBar>
 			<Content type={ContainerEnumType.COL}>
-				<NotificationBlog show={status} />
+				<NotificationBlog show={!status} />
 				<ImageQRCode certificateToken={data.certificate} />
 				<UserInfoBlog data={userData} />
 				<ButtonPrint type="submit" onClick={() => handlePrint()} className={'media-print'}>
