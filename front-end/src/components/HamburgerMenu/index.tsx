@@ -82,7 +82,7 @@ const HamburgerMenu: any = props => {
 			<List active={state}>
 				{routes.map((route, i) =>
 					route.split ? (
-						<Split />
+						<Split key={i} />
 					) : (
 						route.visible && (
 							<Item key={i}>

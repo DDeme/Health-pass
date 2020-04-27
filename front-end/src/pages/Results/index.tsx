@@ -61,22 +61,22 @@ const ButtonPrint = styled(Button)`
 const Results = () => {
 	const { t } = useTranslation()
 	let location = useLocation()
+	const { loading, error, data } = useQuery(QUERY_RESULTS)
 
 	useEffect(() => {
-		location.pathname === '/results-print' && window.print()
+		data && location.pathname === '/results-print' && window.print()
 	})
 
-	const handlePrint = () => {
-		window.print()
-	}
-
-	const { loading, error, data } = useQuery(QUERY_RESULTS)
 	if (loading) return <Loading />
 	if (error) return <NotFound />
 	if (!data) return <NotFound />
 
 	const userData = data && verifyPass(data.certificate)
 	const status = userData.movementAllowed
+
+	const handlePrint = () => {
+		window.print()
+	}
 
 	return (
 		<Mobile>
