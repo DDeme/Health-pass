@@ -54,6 +54,7 @@ const TestReusults = () => {
 
 	// TODO v back-ende prementovat test_results na testResults
 	const testResults = data.test_results
+	console.log(testResults)
 
 	return (
 		<Mobile>

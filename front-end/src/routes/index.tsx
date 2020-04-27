@@ -58,7 +58,7 @@ export const routes = [
 	{ visible: true, label: 'My certificate', link: '/results', component: Results },
 	{ visible: true, label: 'Print certificate', link: '/results-print', component: Results },
 	{ visible: true, label: 'My status', link: '/mystatus', component: MyStatus },
-	{ visible: true, label: 'Test results', link: '/test-results', component: TestResults },
+	{ visible: true, label: 'Test results', link: '/test-reusults', component: TestResults },
 	{ visible: true, label: 'Notifications', link: '/notifications', component: Notifications },
 	{
 		visible: true,
