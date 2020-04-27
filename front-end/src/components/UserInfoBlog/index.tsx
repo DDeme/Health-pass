@@ -31,7 +31,7 @@ const Logo: any = props => {
 	const { t } = useTranslation()
 
 	return (
-		<Wrapper type={ContainerEnumType.COL} y={ContainerEnumPosition.LEFT}>
+		<Wrapper className={props.className} type={ContainerEnumType.COL} y={ContainerEnumPosition.LEFT}>
 			<Label>{t('results.info.label_one')}</Label>
 			<TitleName>{props.data.name}</TitleName>
 			<Label>{t('results.info.label_two')}</Label>

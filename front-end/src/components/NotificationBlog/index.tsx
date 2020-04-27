@@ -45,12 +45,12 @@ const Link = styled(LinkR)`
 	}
 `
 
-const NotificationBlog: any = ({ show }) => {
+const NotificationBlog: any = ({ show, className }) => {
 	const { t } = useTranslation()
 
 	return (
 		show && (
-			<Wrapper type={ContainerEnumType.COL}>
+			<Wrapper className={className} type={ContainerEnumType.COL}>
 				<Container x={ContainerEnumPosition.LEFT}>
 					<IconNotification name="notification" />
 					<Title>{t('results.positive.notification.title')}</Title>

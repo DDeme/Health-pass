@@ -87,7 +87,7 @@ const Results = () => {
 				</>
 			</StatusBar>
 			<Content type={ContainerEnumType.COL}>
-				<NotificationBlog show={!status} />
+				<NotificationBlog show={!status} className={'media-print'} />
 				<ImageQRCode certificateToken={data.certificate} />
 				<UserInfoBlog data={userData} />
 				<ButtonPrint type="submit" onClick={() => handlePrint()} className={'media-print'}>
