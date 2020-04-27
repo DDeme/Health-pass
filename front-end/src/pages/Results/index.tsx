@@ -86,7 +86,6 @@ const Results = () => {
 					<Title>{status ? t('results.positive.title') : t('results.negative.title')}</Title>
 				</>
 			</StatusBar>
-
 			<Content type={ContainerEnumType.COL}>
 				<NotificationBlog show={status} />
 				<ImageQRCode certificateToken={data.certificate} />

@@ -42,8 +42,8 @@ const VerifyByPhoneNumber = () => {
 
 	return (
 		<Navigation>
-			<TitleMain>{t('verify_by_phone_number.titleMain')}</TitleMain>
 			<List onSubmit={handleSubmit(onSubmit)}>
+				<TitleMain>{t('verify_by_phone_number.titleMain')}</TitleMain>
 				<Input
 					type="tel"
 					name="phone"

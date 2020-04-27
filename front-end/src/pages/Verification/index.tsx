@@ -45,8 +45,8 @@ const Verification = () => {
 
 	return (
 		<Navigation>
-			<TitleMain>{t('verification.titleMain')}</TitleMain>
 			<List onSubmit={handleSubmit(onSubmit)}>
+				<TitleMain>{t('verification.titleMain')}</TitleMain>
 				<Input
 					type="string"
 					name="verification"
