@@ -23,13 +23,18 @@ const Button: any = styled(ButtonC)`
 
 type FormData = {
 	citizen: string
-	phone: number
+	phone: string
+}
+
+const defaultValues: FormData = {
+	citizen: 'PDAAA456',
+	phone: '489.378.3281',
 }
 
 const Login = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
-	const { register, handleSubmit, watch, errors } = useForm<FormData>()
+	const { register, handleSubmit, watch, errors } = useForm<FormData>({ defaultValues })
 	const onSubmit = data => {
 		// TODO send data to server and add verify for push history
 		console.log(data)
@@ -54,7 +59,7 @@ const Login = () => {
 					info={t('login.info_one')}
 				/>
 				<Input
-					type="tel"
+					type="string"
 					name="phone"
 					register={register({
 						required: true,

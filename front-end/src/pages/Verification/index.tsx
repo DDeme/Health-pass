@@ -26,11 +26,15 @@ type FormData = {
 	verification: string
 }
 
+const defaultValues: FormData = {
+	verification: 'A684CC2B',
+}
+
 const Verification = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
 	const location = useLocation()
-	const { register, handleSubmit, watch, errors } = useForm<FormData>()
+	const { register, handleSubmit, watch, errors } = useForm<FormData>({ defaultValues })
 
 	const onSubmit = data => {
 		// TODO send data to server and add verify for push history

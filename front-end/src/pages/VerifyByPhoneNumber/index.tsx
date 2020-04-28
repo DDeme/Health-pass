@@ -22,14 +22,17 @@ const Button: any = styled(ButtonC)`
 `
 
 type FormData = {
-	citizen: string
-	phone: number
+	phone: string
+}
+
+const defaultValues: FormData = {
+	phone: '489.378.3281',
 }
 
 const VerifyByPhoneNumber = () => {
 	const history = useHistory()
 	const { t } = useTranslation()
-	const { register, handleSubmit, watch, errors } = useForm<FormData>()
+	const { register, handleSubmit, watch, errors } = useForm<FormData>({ defaultValues })
 
 	const onSubmit = data => {
 		// TODO send data to server and add verify for push history
