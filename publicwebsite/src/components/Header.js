@@ -85,15 +85,9 @@ export default class Header extends Component {
                 </Scroll>
               </li>
               <li className="nav-item">
-                <Scroll
-                  onClick={_ => this.toggleMenu(!openMenu)}
-                  type="id"
-                  element="contact"
-                >
-                  <a className="nav-link" href="https://medicpass.app/app/">
-                    Go to App
-                  </a>
-                </Scroll>
+                <a className="nav-link" href="https://medicpass.app/app/">
+                  Go to App
+                </a>
               </li>
             </ul>
           </div>
