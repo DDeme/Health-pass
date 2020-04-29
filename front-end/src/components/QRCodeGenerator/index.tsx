@@ -13,8 +13,8 @@ export interface QRCodeGeneratorProps {
 }
 
 const QRCodeGenerator = (props: QRCodeGeneratorProps) => {
-	const code = `http://qr.demecko.com/app/scanning/${props.certificateToken}`
-	return <QRCode className={props.className} value={code} {...QrCodeProps} />
+	// const code = `http://qr.demecko.com/app/scanning/${props.certificateToken}`
+	return <QRCode className={props.className} value={props.certificateToken} {...QrCodeProps} />
 }
 
 export default QRCodeGenerator
