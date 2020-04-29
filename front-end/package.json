@@ -2,6 +2,7 @@
 	"name": "front-end-t",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://medicpass.app/app/",
 	"dependencies": {
 		"@apollo/react-hooks": "^3.1.5",
 		"@testing-library/jest-dom": "^4.2.4",

@@ -1,3 +1,5 @@
 rm -rf build
 mkdir build
-cp -r ../front-end/build/* ./build/
+mkdir ./build/app
+cp -r ../front-end/build/* ./build/app/
+cp -r ../publicwebsite/public/* ./build/
