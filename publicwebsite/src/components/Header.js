@@ -90,8 +90,8 @@ export default class Header extends Component {
                   type="id"
                   element="contact"
                 >
-                  <a className="nav-link" href="#contact">
-                    Contact
+                  <a className="nav-link" href="https://medicpass.app/app/">
+                    Go to App
                   </a>
                 </Scroll>
               </li>
