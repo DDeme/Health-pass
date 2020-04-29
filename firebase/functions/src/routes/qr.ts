@@ -5,7 +5,7 @@ import { getRandomUser } from '../lib/getRandomUser'
 
 const router = Router()
 
-const SCANNING_URL = 'http://qr.demecko.com/scanning'
+const SCANNING_URL = 'http://qr.demecko.com/app/scanning'
 
 const getCodeUrl = (certificate: string) => `${SCANNING_URL}/${certificate}`
 
