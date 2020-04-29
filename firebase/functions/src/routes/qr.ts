@@ -5,16 +5,25 @@ import { getRandomUser } from '../lib/getRandomUser'
 
 const router = Router()
 
+const SCANNING_URL = 'http://qr.demecko.com/scanning'
+
+const getCodeUrl = (certificate: string) => `${SCANNING_URL}/${certificate}`
+
 router.get('/valid', (req, res, next) => {
-	const code = qr.image(getHealthCertificate(getRandomUser()), { type: 'svg' })
+	const code = qr.image(getCodeUrl(getHealthCertificate(getRandomUser())), {
+		type: 'svg',
+	})
 	res.type('svg')
 	code.pipe(res)
 })
 
 router.get('/invalid', (req, res, next) => {
-	const code = qr.image(getHealthCertificate(getRandomUser(false)), {
-		type: 'svg',
-	})
+	const code = qr.image(
+		getCodeUrl(getHealthCertificate(getRandomUser(false))),
+		{
+			type: 'svg',
+		}
+	)
 	res.type('svg')
 	code.pipe(res)
 })
