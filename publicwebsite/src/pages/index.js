@@ -48,7 +48,7 @@ const IndexPage = () => (
         <div className="row">
           <div className="col-md-8 mx-auto">
             <h2 className="section-heading">Try it for yourself.</h2>
-            <p>Scan one of this qr codes or visit</p>
+            <p>Open app with mobile and scan qr codes.</p>
             <a className="badge-link" href="/app/scanning">
               medicpass.app/app
             </a>
