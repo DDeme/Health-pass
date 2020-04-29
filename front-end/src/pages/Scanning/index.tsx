@@ -1,6 +1,6 @@
 //@ts-check
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { verifyPass } from '../../services'
 import {
@@ -69,6 +69,15 @@ const Scanning: any = () => {
 	const [scan, setScan] = useState('')
 	const results: Data = {}
 	const [data, setData] = useState(results)
+
+	const params = useParams()
+
+	if (params.hasOwnProperty('certificate') && params.certificate !== null && params.certificate !== undefined) {
+		const cert = verifyPass(params.certificate)
+		if (cert !== null) {
+			setData(cert)
+		}
+	}
 
 	useEffect(() => {
 		// TODO vypnuť cameru po redirecte
