@@ -64,7 +64,7 @@ const Results = () => {
 	const { loading, error, data } = useQuery(QUERY_RESULTS)
 
 	useEffect(() => {
-		data && location.pathname === '/results-print' && window.print()
+		data && location.pathname === 'https://medicpass.app/app/results-print' && window.print()
 	})
 
 	if (loading) return <Loading />
