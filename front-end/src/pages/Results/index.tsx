@@ -64,7 +64,9 @@ const Results = () => {
 	const { loading, error, data } = useQuery(QUERY_RESULTS)
 
 	useEffect(() => {
-		data && location.pathname === '/app/results-print' && window.print()
+		console.log(location.pathname)
+
+		data && location.pathname === '/results-print' && window.print()
 	})
 
 	if (loading) return <Loading />
