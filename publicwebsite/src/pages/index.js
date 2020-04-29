@@ -49,7 +49,7 @@ const IndexPage = () => (
           <div className="col-md-8 mx-auto">
             <h2 className="section-heading">Try it for yourself.</h2>
             <p>Open app with mobile and scan qr codes.</p>
-            <a className="badge-link" href="/app/scanning">
+            <a className="badge-link" href="https://medicpass.app/app/">
               medicpass.app/app
             </a>
             <div className="badges">
@@ -63,7 +63,7 @@ const IndexPage = () => (
                 <div className="col-lg-4"></div>
                 <div className="col-lg-4">
                   <div class="code">
-                    <img src="https://us-central1-health-pass.cloudfunctions.net/api/qr/valid" />
+                    <img src="https://us-central1-health-pass.cloudfunctions.net/api/qr/invalid" />
                   </div>
                   <p>Restricted</p>
                 </div>
