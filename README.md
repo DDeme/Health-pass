@@ -1,2 +1,3 @@
-# Health-pass
-Health pass app.
+# Health-pass ( Medic pass ) 
+Our submission to #EuvsVirus Hackathon.
+Visit https://medicpass.app/
