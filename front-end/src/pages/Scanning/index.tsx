@@ -72,12 +72,14 @@ const Scanning: any = () => {
 
 	const params = useParams()
 
-	if (params.hasOwnProperty('certificate') && params.certificate !== null && params.certificate !== undefined) {
-		const cert = verifyPass(params.certificate)
-		if (cert !== null) {
-			setData(cert)
+	try {
+		if (params.hasOwnProperty('certificate') && params.certificate !== null && params.certificate !== undefined) {
+			const cert = verifyPass(params.certificate)
+			if (cert !== null) {
+				setData(cert)
+			}
 		}
-	}
+	} catch {}
 
 	useEffect(() => {
 		// TODO vypnuť cameru po redirecte
