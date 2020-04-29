@@ -68,7 +68,6 @@ export const routes = [
 	},
 	{ visible: true, split: true },
 	{ visible: true, label: 'Verify by scanning', link: '/scanning/:certificate?', component: Scanning },
-	{ visible: true, label: 'Verify by scanning', link: '/scanning', component: Scanning },
 	{
 		visible: true,
 		label: 'Verify by phone number',

@@ -78,8 +78,11 @@ const Scanning: any = () => {
 			if (cert !== null) {
 				setData(cert)
 			}
+			throw new Error('wrong token')
 		}
-	} catch {}
+	} catch {
+		history.push('/scanning')
+	}
 
 	useEffect(() => {
 		// TODO vypnuť cameru po redirecte
@@ -88,7 +91,8 @@ const Scanning: any = () => {
 			if (certificate !== null) {
 				setData(certificate)
 			}
-		} catch {
+		} catch (e) {
+			debugger
 			setData({})
 			history.push('/notfound')
 		}

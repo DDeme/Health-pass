@@ -20,6 +20,9 @@ interface VerifiedCertificate extends Certificate {
 // const verifyJWT = (token): boolean => true
 
 const parseJWT = token => {
+	if (token === null) {
+		return null
+	}
 	const trimmed = token.replace('http://qr.demecko.com/app/scanning/', '')
 	const data = jwt.decode(trimmed)
 
