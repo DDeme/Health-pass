@@ -6671,10 +6671,10 @@ jsqr@^1.2.0:
   resolved "https://registry.yarnpkg.com/jsqr/-/jsqr-1.2.0.tgz#f93fc65fa7d1ded78b1bcb020fa044352b04261a"
   integrity sha512-wKcQS9QC2VHGk7aphWCp1RrFyC0CM6fMgC5prZZ2KV/Lk6OKNoCod9IR6bao+yx3KPY0gZFC5dc+h+KFzCI0Wg==
 
-jsrsasign@^8.0.15:
-  version "8.0.15"
-  resolved "https://registry.yarnpkg.com/jsrsasign/-/jsrsasign-8.0.15.tgz#0d56856efa75fad84b578655249700f500388112"
-  integrity sha512-6UKHqnNs5lYROn03wf1BTw7DQx5tW616DTigjbo0JHV97D3HzIqYmPVCBSNsfEfQOrfpFqmPZJvaC3cMNOT0Yw==
+jsrsasign@^8.0.19:
+  version "8.0.19"
+  resolved "https://registry.yarnpkg.com/jsrsasign/-/jsrsasign-8.0.19.tgz#c36260f103cc639a9202e5243d7544cde48d53a7"
+  integrity sha512-qf+F41huTh9ThXj5n3yfAJJRp8vx05JYbGlGvCjusYX50rsfqY6ASK08LCOutl0yA1BHIpGG8bd1w5x9aGy7Zg==
 
 jsx-ast-utils@^2.2.1, jsx-ast-utils@^2.2.3:
   version "2.2.3"
